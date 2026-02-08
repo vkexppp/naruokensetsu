@@ -79,7 +79,7 @@
             font-family: 'Noto Sans JP', sans-serif;
             font-size: 0.55em;
             letter-spacing: 0.1em;
-            color: #94a3b8; /* スレートグレー系で上品に */
+            color: #94a3b8;
         }
     </style>
 </head>
@@ -89,7 +89,6 @@
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex flex-col text-left">
-                <!-- Naruo Constructionを削除し、rubyタグでの読み仮名表記に変更 -->
                 <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">
                     株式会社 <ruby>成王<rt class="font-bold">なるおう</rt></ruby>建設
                 </h1>
@@ -168,29 +167,30 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-10 md:mb-24 fade-in">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold">Services</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
+                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-6">サービス内容</h3>
+                <p class="text-slate-500 text-sm md:text-base tracking-widest max-w-2xl mx-auto">建物の大小や構造、難易度を問わず、あらゆる解体工事に対応いたします</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans font-bold">01</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">住宅解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">木造家屋から蔵まで　近隣への配慮を徹底し、次なる建築に最適な更地へと仕上げます</p>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">住宅・切り離し解体</h4>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left font-medium text-slate-600">一般住宅から、家を半分残して半分を壊すといった複雑な『切り離し解体』まで対応　高度な技術であらゆる施工を完遂します</p>
                 </div>
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans font-bold">02</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">RC・鉄骨解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗やアパート　熟練のオペレーターが騒音・振動を最小限に抑え、安全に施工します</p>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">鉄骨・RC造解体</h4>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">ビル、店舗、工場など　建物の構造を問わず全ての解体が可能です。熟練のオペレーターが安全かつ迅速に施工します</p>
                 </div>
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans font-bold">03</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">内装解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗のスケルトン工事　限られた工期内で、正確な分別と徹底した現場管理を実施します</p>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗やオフィスのスケルトン工事　限られた工期内で、正確な分別と徹底した現場管理により高品質な更地へと仕上げます</p>
                 </div>
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans font-bold">04</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">アスベスト除去</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">法令を遵守し、専門スタッフが最新の飛散防止対策を講じて安全かつ確実に除去を行います</p>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">法令を遵守し、専門スタッフが最新の飛散防止対策を講じて確実に除去　一気通貫での対応で手間とコストを削減します</p>
                 </div>
             </div>
         </div>
@@ -224,7 +224,8 @@
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-left">Work Progress</span>
                         <div class="flex-grow h-px bg-slate-200"></div>
                     </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider text-left">環境に配慮した分別施工</p>
+                    <!-- 「環境に配慮した分別施工」から「環境に配慮した解体」に修正 -->
+                    <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider text-left">環境に配慮した解体</p>
                 </div>
             </div>
         </div>
