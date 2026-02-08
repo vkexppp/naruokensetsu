@@ -26,18 +26,15 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* プロフェッショナルなネイビー配色 */
+        /* 大手企業らしい重厚なネイビー配色 */
         .bg-corporate-deep {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
-        .bg-section-light {
-            background-color: #f1f5f9; /* 区切りを分かりやすくするため少し濃いめのグレーに変更 */
-        }
         .nav-glass {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(12px);
         }
-        /* 字間のプロフェッショナル調整 */
+        /* プロフェッショナルな字間調整 */
         .tracking-premium {
             letter-spacing: 0.3em;
         }
@@ -47,13 +44,13 @@
         }
         .vertical-line {
             width: 1px;
-            height: 50px;
+            height: 40px;
             background: linear-gradient(to bottom, #0f172a, transparent);
             margin: 0 auto;
             opacity: 0.4;
         }
         @media (min-width: 768px) {
-            .vertical-line { height: 100px; }
+            .vertical-line { height: 80px; }
         }
         #mobile-menu {
             transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
@@ -62,10 +59,10 @@
         #mobile-menu.active {
             transform: translateX(0);
         }
-        /* カードデザインの洗練 - 枠線をより濃く、視認性を向上 */
+        /* カードデザイン - 枠線を濃くして視認性を向上 */
         .service-card {
             background-color: #ffffff;
-            border: 1.5px solid #94a3b8; /* 枠線を太く、濃くしました */
+            border: 1.5px solid #94a3b8; /* 枠線を濃く設定 */
             transition: all 0.4s ease;
         }
         .service-card:hover {
@@ -115,7 +112,7 @@
     <!-- Hero Section -->
     <section class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col items-center pt-32 md:pt-48 pb-10 bg-white">
         <!-- Text Area -->
-        <div class="text-center px-6 z-10 fade-in mb-8 md:mb-16">
+        <div class="text-center px-6 z-10 fade-in mb-6 md:mb-16">
             <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.8em] mb-10 md:mb-16 serif uppercase">
                 Integrity in Demolition.
             </p>
@@ -127,23 +124,21 @@
 
         <!-- Main Image -->
         <div class="w-full px-6 md:px-24 max-w-7xl mx-auto fade-in">
-            <div class="relative overflow-hidden shadow-2xl rounded-sm border border-slate-100">
+            <div class="relative overflow-hidden shadow-2xl rounded-sm">
                 <img src="600004693690679420.jpg" alt="成王建設 旗艦重機" class="w-full h-auto object-cover md:object-contain bg-white transition-transform duration-[3000ms] hover:scale-105">
             </div>
         </div>
     </section>
 
-    <!-- Concept Section with Image -->
+    <!-- Concept Section -->
     <section id="about" class="py-40 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-                <!-- Concept Image - 他の写真と統一 -->
                 <div class="order-2 md:order-1 fade-in">
                     <div class="relative group overflow-hidden shadow-2xl rounded-sm">
-                        <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.3] group-hover:grayscale-0">
+                        <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105">
                     </div>
                 </div>
-                <!-- Concept Text -->
                 <div class="order-1 md:order-2 fade-in">
                     <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-8 uppercase text-left">Philosophy</span>
                     <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-12 text-left">
@@ -159,19 +154,19 @@
         </div>
     </section>
 
-    <!-- CEO Message Section -->
+    <!-- CEO Message Section (Correct Photo) -->
     <section id="ceo" class="py-40 px-6 bg-white overflow-hidden border-t border-slate-100">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 items-start">
-                <!-- CEO Photo - 確実に father.jpg を読み込むよう設定 -->
+                <!-- CEO Photo - father.jpg を反映 -->
                 <div class="md:col-span-5 fade-in">
-                    <div class="relative">
-                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-slate-200"></div>
-                        <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop'">
-                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-slate-200"></div>
+                    <div class="relative group">
+                        <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
+                        <div class="absolute -top-4 -left-4 w-16 h-16 border-t border-l border-slate-200 pointer-events-none"></div>
+                        <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b border-r border-slate-200 pointer-events-none"></div>
                     </div>
                 </div>
-                <!-- CEO Profile & Message -->
+                <!-- CEO Profile -->
                 <div class="md:col-span-7 fade-in">
                     <div class="mb-12">
                         <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-8 uppercase text-left">Representative Message</span>
@@ -180,7 +175,7 @@
                             父から受け継いだ「誠実」を貫く。
                         </h3>
                         <p class="text-slate-800 text-xl serif mt-8 font-bold text-left">
-                            代表取締役　菅 正行 <span class="text-sm font-normal text-slate-400 ml-4 font-sans">Masayuki Suga</span>
+                            代表取締役　菅 正行 <span class="text-sm font-normal text-slate-400 ml-4 font-sans uppercase">Masayuki Suga</span>
                         </p>
                     </div>
                     
@@ -222,24 +217,28 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 01 -->
                 <div class="fade-in service-card p-10">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">01</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">住宅解体</h4>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">住宅解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">木造家屋から蔵まで。近隣への配慮を徹底し、次なる建築に最適な更地へと仕上げます。</p>
                 </div>
+                <!-- Service 02 -->
                 <div class="fade-in service-card p-10">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">02</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">RC・鉄骨解体</h4>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">RC・鉄骨解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗やアパート。熟練のオペレーターが騒音・振動を最小限に抑え、安全に施工します。</p>
                 </div>
+                <!-- Service 03 -->
                 <div class="fade-in service-card p-10">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">03</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">内装解体</h4>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">内装解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗のスケルトン工事。限られた工期内で、正確な分別と徹底した現場管理を実施します。</p>
                 </div>
+                <!-- Service 04 - アスベスト除去 -->
                 <div class="fade-in service-card p-10">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">04</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">アスベスト除去</h4>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">アスベスト除去</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">法令を遵守し、専門スタッフが最新の飛散防止対策を講じて安全かつ確実に除去を行います。</p>
                 </div>
             </div>
@@ -283,14 +282,14 @@
     <!-- Contact Section -->
     <footer id="contact" class="bg-corporate-deep text-white py-40 px-6">
         <div class="max-w-5xl mx-auto text-center fade-in">
-            <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-12 uppercase">Contact Us</span>
+            <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-12 uppercase text-center">Contact Us</span>
             <h3 class="text-3xl md:text-5xl font-bold serif mb-20 tracking-wider">ご相談・お見積り</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 text-left border-t border-slate-700/50 pt-20">
                 <div>
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Direct Line</p>
                     <p class="text-4xl md:text-5xl font-light tracking-tighter hover:text-slate-300 transition-colors text-left">0123-456-7890</p>
-                    <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left">Reception: 9:00 - 18:00 (Weekday)</p>
+                    <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left font-bold">Reception: 9:00 - 18:00 (Weekday)</p>
                 </div>
                 <div class="border-l-0 md:border-l border-slate-700/50 md:pl-20">
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Corporate Information</p>
@@ -303,7 +302,7 @@
             </div>
             
             <div class="mt-40 pt-10 border-t border-slate-700/50">
-                <p class="text-[10px] tracking-[0.6em] text-slate-600 uppercase font-bold">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
+                <p class="text-[10px] tracking-[0.6em] text-slate-600 uppercase font-bold text-center">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
@@ -325,7 +324,7 @@
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
-                if(mobileMenu) mobileMenu.classList.remove('active');
+                if(typeof mobileMenu !== 'undefined') mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
@@ -333,21 +332,23 @@
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            const spans = menuBtn.querySelectorAll('span');
-            if(mobileMenu.classList.contains('active')){
-                document.body.style.overflow = 'hidden';
-                spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-            } else {
-                document.body.style.overflow = '';
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                const spans = menuBtn.querySelectorAll('span');
+                if(mobileMenu.classList.contains('active')){
+                    document.body.style.overflow = 'hidden';
+                    spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+                } else {
+                    document.body.style.overflow = '';
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
