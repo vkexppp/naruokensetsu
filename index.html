@@ -62,7 +62,7 @@
         /* カードデザイン */
         .service-card {
             background-color: #ffffff;
-            border: 1.5px solid #cbd5e1;
+            border: 1px solid #cbd5e1;
             transition: all 0.4s ease;
         }
         .service-card:hover {
@@ -128,8 +128,8 @@
         </div>
     </section>
 
-    <!-- History Section (Slate-50) -->
-    <section id="history" class="py-12 md:py-32 px-6 bg-slate-50 border-y border-slate-100">
+    <!-- History Section (Slate-100) - Increased contrast -->
+    <section id="history" class="py-12 md:py-32 px-6 bg-slate-100 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
                 <div class="order-2 md:order-1 fade-in">
@@ -150,11 +150,11 @@
         </div>
     </section>
 
-    <!-- Service Section (Slate-100) -->
-    <section id="service" class="bg-slate-100 py-12 md:py-32 px-6 border-b border-slate-200">
+    <!-- Service Section (White) -->
+    <section id="service" class="bg-white py-12 md:py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-10 md:mb-24 fade-in">
-                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
+                <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
             </div>
             
@@ -183,8 +183,8 @@
         </div>
     </section>
 
-    <!-- Project Gallery (White) -->
-    <section id="projects" class="py-12 md:py-32 px-6 bg-white">
+    <!-- Project Gallery (Slate-50) -->
+    <section id="projects" class="py-12 md:py-32 px-6 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-10 md:mb-24 fade-in">
                 <div>
@@ -217,8 +217,8 @@
         </div>
     </section>
 
-    <!-- CEO Message Section (Slate-50) -->
-    <section id="ceo" class="py-12 md:py-32 px-6 bg-slate-50 overflow-hidden border-t border-slate-100">
+    <!-- CEO Message Section (Slate-100) - Changed for better flow -->
+    <section id="ceo" class="py-12 md:py-32 px-6 bg-slate-100 overflow-hidden border-b border-slate-200">
         <div class="max-w-4xl mx-auto text-center">
             <!-- 1. 表題 -->
             <div class="mb-10 md:mb-16 fade-in">
@@ -236,7 +236,7 @@
 
             <!-- 3. お名前 -->
             <div class="mb-10 md:mb-16 fade-in">
-                <p class="text-slate-500 text-sm md:text-base font-medium mb-4 tracking-widest uppercase">代表取締役</p>
+                <p class="text-slate-500 text-sm md:text-base font-medium mb-4 tracking-widest uppercase font-sans">代表取締役</p>
                 <p class="text-slate-800 text-3xl md:text-4xl serif font-bold">
                     菅 正行 <span class="text-sm md:text-base font-normal text-slate-400 ml-4 font-sans uppercase tracking-widest">Masayuki Kan</span>
                 </p>
@@ -263,27 +263,62 @@
     <footer id="contact" class="bg-corporate-deep text-white py-12 md:py-32 px-6">
         <div class="max-w-5xl mx-auto text-center fade-in">
             <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-8 md:mb-12 uppercase text-center font-sans">Contact Us</span>
-            <h3 class="text-3xl md:text-5xl font-bold serif mb-16 md:mb-20 tracking-wider">ご相談・お見積り</h3>
+            <h3 class="text-3xl md:text-5xl font-bold serif mb-16 md:mb-20 tracking-wider text-center">ご相談・お見積り</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-left border-t border-slate-700/50 pt-16 md:pt-20">
+                <!-- Left: Contact info -->
                 <div>
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Direct Line</p>
                     <p class="text-4xl md:text-5xl font-light tracking-tighter hover:text-slate-300 transition-colors text-left">089-924-6604</p>
                     <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left font-bold font-sans">Reception: 9:00 - 18:00 (Weekday)</p>
                 </div>
+                <!-- Right: Company Overview (Updated from documents) -->
                 <div class="border-l-0 md:border-l border-slate-700/50 md:pl-20">
-                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left font-sans">Company Overview</p>
-                    <h4 class="text-xl font-bold serif mb-6 tracking-widest text-left font-bold">株式会社 成王建設</h4>
-                    <p class="text-sm text-slate-300 leading-loose tracking-widest text-left font-medium space-y-1">
-                        <span class="block">所在地：〒791-8017 愛媛県松山市西長戸町250-6</span>
-                        <span class="block">資本金：5,000千円</span>
-                        <span class="block">許可：愛媛県知事許可 第014057号</span>
-                    </p>
+                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left font-sans text-left">Company Overview</p>
+                    <h4 class="text-xl font-bold serif mb-6 tracking-widest text-left font-bold text-left">株式会社 成王建設</h4>
+                    <div class="text-sm text-slate-300 leading-loose tracking-widest text-left font-normal space-y-2">
+                        <p><span class="text-slate-500 mr-2">代表者名</span> 菅 正行（カン マサユキ）</p>
+                        <p><span class="text-slate-500 mr-2">所在地</span> 〒791-8017 愛媛県松山市西長戸町250-6</p>
+                        <p><span class="text-slate-500 mr-2">他の拠点</span> 〒791-8017 愛媛県松山市西長戸町250-3</p>
+                        <p><span class="text-slate-500 mr-2">資本金</span> 5,000千円</p>
+                        <p><span class="text-slate-500 mr-2">業務内容</span> 土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New: Detailed Licenses Section -->
+            <div class="mt-20 pt-16 border-t border-slate-700/50 text-left">
+                <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-8 uppercase text-left font-sans">Licenses & Permits</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6 text-xs text-slate-400 tracking-wider">
+                    <div class="space-y-4">
+                        <p class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>建設業許可</span>
+                            <span class="text-slate-200">愛媛県知事許可 第014057号</span>
+                        </p>
+                        <p class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>産業廃棄物収集運搬業許可（愛媛県）</span>
+                            <span class="text-slate-200">第03802100626号</span>
+                        </p>
+                        <p class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>産業廃棄物収集運搬業許可（松山市）</span>
+                            <span class="text-slate-200">第08910100626号</span>
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>一般廃棄物収集運搬業許可（松山市）</span>
+                            <span class="text-slate-200">第20081001201号</span>
+                        </p>
+                        <p class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>産業廃棄物処分業許可</span>
+                            <span class="text-slate-200">第08920100626号</span>
+                        </p>
+                    </div>
                 </div>
             </div>
             
             <div class="mt-20 md:mt-32 pt-10 border-t border-slate-700/50 text-center">
-                <p class="text-[10px] tracking-[0.6em] text-slate-600 uppercase font-bold">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
+                <p class="text-[10px] tracking-[0.6em] text-slate-600 uppercase font-bold text-center">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
