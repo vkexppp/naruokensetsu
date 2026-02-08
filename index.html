@@ -128,7 +128,7 @@
         </div>
     </section>
 
-    <!-- History Section (Slate-100) - Increased contrast -->
+    <!-- History Section (Slate-100) -->
     <section id="history" class="py-12 md:py-32 px-6 bg-slate-100 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
@@ -217,7 +217,7 @@
         </div>
     </section>
 
-    <!-- CEO Message Section (Slate-100) - Changed for better flow -->
+    <!-- CEO Message Section (Slate-100) -->
     <section id="ceo" class="py-12 md:py-32 px-6 bg-slate-100 overflow-hidden border-b border-slate-200">
         <div class="max-w-4xl mx-auto text-center">
             <!-- 1. 表題 -->
@@ -225,10 +225,10 @@
                 <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight">代表取締役 挨拶</h3>
             </div>
 
-            <!-- 2. 写真 -->
+            <!-- 2. 写真 - fatherbike.jpg に更新 -->
             <div class="mb-10 md:mb-16 fade-in flex justify-center">
                 <div class="relative group max-w-lg w-full">
-                    <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
+                    <img src="fatherbike.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
                     <div class="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 border-t border-l border-slate-200 pointer-events-none"></div>
                     <div class="absolute -bottom-4 -right-4 w-12 md:w-16 h-12 md:h-16 border-b border-r border-slate-200 pointer-events-none"></div>
                 </div>
@@ -272,7 +272,7 @@
                     <p class="text-4xl md:text-5xl font-light tracking-tighter hover:text-slate-300 transition-colors text-left">089-924-6604</p>
                     <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left font-bold font-sans">Reception: 9:00 - 18:00 (Weekday)</p>
                 </div>
-                <!-- Right: Company Overview (Updated from documents) -->
+                <!-- Right: Company Overview (Consolidated) -->
                 <div class="border-l-0 md:border-l border-slate-700/50 md:pl-20">
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left font-sans text-left">Company Overview</p>
                     <h4 class="text-xl font-bold serif mb-6 tracking-widest text-left font-bold text-left">株式会社 成王建設</h4>
@@ -282,37 +282,33 @@
                         <p><span class="text-slate-500 mr-2">他の拠点</span> 〒791-8017 愛媛県松山市西長戸町250-3</p>
                         <p><span class="text-slate-500 mr-2">資本金</span> 5,000千円</p>
                         <p><span class="text-slate-500 mr-2">業務内容</span> 土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- New: Detailed Licenses Section -->
-            <div class="mt-20 pt-16 border-t border-slate-700/50 text-left">
-                <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-8 uppercase text-left font-sans">Licenses & Permits</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6 text-xs text-slate-400 tracking-wider">
-                    <div class="space-y-4">
-                        <p class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>建設業許可</span>
-                            <span class="text-slate-200">愛媛県知事許可 第014057号</span>
-                        </p>
-                        <p class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>産業廃棄物収集運搬業許可（愛媛県）</span>
-                            <span class="text-slate-200">第03802100626号</span>
-                        </p>
-                        <p class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>産業廃棄物収集運搬業許可（松山市）</span>
-                            <span class="text-slate-200">第08910100626号</span>
-                        </p>
-                    </div>
-                    <div class="space-y-4">
-                        <p class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>一般廃棄物収集運搬業許可（松山市）</span>
-                            <span class="text-slate-200">第20081001201号</span>
-                        </p>
-                        <p class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>産業廃棄物処分業許可</span>
-                            <span class="text-slate-200">第08920100626号</span>
-                        </p>
+                        
+                        <!-- 許認可を業務内容の下に配置（間を空けずに統合） -->
+                        <div class="mt-8 pt-6 border-t border-slate-700/50">
+                            <p class="text-[9px] tracking-[0.4em] text-slate-500 font-bold mb-4 uppercase font-sans">許認可</p>
+                            <div class="space-y-1 text-xs text-slate-400">
+                                <p class="flex justify-between border-b border-slate-800 pb-1">
+                                    <span>建設業許可</span>
+                                    <span class="text-slate-200">愛媛県知事許可 第014057号</span>
+                                </p>
+                                <p class="flex justify-between border-b border-slate-800 pb-1">
+                                    <span>産業廃棄物収集運搬業許可（愛媛県）</span>
+                                    <span class="text-slate-200">第03802100626号</span>
+                                </p>
+                                <p class="flex justify-between border-b border-slate-800 pb-1">
+                                    <span>産業廃棄物収集運搬業許可（松山市）</span>
+                                    <span class="text-slate-200">第08910100626号</span>
+                                </p>
+                                <p class="flex justify-between border-b border-slate-800 pb-1">
+                                    <span>一般廃棄物収集運搬業許可（松山市）</span>
+                                    <span class="text-slate-200">第20081001201号</span>
+                                </p>
+                                <p class="flex justify-between border-b border-slate-800 pb-1">
+                                    <span>産業廃棄物処分業許可</span>
+                                    <span class="text-slate-200">第08920100626号</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
