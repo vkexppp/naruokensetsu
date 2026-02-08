@@ -74,6 +74,13 @@
             display: inline-block;
             white-space: nowrap;
         }
+        /* ルビの微調整 */
+        ruby rt {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.55em;
+            letter-spacing: 0.1em;
+            color: #94a3b8; /* スレートグレー系で上品に */
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -82,8 +89,10 @@
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex flex-col text-left">
-                <span class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-0.5 uppercase">Naruo Construction</span>
-                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">株式会社 成王建設</h1>
+                <!-- Naruo Constructionを削除し、rubyタグでの読み仮名表記に変更 -->
+                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">
+                    株式会社 <ruby>成王<rt class="font-bold">なるおう</rt></ruby>建設
+                </h1>
             </div>
             
             <!-- Desktop Menu -->
@@ -147,7 +156,7 @@
                         愛媛の地で、<br>信頼されて<span class="text-slate-800">三十年</span>
                     </h3>
                     <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-left">
-                        成王建設は解体事業に特化した専門集団です。創業以来磨き上げた「誠実」と「技術」を武器に、数多くの現場と向き合ってまいりました。地域社会の再生を担う責任を胸に、安全・丁寧な施工をお約束いたします。
+                        <ruby>成王<rt>なるおう</rt></ruby>建設は解体事業に特化した専門集団です。創業以来磨き上げた「誠実」と「技術」を武器に、数多くの現場と向き合ってまいりました。地域社会の再生を担う責任を胸に、安全・丁寧な施工をお約束いたします。
                     </p>
                 </div>
             </div>
@@ -258,7 +267,7 @@
     <footer id="contact" class="bg-slate-50 pt-20 md:pt-32 pb-12 px-6">
         <div class="max-w-5xl mx-auto">
             
-            <!-- Block 1: Highlighted Contact Area (Integrated and emphasized) -->
+            <!-- Block 1: Highlighted Contact Area -->
             <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm text-center fade-in mb-20 md:mb-32">
                 <span class="text-slate-400 text-[10px] tracking-[0.8em] font-bold block mb-4 uppercase font-sans">Contact Us</span>
                 <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider">ご相談・お見積もり</h3>
@@ -319,7 +328,7 @@
                             </p>
                         </div>
                         
-                        <!-- 許認可 (Detailed List) -->
+                        <!-- 許認可 -->
                         <div class="bg-white p-6 md:p-8 border border-slate-200 rounded-sm">
                             <p class="text-[11px] tracking-[0.4em] text-slate-900 font-bold mb-6 uppercase font-sans">許認可</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-xs text-slate-500">
