@@ -86,7 +86,7 @@
                 <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">株式会社 成王建設</h1>
             </div>
             
-            <!-- Desktop Menu (Updated to Japanese) -->
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-10 text-[12px] font-bold tracking-[0.1em] text-slate-600">
                 <a href="#history" class="hover:text-slate-900 transition-colors">歩み</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">事業内容</a>
@@ -95,7 +95,7 @@
                 <a href="#contact" class="bg-slate-900 text-white px-6 py-3 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm">お問い合わせ・お見積もり</a>
             </div>
 
-            <!-- Hamburger Button (Mobile) -->
+            <!-- Hamburger Button -->
             <button id="menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50">
                 <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
                 <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
@@ -226,7 +226,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <!-- 1. 表題 -->
             <div class="mb-10 md:mb-16 fade-in">
-                <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight">代表取締役 挨拶</h3>
+                <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight">代表挨拶</h3>
             </div>
 
             <!-- 2. 写真 -->
@@ -238,27 +238,18 @@
                 </div>
             </div>
 
-            <!-- 3. お名前 -->
-            <div class="mb-8 md:mb-12 fade-in">
-                <p class="text-slate-500 text-sm md:text-base font-medium mb-4 tracking-widest uppercase font-sans font-bold">代表取締役</p>
-                <p class="text-slate-800 text-3xl md:text-4xl serif font-bold">
-                    菅 正行 <span class="text-sm md:text-base font-normal text-slate-400 ml-4 font-sans uppercase tracking-widest">Masayuki Kan</span>
-                </p>
-            </div>
-
-            <!-- 4. メインコピー -->
-            <div class="mb-8 md:mb-10 fade-in">
-                <h4 class="text-xl md:text-2xl font-bold serif text-slate-800 leading-relaxed max-w-2xl mx-auto">
-                    真面目に、真っ直ぐに<br>
-                    創業から三十年、変わらぬ「誠実」を
-                </h4>
-            </div>
-
-            <!-- 5. 本文 -->
+            <!-- 3. 本文 (直下に配置) -->
             <div class="fade-in text-left md:text-center max-w-2xl mx-auto">
                 <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
                     私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。私がこの会社を興して以来、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
                 </p>
+                <!-- 署名 -->
+                <div class="text-right mt-12">
+                    <p class="text-slate-900 font-bold serif leading-loose tracking-widest">
+                        株式会社 成王建設<br>
+                        代表取締役 菅 正行
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -267,17 +258,26 @@
     <footer id="contact" class="bg-slate-50 pt-20 md:pt-32 pb-12 px-6">
         <div class="max-w-5xl mx-auto">
             
-            <!-- Block 1: Highlighted Contact Area -->
-            <div class="bg-contact-block text-white p-10 md:p-16 rounded-sm text-center fade-in mb-20 md:mb-32">
+            <!-- Block 1: Highlighted Contact Area (Integrated and emphasized) -->
+            <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm text-center fade-in mb-20 md:mb-32">
                 <span class="text-slate-400 text-[10px] tracking-[0.8em] font-bold block mb-4 uppercase font-sans">Contact Us</span>
                 <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider">ご相談・お見積もり</h3>
                 
-                <div class="w-12 h-px bg-slate-500 mx-auto mb-10 opacity-50"></div>
+                <div class="w-12 h-px bg-slate-500 mx-auto mb-12 opacity-50"></div>
                 
-                <div class="space-y-6">
-                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold uppercase">Direct Communication</p>
-                    <a href="tel:0899246604" class="block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">089-924-6604</a>
-                    <a href="mailto:masa.kan8588@gmail.com" class="block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans">masa.kan8588@gmail.com</a>
+                <div class="flex flex-col items-center space-y-10">
+                    <a href="tel:0899246604" class="group block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">
+                        <span class="flex items-center justify-center gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="md:w-12 md:h-12"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            089-924-6604
+                        </span>
+                    </a>
+                    <a href="mailto:masa.kan8588@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans">
+                        <span class="flex items-center justify-center gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="md:w-8 md:h-8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            masa.kan8588@gmail.com
+                        </span>
+                    </a>
                 </div>
             </div>
 
@@ -379,7 +379,6 @@
                 if(mobileMenu) mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
                 
-                // ハンバーガーボタンの状態をリセット
                 const spans = document.getElementById('menu-btn').querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
