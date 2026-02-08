@@ -66,7 +66,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: #0f172a;
         }
-        /* 文章が変なところで切れないようにするための共通クラス */
+        /* 文章が不自然に切れないようにするための制御 */
         .text-unit {
             display: inline-block;
             white-space: normal;
@@ -169,7 +169,7 @@
             <div class="text-center mb-10 md:mb-24 fade-in">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold text-unit">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-6 text-unit">サービス内容</h3>
-                <p class="text-slate-800 text-lg md:text-2xl tracking-widest max-w-3xl mx-auto font-bold leading-relaxed">
+                <p class="text-slate-800 text-xl md:text-3xl tracking-widest max-w-4xl mx-auto font-bold leading-relaxed">
                     <span class="text-unit">建物の大小・構造を問わず、</span><br class="md:hidden"><span class="text-unit">全ての解体に対応いたします</span>
                 </p>
             </div>
@@ -244,10 +244,12 @@
     <!-- CEO Message Section -->
     <section id="ceo" class="py-12 md:py-32 px-6 bg-white overflow-hidden border-b border-slate-100">
         <div class="max-w-4xl mx-auto text-center">
+            <!-- 1. 表題 -->
             <div class="mb-10 md:mb-16 fade-in">
                 <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight text-unit">代表挨拶</h3>
             </div>
 
+            <!-- 2. 写真 -->
             <div class="mb-10 md:mb-16 fade-in flex justify-center">
                 <div class="relative group max-w-lg w-full">
                     <img src="fatherbike.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
@@ -256,6 +258,7 @@
                 </div>
             </div>
 
+            <!-- 3. 本文 (直下に配置・署名追加) -->
             <div class="fade-in text-left md:text-center max-w-2xl mx-auto">
                 <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
                     <span class="text-unit">私たちは愛媛の地で、</span><span class="text-unit">解体という仕事を通じて</span><span class="text-unit">街の再生を担ってまいりました。</span><span class="text-unit">私がこの会社を興して以来、</span><span class="text-unit">私の信念は変わりません。</span><span class="text-unit">それは「どこまでも真面目に</span><span class="text-unit">現場と向き合うこと」です。</span><span class="text-unit">解体は次なる建設への第一歩。</span><span class="text-unit">だからこそ、私たちが残す更地は、</span><span class="text-unit">未来への希望が描けるほど</span><span class="text-unit">美しくなければならないと</span><span class="text-unit">考えています。</span>
@@ -270,11 +273,11 @@
         </div>
     </section>
 
-    <!-- Contact & Company Info -->
+    <!-- Highlighted Contact Section & Company Info -->
     <footer id="contact" class="bg-slate-50 pt-20 md:pt-32 pb-12 px-6">
         <div class="max-w-5xl mx-auto">
             
-            <!-- Block 1: Highlighted Contact Area -->
+            <!-- Block 1: Highlighted Contact Area (Integrated and emphasized) -->
             <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm text-center fade-in mb-20 md:mb-32">
                 <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider text-unit">ご相談・お見積もり</h3>
                 
@@ -296,21 +299,21 @@
                 </div>
             </div>
 
-            <!-- Block 2: Company Overview -->
+            <!-- Block 2: Company Overview (English labels removed, spacing tightened) -->
             <div class="fade-in text-slate-800">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-                    <!-- Left Side: Basic Org Info -->
-                    <div class="md:col-span-4 space-y-2">
-                        <h4 class="text-2xl font-bold serif mb-6 text-unit">株式会社 成王建設</h4>
-                        <div class="text-sm leading-loose tracking-widest font-medium space-y-1 text-slate-600">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Organization & Basic Access -->
+                    <div class="md:col-span-4 space-y-4">
+                        <h4 class="text-2xl font-bold serif text-unit">株式会社 成王建設</h4>
+                        <div class="text-sm leading-loose tracking-widest text-slate-600 font-medium space-y-2">
                             <p class="text-unit">代表者名：菅 正行（カン マサユキ）</p>
                             <p class="text-unit">資本金：5,000千円</p>
                         </div>
                     </div>
                     
-                    <!-- Right Side: Access & Licenses -->
-                    <div class="md:col-span-8 space-y-10">
-                        <div class="text-sm leading-loose tracking-widest space-y-4 text-slate-600">
+                    <!-- Addresses & Licenses -->
+                    <div class="md:col-span-8 space-y-8">
+                        <div class="text-sm leading-loose tracking-widest text-slate-600 space-y-4">
                             <p class="flex flex-col sm:flex-row sm:items-start">
                                 <span class="w-24 shrink-0 font-bold text-slate-400 text-unit">所在地</span>
                                 <span class="address-unit">〒791-8017</span>
