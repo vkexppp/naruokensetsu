@@ -26,9 +26,10 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* お問い合わせセクションの強調カラー */
-        .bg-contact-emphasize {
+        /* お問い合わせブロックの強調 */
+        .bg-contact-block {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         .nav-glass {
             background-color: rgba(255, 255, 255, 0.96);
@@ -68,10 +69,10 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: #0f172a;
         }
-        /* 住所が変なところで切れないように調整 */
-        .address-keep {
+        /* 住所のレスポンシブ制御 */
+        .address-unit {
             display: inline-block;
-            word-break: keep-all;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -85,15 +86,17 @@
                 <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">株式会社 成王建設</h1>
             </div>
             
-            <div class="hidden md:flex items-center space-x-12 text-[11px] font-bold tracking-[0.25em] uppercase text-slate-500">
-                <a href="#history" class="hover:text-slate-900 transition-colors">History</a>
-                <a href="#service" class="hover:text-slate-900 transition-colors">Business</a>
-                <a href="#projects" class="hover:text-slate-900 transition-colors">Projects</a>
-                <a href="#ceo" class="hover:text-slate-900 transition-colors">CEO</a>
-                <a href="#contact" class="bg-slate-900 text-white px-10 py-3 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm text-sm">Contact</a>
+            <!-- Desktop Menu (Updated to Japanese) -->
+            <div class="hidden lg:flex items-center space-x-10 text-[12px] font-bold tracking-[0.1em] text-slate-600">
+                <a href="#history" class="hover:text-slate-900 transition-colors">歩み</a>
+                <a href="#service" class="hover:text-slate-900 transition-colors">事業内容</a>
+                <a href="#projects" class="hover:text-slate-900 transition-colors">実績紹介</a>
+                <a href="#ceo" class="hover:text-slate-900 transition-colors">代表挨拶</a>
+                <a href="#contact" class="bg-slate-900 text-white px-6 py-3 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm">お問い合わせ・お見積もり</a>
             </div>
 
-            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50">
+            <!-- Hamburger Button (Mobile) -->
+            <button id="menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50">
                 <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
                 <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
                 <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
@@ -102,12 +105,12 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-12 text-xl tracking-[0.3em] serif text-slate-900">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-10 text-xl tracking-[0.2em] serif text-slate-900">
         <a href="#history" class="mobile-link">歩み</a>
         <a href="#service" class="mobile-link">事業内容</a>
         <a href="#projects" class="mobile-link">実績紹介</a>
         <a href="#ceo" class="mobile-link">代表挨拶</a>
-        <a href="#contact" class="mobile-link bg-slate-900 text-white px-12 py-4 rounded-sm mt-8 shadow-lg">お問い合わせ</a>
+        <a href="#contact" class="mobile-link bg-slate-900 text-white px-10 py-4 rounded-sm mt-6 shadow-lg text-lg">お問い合わせ・お見積もり</a>
     </div>
 
     <!-- Hero Section -->
@@ -221,10 +224,12 @@
     <!-- CEO Message Section (White) -->
     <section id="ceo" class="py-12 md:py-32 px-6 bg-white overflow-hidden border-b border-slate-100">
         <div class="max-w-4xl mx-auto text-center">
+            <!-- 1. 表題 -->
             <div class="mb-10 md:mb-16 fade-in">
                 <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight">代表取締役 挨拶</h3>
             </div>
 
+            <!-- 2. 写真 -->
             <div class="mb-10 md:mb-16 fade-in flex justify-center">
                 <div class="relative group max-w-lg w-full">
                     <img src="fatherbike.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
@@ -233,20 +238,23 @@
                 </div>
             </div>
 
-            <div class="mb-10 md:mb-16 fade-in">
+            <!-- 3. お名前 -->
+            <div class="mb-8 md:mb-12 fade-in">
                 <p class="text-slate-500 text-sm md:text-base font-medium mb-4 tracking-widest uppercase font-sans font-bold">代表取締役</p>
                 <p class="text-slate-800 text-3xl md:text-4xl serif font-bold">
                     菅 正行 <span class="text-sm md:text-base font-normal text-slate-400 ml-4 font-sans uppercase tracking-widest">Masayuki Kan</span>
                 </p>
             </div>
 
-            <div class="mb-10 md:mb-12 fade-in">
+            <!-- 4. メインコピー -->
+            <div class="mb-8 md:mb-10 fade-in">
                 <h4 class="text-xl md:text-2xl font-bold serif text-slate-800 leading-relaxed max-w-2xl mx-auto">
                     真面目に、真っ直ぐに<br>
                     創業から三十年、変わらぬ「誠実」を
                 </h4>
             </div>
 
+            <!-- 5. 本文 -->
             <div class="fade-in text-left md:text-center max-w-2xl mx-auto">
                 <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
                     私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。私がこの会社を興して以来、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
@@ -255,62 +263,95 @@
         </div>
     </section>
 
-    <!-- Contact & Company Info Section - bg-contact-emphasize -->
-    <footer id="contact" class="bg-contact-emphasize text-white py-12 md:py-32 px-6">
-        <div class="max-w-5xl mx-auto text-center fade-in">
-            <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-8 md:mb-12 uppercase text-center font-sans font-bold">Contact Us</span>
-            <h3 class="text-3xl md:text-5xl font-bold serif mb-16 md:mb-20 tracking-wider text-center">ご相談・お見積り</h3>
+    <!-- Highlighted Contact Section & Company Info -->
+    <footer id="contact" class="bg-slate-50 pt-20 md:pt-32 pb-12 px-6">
+        <div class="max-w-5xl mx-auto">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-left border-t border-slate-700/50 pt-16 md:pt-20">
-                <!-- Left: Contact info -->
-                <div>
-                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left font-bold">Direct Communication</p>
-                    <p class="text-3xl md:text-5xl font-light tracking-tighter hover:text-blue-400 transition-colors text-left mb-6">089-924-6604</p>
-                    <p class="text-lg md:text-xl font-light tracking-tight hover:text-blue-400 transition-colors text-left break-all font-sans">masa.kan8588@gmail.com</p>
+            <!-- Block 1: Highlighted Contact Area -->
+            <div class="bg-contact-block text-white p-10 md:p-16 rounded-sm text-center fade-in mb-20 md:mb-32">
+                <span class="text-slate-400 text-[10px] tracking-[0.8em] font-bold block mb-4 uppercase font-sans">Contact Us</span>
+                <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider">ご相談・お見積もり</h3>
+                
+                <div class="w-12 h-px bg-slate-500 mx-auto mb-10 opacity-50"></div>
+                
+                <div class="space-y-6">
+                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold uppercase">Direct Communication</p>
+                    <a href="tel:0899246604" class="block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">089-924-6604</a>
+                    <a href="mailto:masa.kan8588@gmail.com" class="block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans">masa.kan8588@gmail.com</a>
                 </div>
-                <!-- Right: Company Overview -->
-                <div class="border-l-0 md:border-l border-slate-700/50 md:pl-20">
-                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left font-sans text-left font-bold">Company Overview</p>
-                    <h4 class="text-xl font-bold serif mb-6 tracking-widest text-left font-bold text-left">株式会社 成王建設</h4>
-                    <div class="text-sm text-slate-300 leading-loose tracking-widest text-left font-normal space-y-4">
-                        <div class="flex flex-col sm:flex-row"><span class="text-slate-500 w-24 shrink-0 font-bold">代表者名</span><span>菅 正行（カン マサユキ）</span></div>
-                        <div class="flex flex-col sm:flex-row"><span class="text-slate-500 w-24 shrink-0 font-bold">所在地</span><span class="address-keep">〒791-8017</span> <span class="address-keep">愛媛県松山市西長戸町250-6</span></div>
-                        <div class="flex flex-col sm:flex-row"><span class="text-slate-500 w-24 shrink-0 font-bold">事業場</span><span class="address-keep">〒799-2652</span> <span class="address-keep">愛媛県松山市福角町甲909番2、甲925番2、乙601番2</span></div>
-                        <div class="flex flex-col sm:flex-row"><span class="text-slate-500 w-24 shrink-0 font-bold">資本金</span><span>5,000千円</span></div>
-                        <div class="flex flex-col sm:flex-row"><span class="text-slate-500 w-24 shrink-0 font-bold">業務内容</span><span>土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</span></div>
+            </div>
+
+            <!-- Block 2: Company Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 fade-in text-slate-800">
+                <div class="md:col-span-4">
+                    <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase font-sans font-bold">Organization</p>
+                    <h4 class="text-2xl font-bold serif mb-4">株式会社 成王建設</h4>
+                    <p class="text-sm text-slate-500 leading-loose tracking-widest font-medium">
+                        代表者名：菅 正行（カン マサユキ）<br>
+                        資本金：5,000千円
+                    </p>
+                </div>
+                
+                <div class="md:col-span-8 space-y-8">
+                    <div>
+                        <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-4 uppercase font-sans font-bold">Access</p>
+                        <div class="text-sm leading-loose tracking-widest space-y-4">
+                            <p class="flex flex-col sm:flex-row sm:items-start">
+                                <span class="w-24 shrink-0 font-bold text-slate-400">所在地</span>
+                                <span class="address-unit">〒791-8017</span>
+                                <span class="address-unit">愛媛県松山市西長戸町250-6</span>
+                            </p>
+                            <p class="flex flex-col sm:flex-row sm:items-start">
+                                <span class="w-24 shrink-0 font-bold text-slate-400">事業場</span>
+                                <span class="address-unit">〒799-2652</span>
+                                <span class="address-unit">愛媛県松山市福角町</span>
+                                <span class="address-unit">甲909番2、甲925番2、乙601番2</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-4 uppercase font-sans font-bold">Business & Licenses</p>
+                        <div class="text-sm leading-loose tracking-widest mb-6">
+                            <p class="flex flex-col sm:flex-row sm:items-start">
+                                <span class="w-24 shrink-0 font-bold text-slate-400">業務内容</span>
+                                <span>土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</span>
+                            </p>
+                        </div>
                         
-                        <!-- 許認可 -->
-                        <div class="mt-4 pt-6 border-t border-slate-700/50">
-                            <p class="text-[9px] tracking-[0.4em] text-slate-500 font-bold mb-4 uppercase font-sans font-bold">許認可</p>
-                            <div class="space-y-1.5 text-xs text-slate-400">
-                                <p class="flex justify-between border-b border-slate-800 pb-1">
-                                    <span class="shrink-0 mr-4">建設業許可</span>
-                                    <span class="text-slate-200 address-keep">愛媛県知事許可 第014057号</span>
+                        <!-- 許認可 (Detailed List) -->
+                        <div class="bg-white p-6 md:p-8 border border-slate-200 rounded-sm">
+                            <p class="text-[11px] tracking-[0.4em] text-slate-900 font-bold mb-6 uppercase font-sans">許認可</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-xs text-slate-500">
+                                <p class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span>建設業許可</span>
+                                    <span class="text-slate-900 font-bold">愛媛県知事 第014057号</span>
                                 </p>
-                                <p class="flex justify-between border-b border-slate-800 pb-1">
-                                    <span class="shrink-0 mr-4 text-[10px] md:text-xs">産業廃棄物収集運搬業（愛媛県）</span>
-                                    <span class="text-slate-200 address-keep">第03802100626号</span>
+                                <p class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span>産廃収集運搬（愛媛県）</span>
+                                    <span class="text-slate-900 font-bold">第03802100626号</span>
                                 </p>
-                                <p class="flex justify-between border-b border-slate-800 pb-1">
-                                    <span class="shrink-0 mr-4 text-[10px] md:text-xs">産業廃棄物収集運搬業（松山市）</span>
-                                    <span class="text-slate-200 address-keep">第08910100626号</span>
+                                <p class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span>産廃収集運搬（松山市）</span>
+                                    <span class="text-slate-900 font-bold">第08910100626号</span>
                                 </p>
-                                <p class="flex justify-between border-b border-slate-800 pb-1">
-                                    <span class="shrink-0 mr-4 text-[10px] md:text-xs">一般廃棄物収集運搬業（松山市）</span>
-                                    <span class="text-slate-200 address-keep">第20081001201号</span>
+                                <p class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span>一般廃棄物運搬（松山市）</span>
+                                    <span class="text-slate-900 font-bold">第20081001201号</span>
                                 </p>
-                                <p class="flex justify-between border-b border-slate-800 pb-1">
-                                    <span class="shrink-0 mr-4 text-[10px] md:text-xs">産業廃棄物処分業</span>
-                                    <span class="text-slate-200 address-keep">第08920100626号</span>
+                                <p class="flex justify-between border-b border-slate-100 pb-1">
+                                    <span>産業廃棄物処分業</span>
+                                    <span class="text-slate-900 font-bold">第08920100626号</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-20 md:mt-32 pt-10 border-t border-slate-700/50 text-center">
-                <p class="text-[10px] tracking-[0.6em] text-slate-600 uppercase font-bold text-center font-sans">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
+
+            <!-- Footer Bottom -->
+            <div class="mt-20 md:mt-32 pt-10 border-t border-slate-200 text-center">
+                <p class="text-[10px] tracking-[0.6em] text-slate-400 uppercase font-bold font-sans">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
@@ -337,6 +378,12 @@
                 const mobileMenu = document.getElementById('mobile-menu');
                 if(mobileMenu) mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // ハンバーガーボタンの状態をリセット
+                const spans = document.getElementById('menu-btn').querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
             });
         });
 
