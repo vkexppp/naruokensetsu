@@ -62,16 +62,16 @@
         #mobile-menu.active {
             transform: translateX(0);
         }
-        /* カードデザインの洗練 */
+        /* カードデザインの洗練 - 枠線を少し濃くして視認性を向上 */
         .service-card {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
             transition: all 0.4s ease;
         }
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-            border-color: #cbd5e1;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+            border-color: #94a3b8;
         }
     </style>
 </head>
@@ -82,7 +82,7 @@
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex flex-col">
                 <span class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-0.5 uppercase text-left">Naruo Construction</span>
-                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">株式会社 成王建設</h1>
+                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif text-left">株式会社 成王建設</h1>
             </div>
             
             <!-- Desktop Menu -->
@@ -135,19 +135,19 @@
     <section id="about" class="py-40 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-                <!-- Concept Image -->
+                <!-- Concept Image - 白枠を削除し統一 -->
                 <div class="order-2 md:order-1 fade-in">
-                    <div class="relative group overflow-hidden shadow-2xl rounded-sm border-4 border-white">
+                    <div class="relative group overflow-hidden shadow-2xl rounded-sm">
                         <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.3] group-hover:grayscale-0">
                     </div>
                 </div>
                 <!-- Concept Text -->
                 <div class="order-1 md:order-2 fade-in">
                     <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-8 uppercase text-left">Philosophy</span>
-                    <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-12">
+                    <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-12 text-left">
                         壊すことは、<br>新しく<br><span class="text-slate-800">はじめる</span>こと。
                     </h3>
-                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-slate-200 pl-10">
+                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-slate-200 pl-10 text-left">
                         成王建設は解体事業に特化した専門集団です。<br>
                         単なる破壊ではなく、土地を浄め、人々の想い出を次なる景色へと繋ぐ。<br>
                         そのための安全と配慮こそが、私たちの誇る「技術」です。
@@ -160,21 +160,33 @@
     <!-- Service Section -->
     <section id="service" class="bg-white py-40 px-6 border-y border-slate-100">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="fade-in service-card p-12 md:p-16">
-                    <span class="text-slate-300 text-[10px] tracking-widest font-bold block mb-8 uppercase text-left">Service 01</span>
-                    <h4 class="text-xl font-bold mb-8 serif text-slate-900">住宅解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider">木造家屋から蔵まで。近隣への配慮を徹底し、次なる建築に最適な更地へと仕上げます。</p>
+            <!-- セクション見出しを追加 -->
+            <div class="text-center mb-24 fade-in">
+                <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
+                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="fade-in service-card p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">01</span>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">住宅解体</h4>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">木造家屋から蔵まで。近隣への配慮を徹底し、次なる建築に最適な更地へと仕上げます。</p>
                 </div>
-                <div class="fade-in service-card p-12 md:p-16">
-                    <span class="text-slate-300 text-[10px] tracking-widest font-bold block mb-8 uppercase text-left">Service 02</span>
-                    <h4 class="text-xl font-bold mb-8 serif text-slate-900">RC・鉄骨解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider">店舗やアパート。熟練のオペレーターが騒音・振動を最小限に抑え、安全に施工します。</p>
+                <div class="fade-in service-card p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">02</span>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">RC・鉄骨解体</h4>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗やアパート。熟練のオペレーターが騒音・振動を最小限に抑え、安全に施工します。</p>
                 </div>
-                <div class="fade-in service-card p-12 md:p-16">
-                    <span class="text-slate-300 text-[10px] tracking-widest font-bold block mb-8 uppercase text-left">Service 03</span>
-                    <h4 class="text-xl font-bold mb-8 serif text-slate-900">内装解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider">店舗のスケルトン工事。限られた工期内で、正確な分別と徹底した現場管理を実施します。</p>
+                <div class="fade-in service-card p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">03</span>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">内装解体</h4>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗のスケルトン工事。限られた工期内で、正確な分別と徹底した現場管理を実施します。</p>
+                </div>
+                <!-- サービス追加: アスベスト除去 -->
+                <div class="fade-in service-card p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">04</span>
+                    <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">アスベスト除去</h4>
+                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">法令を遵守し、専門スタッフが最新の飛散防止対策を講じて安全かつ確実に除去を行います。</p>
                 </div>
             </div>
         </div>
@@ -186,7 +198,7 @@
             <div class="flex justify-between items-end mb-24 fade-in">
                 <div>
                     <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-left">Archive</span>
-                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">施工実績</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 text-left">施工実績</h3>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
@@ -198,7 +210,7 @@
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-left">Safety Control</span>
                         <div class="flex-grow h-px bg-slate-200"></div>
                     </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider">安全管理と近隣配慮の徹底</p>
+                    <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider text-left">安全管理と近隣配慮の徹底</p>
                 </div>
                 <div class="fade-in group">
                     <div class="relative overflow-hidden shadow-2xl mb-8 border border-white">
@@ -208,7 +220,7 @@
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-left">Work Progress</span>
                         <div class="flex-grow h-px bg-slate-200"></div>
                     </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider">環境に配慮した分別施工</p>
+                    <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider text-left">環境に配慮した分別施工</p>
                 </div>
             </div>
         </div>
@@ -223,13 +235,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 text-left border-t border-slate-700/50 pt-20">
                 <div>
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Direct Line</p>
-                    <p class="text-4xl md:text-5xl font-light tracking-tighter hover:text-slate-300 transition-colors">0123-456-7890</p>
-                    <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase">Reception: 9:00 - 18:00 (Weekday)</p>
+                    <p class="text-4xl md:text-5xl font-light tracking-tighter hover:text-slate-300 transition-colors text-left">0123-456-7890</p>
+                    <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left">Reception: 9:00 - 18:00 (Weekday)</p>
                 </div>
                 <div class="border-l-0 md:border-l border-slate-700/50 md:pl-20">
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Corporate Information</p>
-                    <h4 class="text-xl font-bold serif mb-6 tracking-widest">株式会社 成王建設</h4>
-                    <p class="text-sm text-slate-400 leading-loose tracking-widest">
+                    <h4 class="text-xl font-bold serif mb-6 tracking-widest text-left">株式会社 成王建設</h4>
+                    <p class="text-sm text-slate-400 leading-loose tracking-widest text-left">
                         愛媛県〇〇市〇〇町1-2-3<br>
                         愛媛県知事 許可（般-〇）第〇〇〇号
                     </p>
