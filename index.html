@@ -31,7 +31,7 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
         .bg-section-light {
-            background-color: #f8fafc; /* 清潔感のある極めて淡いブルーグレー */
+            background-color: #f1f5f9; /* 区切りを分かりやすくするため少し濃いめのグレーに変更 */
         }
         .nav-glass {
             background-color: rgba(255, 255, 255, 0.95);
@@ -62,16 +62,16 @@
         #mobile-menu.active {
             transform: translateX(0);
         }
-        /* カードデザインの洗練 */
+        /* カードデザインの洗練 - 枠線をより濃く、視認性を向上 */
         .service-card {
-            background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            border: 1.5px solid #94a3b8; /* 枠線を太く、濃くしました */
             transition: all 0.4s ease;
         }
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
-            border-color: #94a3b8;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #0f172a;
         }
     </style>
 </head>
@@ -137,7 +137,7 @@
     <section id="about" class="py-40 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-                <!-- Concept Image -->
+                <!-- Concept Image - 他の写真と統一 -->
                 <div class="order-2 md:order-1 fade-in">
                     <div class="relative group overflow-hidden shadow-2xl rounded-sm">
                         <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.3] group-hover:grayscale-0">
@@ -149,7 +149,7 @@
                     <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-12 text-left">
                         壊すことは、<br>新しく<br><span class="text-slate-800">はじめる</span>こと。
                     </h3>
-                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-blue-900/10 pl-10 text-left">
+                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-slate-300 pl-10 text-left">
                         成王建設は解体事業に特化した専門集団です。<br>
                         単なる破壊ではなく、土地を浄め、人々の想い出を次なる景色へと繋ぐ。<br>
                         そのための安全と配慮こそが、私たちの誇る「技術」です。
@@ -159,15 +159,15 @@
         </div>
     </section>
 
-    <!-- CEO Message Section (Added) -->
-    <section id="ceo" class="py-40 px-6 bg-white overflow-hidden">
+    <!-- CEO Message Section -->
+    <section id="ceo" class="py-40 px-6 bg-white overflow-hidden border-t border-slate-100">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 items-start">
-                <!-- CEO Photo -->
+                <!-- CEO Photo - 確実に father.jpg を読み込むよう設定 -->
                 <div class="md:col-span-5 fade-in">
                     <div class="relative">
                         <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-slate-200"></div>
-                        <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover grayscale-[0.1] hover:grayscale-0 transition duration-700">
+                        <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop'">
                         <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-slate-200"></div>
                     </div>
                 </div>
@@ -189,8 +189,8 @@
                             私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。父からこの会社を引き継いだ時から、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
                         </p>
 
-                        <!-- Profile Details Table-like Layout -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 pt-10 border-t border-slate-100">
+                        <!-- Profile Details -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 pt-10 border-t border-slate-100">
                             <div>
                                 <h4 class="text-[10px] tracking-widest text-slate-400 font-bold uppercase mb-2">Education & License</h4>
                                 <ul class="text-sm text-slate-700 space-y-1">
@@ -214,14 +214,14 @@
     </section>
 
     <!-- Service Section -->
-    <section id="service" class="bg-slate-50 py-40 px-6 border-y border-slate-200/60">
+    <section id="service" class="bg-slate-50 py-40 px-6 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24 fade-in">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="fade-in service-card p-10">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">01</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">住宅解体</h4>
@@ -257,7 +257,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
                 <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-8 border border-white">
+                    <div class="relative overflow-hidden shadow-2xl mb-8 border border-slate-100">
                         <img src="600004840290779411.jpg" alt="安全管理" class="w-full h-80 md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
                     <div class="flex items-center gap-4">
@@ -267,7 +267,7 @@
                     <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider text-left">安全管理と近隣配慮の徹底</p>
                 </div>
                 <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-8 border border-white">
+                    <div class="relative overflow-hidden shadow-2xl mb-8 border border-slate-100">
                         <img src="600007693239321155.jpg" alt="施工風景" class="w-full h-80 md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
                     <div class="flex items-center gap-4">
@@ -325,7 +325,7 @@
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
-                if(typeof mobileMenu !== 'undefined') mobileMenu.classList.remove('active');
+                if(mobileMenu) mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
