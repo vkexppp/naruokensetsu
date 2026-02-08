@@ -109,8 +109,8 @@
         <a href="#contact" class="mobile-link bg-slate-900 text-white px-12 py-4 rounded-sm mt-8 shadow-lg">お問い合わせ</a>
     </div>
 
-    <!-- Hero Section (White) -->
-    <section class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col items-center pt-28 md:pt-48 pb-10 bg-white">
+    <!-- Hero Section -->
+    <section class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col items-center pt-24 md:pt-48 pb-10 bg-white">
         <!-- Text Area -->
         <div class="text-center px-6 z-10 fade-in mb-6 md:mb-16">
             <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.8em] mb-8 md:mb-16 serif uppercase">
@@ -130,8 +130,8 @@
         </div>
     </section>
 
-    <!-- History Section - bg-slate-50 (Very Light Grey) -->
-    <section id="history" class="py-14 md:py-32 px-6 bg-slate-50 border-y border-slate-100">
+    <!-- History Section - bg-slate-100 (Increased contrast) -->
+    <section id="history" class="py-12 md:py-32 px-6 bg-slate-100 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center">
                 <div class="order-2 md:order-1 fade-in">
@@ -140,8 +140,8 @@
                     </div>
                 </div>
                 <div class="order-1 md:order-2 fade-in">
-                    <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 md:mb-8 uppercase text-left">Trusted for 30 Years</span>
-                    <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-6 md:mb-12 text-left">
+                    <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 md:mb-8 uppercase text-left">Trusted for 30 Years</span>
+                    <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-8 md:mb-12 text-left">
                         愛媛の地で、<br>信頼されて<span class="text-slate-800">三十年</span>。
                     </h3>
                     <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-left">
@@ -153,10 +153,10 @@
     </section>
 
     <!-- Service Section - White -->
-    <section id="service" class="bg-white py-14 md:py-32 px-6">
+    <section id="service" class="bg-white py-12 md:py-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-24 fade-in">
-                <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
+            <div class="text-center mb-10 md:mb-24 fade-in">
+                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
             </div>
             
@@ -185,10 +185,10 @@
         </div>
     </section>
 
-    <!-- Project Gallery - bg-slate-50 (Consistent alternation) -->
-    <section id="projects" class="py-14 md:py-32 px-6 bg-slate-50 border-y border-slate-200">
+    <!-- Project Gallery - bg-slate-50 (Subtle contrast) -->
+    <section id="projects" class="py-12 md:py-32 px-6 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-12 md:mb-24 fade-in">
+            <div class="flex justify-between items-end mb-10 md:mb-24 fade-in">
                 <div>
                     <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-left">Archive</span>
                     <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 text-left">施工実績</h3>
@@ -220,46 +220,49 @@
     </section>
 
     <!-- CEO Message Section - White Background -->
-    <section id="ceo" class="py-14 md:py-32 px-6 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-24 items-start">
-                <!-- CEO Photo -->
-                <div class="md:col-span-5 fade-in">
-                    <div class="relative group">
-                        <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
-                        <div class="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 border-t border-l border-slate-200 pointer-events-none"></div>
-                        <div class="absolute -bottom-4 -right-4 w-12 md:w-16 h-12 md:h-16 border-b border-r border-slate-200 pointer-events-none"></div>
-                    </div>
+    <section id="ceo" class="py-12 md:py-32 px-6 bg-white overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- 1. 表題 -->
+            <div class="mb-10 md:mb-16 fade-in">
+                <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-4">代表取締役 挨拶</h3>
+            </div>
+
+            <!-- 2. 写真 -->
+            <div class="mb-10 md:mb-16 fade-in flex justify-center">
+                <div class="relative group max-w-lg w-full">
+                    <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
+                    <div class="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 border-t border-l border-slate-200 pointer-events-none"></div>
+                    <div class="absolute -bottom-4 -right-4 w-12 md:w-16 h-12 md:h-16 border-b border-r border-slate-200 pointer-events-none"></div>
                 </div>
-                <!-- CEO Message -->
-                <div class="md:col-span-7 fade-in text-left">
-                    <div class="mb-8 md:mb-12">
-                        <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-4">代表取締役 挨拶</h3>
-                        <p class="text-slate-500 text-lg md:text-xl font-medium mb-8">代表取締役</p>
-                        
-                        <!-- 少し小さめのメインコピー -->
-                        <h4 class="text-xl md:text-2xl font-bold serif text-slate-800 leading-relaxed mb-10 md:mb-12">
-                            真面目に、真っ直ぐに。<br>
-                            創業から三十年、変わらぬ「誠実」を。
-                        </h4>
-                        
-                        <p class="text-slate-800 text-xl md:text-2xl serif font-bold mt-10 md:mt-12">
-                            菅 正行 <span class="text-sm md:text-base font-normal text-slate-400 ml-4 font-sans uppercase tracking-widest">Masayuki Kan</span>
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-6 md:space-y-8">
-                        <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
-                            私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。私がこの会社を興して以来、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
-                        </p>
-                    </div>
-                </div>
+            </div>
+
+            <!-- 3. お名前 -->
+            <div class="mb-10 md:mb-16 fade-in">
+                <p class="text-slate-500 text-sm md:text-base font-medium mb-4 tracking-widest uppercase">代表取締役</p>
+                <p class="text-slate-800 text-3xl md:text-4xl serif font-bold">
+                    菅 正行 <span class="text-sm md:text-base font-normal text-slate-400 ml-4 font-sans uppercase tracking-widest">Masayuki Kan</span>
+                </p>
+            </div>
+
+            <!-- 4. メインコピー -->
+            <div class="mb-10 md:mb-12 fade-in">
+                <h4 class="text-xl md:text-2xl font-bold serif text-slate-800 leading-relaxed max-w-2xl mx-auto">
+                    真面目に、真っ直ぐに。<br>
+                    創業から三十年、変わらぬ「誠実」を。
+                </h4>
+            </div>
+
+            <!-- 5. 本文 -->
+            <div class="fade-in text-left md:text-center max-w-2xl mx-auto">
+                <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
+                    私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。私がこの会社を興して以来、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <footer id="contact" class="bg-corporate-deep text-white py-16 md:py-32 px-6">
+    <footer id="contact" class="bg-corporate-deep text-white py-12 md:py-32 px-6">
         <div class="max-w-5xl mx-auto text-center fade-in">
             <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-8 md:mb-12 uppercase text-center font-sans">Contact Us</span>
             <h3 class="text-3xl md:text-5xl font-bold serif mb-16 md:mb-20 tracking-wider">ご相談・お見積り</h3>
@@ -303,7 +306,8 @@
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
-                if(document.getElementById('mobile-menu')) document.getElementById('mobile-menu').classList.remove('active');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if(mobileMenu) mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
