@@ -62,7 +62,7 @@
         #mobile-menu.active {
             transform: translateX(0);
         }
-        /* カードデザインの洗練 - 枠線を少し濃くして視認性を向上 */
+        /* カードデザインの洗練 */
         .service-card {
             background-color: #f8fafc;
             border: 1px solid #cbd5e1;
@@ -88,6 +88,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-12 text-[11px] font-bold tracking-[0.25em] uppercase text-slate-500">
                 <a href="#about" class="hover:text-slate-900 transition-colors">Concept</a>
+                <a href="#ceo" class="hover:text-slate-900 transition-colors">CEO</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">Business</a>
                 <a href="#projects" class="hover:text-slate-900 transition-colors">Projects</a>
                 <a href="#contact" class="bg-slate-900 text-white px-10 py-3 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm">Contact</a>
@@ -105,6 +106,7 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-12 text-xl tracking-[0.3em] serif text-slate-900">
         <a href="#about" class="mobile-link">コンセプト</a>
+        <a href="#ceo" class="mobile-link">代表挨拶</a>
         <a href="#service" class="mobile-link">事業内容</a>
         <a href="#projects" class="mobile-link">実績紹介</a>
         <a href="#contact" class="mobile-link bg-slate-900 text-white px-12 py-4 rounded-sm mt-8 shadow-lg">お問い合わせ</a>
@@ -123,7 +125,7 @@
             <div class="vertical-line"></div>
         </div>
 
-        <!-- Main Image (Gap Adjusted) -->
+        <!-- Main Image -->
         <div class="w-full px-6 md:px-24 max-w-7xl mx-auto fade-in">
             <div class="relative overflow-hidden shadow-2xl rounded-sm border border-slate-100">
                 <img src="600004693690679420.jpg" alt="成王建設 旗艦重機" class="w-full h-auto object-cover md:object-contain bg-white transition-transform duration-[3000ms] hover:scale-105">
@@ -135,7 +137,7 @@
     <section id="about" class="py-40 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-                <!-- Concept Image - 白枠を削除し統一 -->
+                <!-- Concept Image -->
                 <div class="order-2 md:order-1 fade-in">
                     <div class="relative group overflow-hidden shadow-2xl rounded-sm">
                         <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[0.3] group-hover:grayscale-0">
@@ -147,7 +149,7 @@
                     <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-12 text-left">
                         壊すことは、<br>新しく<br><span class="text-slate-800">はじめる</span>こと。
                     </h3>
-                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-slate-200 pl-10 text-left">
+                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-blue-900/10 pl-10 text-left">
                         成王建設は解体事業に特化した専門集団です。<br>
                         単なる破壊ではなく、土地を浄め、人々の想い出を次なる景色へと繋ぐ。<br>
                         そのための安全と配慮こそが、私たちの誇る「技術」です。
@@ -157,10 +159,63 @@
         </div>
     </section>
 
-    <!-- Service Section -->
-    <section id="service" class="bg-white py-40 px-6 border-y border-slate-100">
+    <!-- CEO Message Section (Added) -->
+    <section id="ceo" class="py-40 px-6 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <!-- セクション見出しを追加 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 items-start">
+                <!-- CEO Photo -->
+                <div class="md:col-span-5 fade-in">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-slate-200"></div>
+                        <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover grayscale-[0.1] hover:grayscale-0 transition duration-700">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-slate-200"></div>
+                    </div>
+                </div>
+                <!-- CEO Profile & Message -->
+                <div class="md:col-span-7 fade-in">
+                    <div class="mb-12">
+                        <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-8 uppercase text-left">Representative Message</span>
+                        <h3 class="text-2xl md:text-3xl font-bold serif text-slate-900 leading-tight mb-4 text-left">
+                            真面目に、真っ直ぐに。<br>
+                            父から受け継いだ「誠実」を貫く。
+                        </h3>
+                        <p class="text-slate-800 text-xl serif mt-8 font-bold text-left">
+                            代表取締役　菅 正行 <span class="text-sm font-normal text-slate-400 ml-4 font-sans">Masayuki Suga</span>
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-8 text-left">
+                        <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base">
+                            私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。父からこの会社を引き継いだ時から、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
+                        </p>
+
+                        <!-- Profile Details Table-like Layout -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 pt-10 border-t border-slate-100">
+                            <div>
+                                <h4 class="text-[10px] tracking-widest text-slate-400 font-bold uppercase mb-2">Education & License</h4>
+                                <ul class="text-sm text-slate-700 space-y-1">
+                                    <li>愛媛県立松山工業高等学校 卒業</li>
+                                    <li>2級建築士</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[10px] tracking-widest text-slate-400 font-bold uppercase mb-2">Personality</h4>
+                                <p class="text-sm text-slate-700">真面目（短所：真面目すぎる）</p>
+                            </div>
+                            <div>
+                                <h4 class="text-[10px] tracking-widest text-slate-400 font-bold uppercase mb-2">Hobbies</h4>
+                                <p class="text-sm text-slate-700">バレーボール、ツーリング</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service" class="bg-slate-50 py-40 px-6 border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24 fade-in">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
@@ -182,7 +237,6 @@
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">内装解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗のスケルトン工事。限られた工期内で、正確な分別と徹底した現場管理を実施します。</p>
                 </div>
-                <!-- サービス追加: アスベスト除去 -->
                 <div class="fade-in service-card p-10">
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">04</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left">アスベスト除去</h4>
@@ -193,7 +247,7 @@
     </section>
 
     <!-- Project Gallery -->
-    <section id="projects" class="py-40 bg-slate-50 px-6">
+    <section id="projects" class="py-40 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-24 fade-in">
                 <div>
@@ -271,7 +325,7 @@
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
-                mobileMenu.classList.remove('active');
+                if(typeof mobileMenu !== 'undefined') mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
