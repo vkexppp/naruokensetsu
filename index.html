@@ -66,7 +66,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: #0f172a;
         }
-        /* 文章が不自然に切れないようにするための制御（文節ごとに括る） */
+        /* 文章が不自然に切れないようにするための制御 */
         .phrase {
             display: inline-block;
             white-space: normal;
@@ -169,8 +169,10 @@
             <div class="text-center mb-10 md:mb-24 fade-in">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-8 phrase">サービス内容</h3>
-                <p class="text-slate-900 text-xl md:text-3xl tracking-widest max-w-5xl mx-auto font-bold leading-relaxed">
-                    <span class="phrase">建物の大小・構造を問わず、</span><br class="md:hidden"><span class="phrase">全ての解体に対応いたします</span>
+                <!-- 強調メッセージ: 見出しより少し小さく、「全て」の色を変更 -->
+                <p class="text-slate-800 text-lg md:text-2xl tracking-widest max-w-5xl mx-auto font-bold leading-relaxed">
+                    <span class="phrase">建物の大小・構造を問わず、</span><br class="md:hidden">
+                    <span class="phrase"><span class="text-blue-600">全て</span>の解体に対応いたします</span>
                 </p>
             </div>
             
@@ -246,7 +248,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <!-- 1. 表題 -->
             <div class="mb-10 md:mb-16 fade-in">
-                <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight text-unit">代表挨拶</h3>
+                <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight phrase">代表挨拶</h3>
             </div>
 
             <!-- 2. 写真 -->
@@ -302,9 +304,9 @@
 
             <!-- Block 2: Company Overview -->
             <div class="fade-in text-slate-800">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
-                    <!-- Organization Info -->
-                    <div class="md:col-span-4 space-y-2">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Organization & Basic Access -->
+                    <div class="md:col-span-4 space-y-4">
                         <h4 class="text-2xl font-bold serif phrase">株式会社 成王建設</h4>
                         <div class="text-sm leading-loose tracking-widest text-slate-600 font-medium space-y-1">
                             <p class="phrase">代表者名：菅 正行（カン マサユキ）</p>
@@ -313,7 +315,7 @@
                     </div>
                     
                     <!-- Addresses & Details -->
-                    <div class="md:col-span-8 space-y-6">
+                    <div class="md:col-span-8 space-y-8">
                         <div class="text-sm leading-loose tracking-widest text-slate-600 space-y-4">
                             <div class="flex flex-col sm:flex-row sm:items-start">
                                 <span class="w-20 shrink-0 font-bold text-slate-400 phrase">所在地</span>
