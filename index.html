@@ -62,7 +62,7 @@
         /* カードデザイン - 枠線を濃くして視認性を向上 */
         .service-card {
             background-color: #ffffff;
-            border: 1.5px solid #94a3b8; /* 枠線を濃く設定 */
+            border: 1.5px solid #94a3b8;
             transition: all 0.4s ease;
         }
         .service-card:hover {
@@ -77,9 +77,9 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex flex-col">
-                <span class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-0.5 uppercase text-left">Naruo Construction</span>
-                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif text-left">株式会社 成王建設</h1>
+            <div class="flex flex-col text-left">
+                <span class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-0.5 uppercase">Naruo Construction</span>
+                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">株式会社 成王建設</h1>
             </div>
             
             <!-- Desktop Menu -->
@@ -110,13 +110,13 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col items-center pt-32 md:pt-48 pb-10 bg-white">
+    <section class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col items-center pt-28 md:pt-48 pb-10 bg-white">
         <!-- Text Area -->
         <div class="text-center px-6 z-10 fade-in mb-6 md:mb-16">
-            <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.8em] mb-10 md:mb-16 serif uppercase">
+            <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.8em] mb-8 md:mb-16 serif uppercase">
                 Integrity in Demolition.
             </p>
-            <h2 class="text-slate-900 text-3xl md:text-6xl lg:text-7xl font-bold tracking-hero serif mb-10 md:mb-16">
+            <h2 class="text-slate-900 text-3xl md:text-6xl lg:text-7xl font-bold tracking-hero serif mb-8 md:mb-16 leading-tight">
                 価値を繋ぐ、<br>「解体」の技術。
             </h2>
             <div class="vertical-line"></div>
@@ -131,20 +131,21 @@
     </section>
 
     <!-- Concept Section -->
-    <section id="about" class="py-40 px-6 bg-slate-50">
+    <section id="about" class="py-16 md:py-40 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 items-center">
                 <div class="order-2 md:order-1 fade-in">
                     <div class="relative group overflow-hidden shadow-2xl rounded-sm">
-                        <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105">
+                        <!-- 写真スタイルを統一（白枠なし） -->
+                        <img src="600009998998962196.jpg" alt="解体作業風景" class="w-full h-[280px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105">
                     </div>
                 </div>
                 <div class="order-1 md:order-2 fade-in">
-                    <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-8 uppercase text-left">Philosophy</span>
-                    <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-12 text-left">
+                    <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-6 md:mb-8 uppercase text-left">Philosophy</span>
+                    <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-8 md:mb-12 text-left">
                         壊すことは、<br>新しく<br><span class="text-slate-800">はじめる</span>こと。
                     </h3>
-                    <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-slate-300 pl-10 text-left">
+                    <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base border-l-2 border-slate-300 pl-8 md:pl-10 text-left">
                         成王建設は解体事業に特化した専門集団です。<br>
                         単なる破壊ではなく、土地を浄め、人々の想い出を次なる景色へと繋ぐ。<br>
                         そのための安全と配慮こそが、私たちの誇る「技術」です。
@@ -154,38 +155,38 @@
         </div>
     </section>
 
-    <!-- CEO Message Section (Correct Photo) -->
-    <section id="ceo" class="py-40 px-6 bg-white overflow-hidden border-t border-slate-100">
+    <!-- CEO Message Section (Corrected Photo) -->
+    <section id="ceo" class="py-16 md:py-40 px-6 bg-white overflow-hidden border-t border-slate-100">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 items-start">
-                <!-- CEO Photo - father.jpg を反映 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-24 items-start">
+                <!-- CEO Photo - father.jpg を正しく反映 -->
                 <div class="md:col-span-5 fade-in">
                     <div class="relative group">
                         <img src="father.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover transition duration-700">
-                        <div class="absolute -top-4 -left-4 w-16 h-16 border-t border-l border-slate-200 pointer-events-none"></div>
-                        <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b border-r border-slate-200 pointer-events-none"></div>
+                        <div class="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 border-t border-l border-slate-200 pointer-events-none"></div>
+                        <div class="absolute -bottom-4 -right-4 w-12 md:w-16 h-12 md:h-16 border-b border-r border-slate-200 pointer-events-none"></div>
                     </div>
                 </div>
                 <!-- CEO Profile -->
                 <div class="md:col-span-7 fade-in">
-                    <div class="mb-12">
-                        <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-8 uppercase text-left">Representative Message</span>
+                    <div class="mb-8 md:mb-12">
+                        <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-6 md:mb-8 uppercase text-left">Representative Message</span>
                         <h3 class="text-2xl md:text-3xl font-bold serif text-slate-900 leading-tight mb-4 text-left">
                             真面目に、真っ直ぐに。<br>
                             父から受け継いだ「誠実」を貫く。
                         </h3>
-                        <p class="text-slate-800 text-xl serif mt-8 font-bold text-left">
+                        <p class="text-slate-800 text-xl serif mt-6 md:mt-8 font-bold text-left">
                             代表取締役　菅 正行 <span class="text-sm font-normal text-slate-400 ml-4 font-sans uppercase">Masayuki Suga</span>
                         </p>
                     </div>
                     
-                    <div class="space-y-8 text-left">
-                        <p class="text-slate-500 leading-[2.6] tracking-widest text-sm md:text-base">
+                    <div class="space-y-6 md:space-y-8 text-left">
+                        <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
                             私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。父からこの会社を引き継いだ時から、私の信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。解体は次なる建設への第一歩。だからこそ、私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。
                         </p>
 
                         <!-- Profile Details -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 pt-10 border-t border-slate-100">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8 pt-8 md:pt-10 border-t border-slate-100">
                             <div>
                                 <h4 class="text-[10px] tracking-widest text-slate-400 font-bold uppercase mb-2">Education & License</h4>
                                 <ul class="text-sm text-slate-700 space-y-1">
@@ -209,35 +210,31 @@
     </section>
 
     <!-- Service Section -->
-    <section id="service" class="bg-slate-50 py-40 px-6 border-y border-slate-200">
+    <section id="service" class="bg-slate-100 py-16 md:py-40 px-6 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24 fade-in">
-                <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
+            <div class="text-center mb-16 md:mb-24 fade-in">
+                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">サービス内容</h3>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 01 -->
-                <div class="fade-in service-card p-10">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">01</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="fade-in service-card p-8 md:p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans">01</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">住宅解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">木造家屋から蔵まで。近隣への配慮を徹底し、次なる建築に最適な更地へと仕上げます。</p>
                 </div>
-                <!-- Service 02 -->
-                <div class="fade-in service-card p-10">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">02</span>
+                <div class="fade-in service-card p-8 md:p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans">02</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">RC・鉄骨解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗やアパート。熟練のオペレーターが騒音・振動を最小限に抑え、安全に施工します。</p>
                 </div>
-                <!-- Service 03 -->
-                <div class="fade-in service-card p-10">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">03</span>
+                <div class="fade-in service-card p-8 md:p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans">03</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">内装解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">店舗のスケルトン工事。限られた工期内で、正確な分別と徹底した現場管理を実施します。</p>
                 </div>
-                <!-- Service 04 - アスベスト除去 -->
-                <div class="fade-in service-card p-10">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left">04</span>
+                <div class="fade-in service-card p-8 md:p-10">
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase text-left font-sans">04</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 text-left tracking-wide">アスベスト除去</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-left">法令を遵守し、専門スタッフが最新の飛散防止対策を講じて安全かつ確実に除去を行います。</p>
                 </div>
@@ -246,9 +243,9 @@
     </section>
 
     <!-- Project Gallery -->
-    <section id="projects" class="py-40 bg-white px-6">
+    <section id="projects" class="py-16 md:py-40 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-24 fade-in">
+            <div class="flex justify-between items-end mb-16 md:mb-24 fade-in">
                 <div>
                     <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-left">Archive</span>
                     <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 text-left">施工実績</h3>
@@ -256,8 +253,8 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
                 <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-8 border border-slate-100">
-                        <img src="600004840290779411.jpg" alt="安全管理" class="w-full h-80 md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0">
+                    <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-slate-100">
+                        <img src="600004840290779411.jpg" alt="安全管理" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
                     <div class="flex items-center gap-4">
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-left">Safety Control</span>
@@ -266,8 +263,8 @@
                     <p class="text-lg font-bold text-slate-800 serif mt-4 tracking-wider text-left">安全管理と近隣配慮の徹底</p>
                 </div>
                 <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-8 border border-slate-100">
-                        <img src="600007693239321155.jpg" alt="施工風景" class="w-full h-80 md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0">
+                    <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-slate-100">
+                        <img src="600007693239321155.jpg" alt="施工風景" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
                     <div class="flex items-center gap-4">
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-left">Work Progress</span>
@@ -280,16 +277,16 @@
     </section>
 
     <!-- Contact Section -->
-    <footer id="contact" class="bg-corporate-deep text-white py-40 px-6">
+    <footer id="contact" class="bg-corporate-deep text-white py-16 md:py-40 px-6">
         <div class="max-w-5xl mx-auto text-center fade-in">
-            <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-12 uppercase text-center">Contact Us</span>
-            <h3 class="text-3xl md:text-5xl font-bold serif mb-20 tracking-wider">ご相談・お見積り</h3>
+            <span class="text-slate-500 text-[10px] tracking-[0.8em] font-bold block mb-8 md:mb-12 uppercase text-center">Contact Us</span>
+            <h3 class="text-3xl md:text-5xl font-bold serif mb-16 md:mb-20 tracking-wider">ご相談・お見積り</h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 text-left border-t border-slate-700/50 pt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-left border-t border-slate-700/50 pt-16 md:pt-20">
                 <div>
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Direct Line</p>
                     <p class="text-4xl md:text-5xl font-light tracking-tighter hover:text-slate-300 transition-colors text-left">0123-456-7890</p>
-                    <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left font-bold">Reception: 9:00 - 18:00 (Weekday)</p>
+                    <p class="text-[10px] text-slate-500 mt-6 tracking-widest uppercase text-left font-bold font-sans">Reception: 9:00 - 18:00 (Weekday)</p>
                 </div>
                 <div class="border-l-0 md:border-l border-slate-700/50 md:pl-20">
                     <p class="text-[9px] tracking-[0.5em] text-slate-400 font-bold mb-6 uppercase text-left">Corporate Information</p>
@@ -301,7 +298,7 @@
                 </div>
             </div>
             
-            <div class="mt-40 pt-10 border-t border-slate-700/50">
+            <div class="mt-20 md:mt-40 pt-10 border-t border-slate-700/50">
                 <p class="text-[10px] tracking-[0.6em] text-slate-600 uppercase font-bold text-center">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
