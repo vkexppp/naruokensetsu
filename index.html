@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社 成王建設 | 未来を拓く、誠実な解体。</title>
+    <title>株式会社 成王建設 | 誠実な解体。</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,227 +17,155 @@
         .serif {
             font-family: 'Shippori Mincho', serif;
         }
-        .hero-zoom {
-            animation: zoom 25s infinite alternate;
-        }
-        @keyframes zoom {
-            from { transform: scale(1); }
-            to { transform: scale(1.08); }
-        }
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        /* 写真を明るく見せるための調整 */
-        img {
-            filter: brightness(1.02) contrast(1.02);
+        /* ナビゲーション（白以外：サンドベージュ） */
+        .nav-bg {
+            background-color: #f2ede4;
+        }
+        .vertical-line {
+            width: 1px;
+            height: 100px;
+            background-color: #d1cfcc;
+            margin: 0 auto;
+        }
+        .hero-title {
+            letter-spacing: 0.15em;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-stone-100">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="flex flex-col">
-                    <span class="text-[10px] tracking-[0.3em] text-amber-800 font-bold mb-0.5">NARUO CONSTRUCTION</span>
-                    <h1 class="text-lg md:text-xl font-bold tracking-widest text-stone-800">株式会社 成王建設</h1>
-                </div>
+    <nav class="fixed w-full z-50 nav-bg border-b border-stone-200/40 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-[10px] tracking-[0.3em] text-amber-800 font-bold mb-0.5 uppercase">Naruo Construction</span>
+                <h1 class="text-lg font-bold tracking-[0.2em] text-stone-800">株式会社 成王建設</h1>
             </div>
-            <div class="hidden md:flex items-center space-x-10 text-[13px] font-medium tracking-widest">
+            <div class="hidden md:flex items-center space-x-12 text-[12px] font-medium tracking-widest uppercase">
                 <a href="#about" class="text-stone-600 hover:text-amber-800 transition">コンセプト</a>
                 <a href="#service" class="text-stone-600 hover:text-amber-800 transition">事業内容</a>
                 <a href="#projects" class="text-stone-600 hover:text-amber-800 transition">実績紹介</a>
-                <a href="#contact" class="border border-amber-800 text-amber-800 px-7 py-2.5 rounded-full hover:bg-amber-800 hover:text-white transition duration-300">お問い合わせ</a>
+                <a href="#contact" class="border border-stone-400 text-stone-800 px-8 py-2.5 rounded-full hover:bg-stone-800 hover:text-white transition duration-300">お問い合わせ</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen w-full overflow-hidden bg-stone-50">
-        <div class="absolute inset-0">
-            <!-- 写真を見えやすくするためオーバーレイを極限まで薄く、明るく設定 -->
-            <img src="600004693690679420.jpg" alt="成王建設 重機" class="w-full h-full object-cover hero-zoom" onerror="this.src='https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?q=80&w=2070&auto=format&fit=crop'">
-            <div class="absolute inset-0 bg-white/20"></div>
-        </div>
-        
-        <div class="relative h-full flex items-center justify-center px-6">
-            <div class="bg-white/80 backdrop-blur-md p-10 md:p-20 border border-white/50 shadow-sm text-center">
-                <p class="text-amber-900 text-sm md:text-base tracking-[0.4em] mb-8 serif">まっさらに、誠実に。その先の未来を想う。</p>
-                <h2 class="text-stone-800 text-4xl md:text-6xl font-bold leading-tight serif mb-10">
-                    価値を繋ぐ、<br>「解体」の技術。
-                </h2>
-                <div class="w-px h-16 bg-amber-800/30 mx-auto"></div>
-            </div>
+    <!-- Hero Section (スクリーンショットのデザインを再現) -->
+    <section class="relative h-screen w-full flex items-center justify-center bg-white pt-16">
+        <div class="text-center fade-in">
+            <p class="text-amber-900 text-[11px] md:text-sm tracking-[0.5em] mb-12 serif">
+                まっさらに、誠実に。その先の未来を想う。
+            </p>
+            <h2 class="text-stone-800 text-4xl md:text-7xl font-bold hero-title serif mb-12">
+                価値を繋ぐ、<br>「解体」の技術。
+            </h2>
+            <div class="vertical-line"></div>
         </div>
     </section>
 
-    <!-- Message Section -->
-    <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div class="md:w-1/2 fade-in">
-                <div class="relative p-4 bg-white shadow-xl rotate-1">
-                    <img src="600004927800475959.jpg" alt="現場の様子" class="w-full h-auto object-cover" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop'">
-                </div>
-            </div>
-            <div class="md:w-1/2 fade-in">
-                <span class="text-amber-800 text-xs tracking-[0.5em] font-bold mb-6 block uppercase">Philosophy</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif leading-relaxed mb-10 text-stone-800">壊すことは、<br>新しく創ること。</h3>
-                <div class="space-y-8 text-stone-600 leading-loose tracking-wider text-sm md:text-base">
-                    <p>成王建設は、愛媛の地で解体事業に専念してまいりました。<br>解体は単なる破壊ではなく、土地を浄め、新しい命を吹き込むための「準備」であると考えています。</p>
-                    <p>近隣の皆様へのご挨拶、徹底した防音・防塵対策。私たちは現場の美しさを追求し、お客様の大切な資産を次なるステージへと繋ぐお手伝いをいたします。</p>
-                </div>
-            </div>
+    <!-- Main Image Section -->
+    <section class="px-6 md:px-24 mb-32">
+        <div class="max-w-7xl mx-auto overflow-hidden rounded-sm shadow-sm fade-in">
+            <img src="600004693690679420.jpg" alt="成王建設 旗艦重機" class="w-full h-auto object-cover">
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Concept Section -->
+    <section id="about" class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <div class="fade-in">
+            <h3 class="text-2xl md:text-3xl font-bold serif mb-10 text-stone-800">壊すことは、新しくはじめること。</h3>
+            <p class="text-stone-500 leading-loose tracking-widest text-sm md:text-base">
+                成王建設は解体事業一本。<br>
+                土地を浄め、人々の想い出を次なる景色へと繋ぐ。<br>
+                そのための安全と配慮こそが、私たちの技術です。
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Section -->
     <section id="service" class="bg-[#f7f3ef] py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 fade-in">
-                <h3 class="text-3xl md:text-4xl font-bold serif mb-6 text-stone-800">事業内容</h3>
-                <p class="text-stone-400 tracking-[0.3em] text-xs">SERVICES</p>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="fade-in text-center">
+                <h4 class="text-xl font-bold mb-6 serif text-stone-800">住宅解体</h4>
+                <p class="text-stone-500 text-xs leading-relaxed">木造、倉庫、蔵。近隣への配慮を徹底し、<br>まっさらな土地へと仕上げます。</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Service 1 -->
-                <div class="fade-in bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition duration-500">
-                    <h4 class="text-xl font-bold mb-6 serif text-stone-800 flex items-center gap-3">
-                        <span class="w-8 h-px bg-amber-800"></span> 木造住宅解体
-                    </h4>
-                    <p class="text-stone-500 text-sm leading-loose">一般住宅の解体から、蔵や倉庫の撤去まで。手壊しと重機を併用し、安全かつ迅速に施工いたします。</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="fade-in bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition duration-500">
-                    <h4 class="text-xl font-bold mb-6 serif text-stone-800 flex items-center gap-3">
-                        <span class="w-8 h-px bg-amber-800"></span> RC・鉄骨解体
-                    </h4>
-                    <p class="text-stone-500 text-sm leading-loose">アパートや店舗など、大規模な構造物にも対応。熟練の技術で、騒音や振動を抑えた確実な作業を行います。</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="fade-in bg-white/50 p-10 rounded-2xl border border-white hover:bg-white transition duration-500">
-                    <h4 class="text-xl font-bold mb-6 serif text-stone-800 flex items-center gap-3">
-                        <span class="w-8 h-px bg-amber-800"></span> 内装解体
-                    </h4>
-                    <p class="text-stone-500 text-sm leading-loose">店舗の原状回復やリフォームに伴う部分解体。夜間作業やスピード施工など、現場の事情に柔軟に対応します。</p>
-                </div>
+            <div class="fade-in text-center">
+                <h4 class="text-xl font-bold mb-6 serif text-stone-800">RC・鉄骨解体</h4>
+                <p class="text-stone-500 text-xs leading-relaxed">アパートや店舗。熟練のオペレーターによる<br>安全・迅速な施工を行います。</p>
+            </div>
+            <div class="fade-in text-center">
+                <h4 class="text-xl font-bold mb-6 serif text-stone-800">内装解体</h4>
+                <p class="text-stone-500 text-xs leading-relaxed">原状回復やリフォーム。限られた工期内で、<br>丁寧な分別解体を実施します。</p>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Grid -->
+    <!-- Project Gallery -->
     <section id="projects" class="py-32 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in">
-                <div>
-                    <h3 class="text-3xl font-bold serif text-stone-800">施工実績</h3>
-                    <p class="text-stone-400 text-xs tracking-widest mt-4">PROJECTS GALLERY</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in group">
+                    <div class="overflow-hidden rounded-lg mb-4">
+                        <img src="600004840290779411.jpg" alt="安全管理" class="w-full h-80 object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <p class="text-xs text-stone-400 tracking-widest serif">SAFETY MANAGEMENT</p>
+                    <p class="text-sm font-bold text-stone-800 mt-2 serif">安全管理と近隣配慮の徹底</p>
                 </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- 黒いオーバーレイを廃止し、写真が見えるように変更 -->
-                <div class="fade-in group relative overflow-hidden rounded-xl aspect-[3/4]">
-                    <img src="600005407561482500.jpg" alt="解体作業1" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                </div>
-                <div class="fade-in group relative overflow-hidden rounded-xl aspect-[3/4]">
-                    <img src="600005405900276131.jpg" alt="解体作業2" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                </div>
-                <div class="fade-in group relative overflow-hidden rounded-xl aspect-[3/4] md:col-span-2">
-                    <img src="600007692165579012(1).jpg" alt="解体作業3" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                </div>
-                <div class="fade-in group relative overflow-hidden rounded-xl aspect-square md:col-span-2">
-                    <img src="600004868224319541.jpg" alt="散水作業" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                </div>
-                <div class="fade-in group relative overflow-hidden rounded-xl aspect-square">
-                    <img src="600009985979580525.jpg" alt="住宅解体" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                </div>
-                <div class="fade-in group relative overflow-hidden rounded-xl aspect-square">
-                    <img src="600009990089998425.jpg" alt="積み込み作業" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                <div class="fade-in group">
+                    <div class="overflow-hidden rounded-lg mb-4">
+                        <img src="600007693239321155.jpg" alt="施工風景" class="w-full h-80 object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <p class="text-xs text-stone-400 tracking-widest serif">DEMOLITION WORK</p>
+                    <p class="text-sm font-bold text-stone-800 mt-2 serif">環境に配慮した分別施工</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
+    <!-- Contact Section -->
     <footer id="contact" class="bg-[#fcfaf7] border-t border-stone-200 py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-                <div class="fade-in">
-                    <h3 class="text-4xl font-bold serif text-stone-800 mb-8">ご相談・お見積り</h3>
-                    <p class="text-stone-500 leading-loose mb-12">解体に関するお悩み、お気軽にお聞かせください。現地調査の上、最適な工法と適正な価格をご提案いたします。</p>
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <p class="text-[10px] tracking-widest text-amber-800 font-bold mb-2 uppercase">Phone</p>
-                            <p class="text-4xl text-stone-800 font-light">0123-456-7890</p>
-                        </div>
-                        <div>
-                            <p class="text-[10px] tracking-widest text-amber-800 font-bold mb-2 uppercase">Email</p>
-                            <p class="text-lg text-stone-800 underline decoration-amber-800/30 underline-offset-8 transition hover:text-amber-800">info@naruo-demolition.co.jp</p>
-                        </div>
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h3 class="text-2xl font-bold serif text-stone-800 mb-12">ご相談・お見積り</h3>
+            <div class="bg-white p-12 rounded-2xl shadow-sm border border-stone-100 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <p class="text-[10px] tracking-widest text-amber-800 font-bold mb-2 uppercase">Phone</p>
+                        <p class="text-4xl text-stone-800 font-light tracking-tighter">0123-456-7890</p>
                     </div>
-                </div>
-
-                <div class="fade-in bg-white p-12 rounded-3xl shadow-sm border border-stone-100">
-                    <h4 class="text-xl font-bold serif text-stone-800 mb-10">会社情報</h4>
-                    <div class="space-y-6 text-sm">
-                        <div class="flex justify-between border-b border-stone-50 pb-4">
-                            <span class="text-stone-400">商号</span>
-                            <span class="text-stone-800 font-medium tracking-wider">株式会社 成王建設</span>
-                        </div>
-                        <div class="flex justify-between border-b border-stone-50 pb-4">
-                            <span class="text-stone-400">所在地</span>
-                            <span class="text-stone-800 font-medium tracking-wider text-right">愛媛県〇〇市〇〇町1-2-3</span>
-                        </div>
-                        <div class="flex justify-between border-b border-stone-50 pb-4">
-                            <span class="text-stone-400">事業内容</span>
-                            <span class="text-stone-800 font-medium tracking-wider">建築物解体工事一式</span>
-                        </div>
-                        <div class="flex justify-between border-b border-stone-50 pb-4">
-                            <span class="text-stone-400">許可</span>
-                            <span class="text-stone-800 font-medium tracking-wider text-right text-xs">愛媛県知事 許可（般-〇）第〇〇〇号</span>
-                        </div>
+                    <div>
+                        <p class="text-[10px] tracking-widest text-amber-800 font-bold mb-2 uppercase">Company</p>
+                        <p class="text-sm text-stone-800 font-medium">株式会社 成王建設</p>
+                        <p class="text-xs text-stone-500 mt-1">愛媛県〇〇市〇〇町1-2-3</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-32 text-center">
-                <p class="text-[10px] tracking-[0.4em] text-stone-400">&copy; NARUO CONSTRUCTION CO., LTD.</p>
-            </div>
+            <p class="mt-24 text-[10px] tracking-[0.5em] text-stone-400 uppercase font-bold">&copy; NARUO CONSTRUCTION CO., LTD.</p>
         </div>
     </footer>
 
     <script>
-        // Reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
