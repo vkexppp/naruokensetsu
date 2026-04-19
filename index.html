@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社 成王建設 | 誠実な解体</title>
     
-    <!-- 1. アイコン設定: アップロードした logo.png を使用 -->
-    <link rel="icon" href="logo.png">
+    <!-- アイコン設定: キャッシュを強制更新するための ?v=2 を追加 -->
+    <link rel="icon" type="image/png" href="logo.png?v=2">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,17 +56,17 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: #0f172a;
         }
-        /* 文章が不自然に切れないようにするための制御 */
         .phrase { display: inline-block; white-space: normal; }
         .address-unit { display: inline-block; white-space: nowrap; }
-        /* 早稲田えんじ色 */
         .text-waseda { color: #890a1e; }
         
+        /* 振り仮名（ルビ）のスタイル修正 */
         ruby rt {
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Shippori Mincho', serif; /* 本体と同じ明朝体に設定 */
             font-size: 0.55em;
-            letter-spacing: 0.1em;
-            color: #94a3b8;
+            letter-spacing: 0.2em;
+            color: #0f172a; /* 黒（濃い紺）に変更 */
+            font-weight: 700;
         }
     </style>
 </head>
@@ -76,10 +76,9 @@
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <!-- ロゴ画像 (logo.png) -->
-                <img src="logo.png" alt="NARUOU" class="h-8 md:h-10 w-auto" onerror="this.style.display='none'">
+                <img src="logo.png" alt="NARUOU" class="h-8 md:h-10 w-auto">
                 <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">
-                    株式会社 <ruby>成王<rt class="font-bold">なるおう</rt></ruby>建設
+                    株式会社 <ruby>成王<rt>なるおう</rt></ruby>建設
                 </h1>
             </div>
             
@@ -153,7 +152,6 @@
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block">サービス内容</h3>
                 
-                <!-- 強調メッセージ: パソコンでも必ず下に来るよう配置し、枠で囲う -->
                 <div class="inline-block border border-slate-200 p-6 md:p-10 rounded-sm">
                     <p class="text-sm md:text-lg tracking-widest font-bold leading-relaxed text-slate-800">
                         <span class="phrase">建物の大小・構造を問わず、</span><br class="md:hidden">
@@ -216,7 +214,7 @@
                     <p class="text-lg font-bold text-slate-800 serif mt-4 phrase">安全管理と近隣配慮の徹底</p>
                 </div>
                 <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white">
+                    <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white text-left">
                         <img src="600007693239321155.jpg" alt="施工風景" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
                     <div class="flex items-center gap-4">
@@ -244,7 +242,6 @@
                 <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
                     <span class="phrase">私たちは愛媛の地で、</span><span class="phrase">解体という仕事を通じて</span><span class="phrase">街の再生を担ってまいりました。</span><span class="phrase">私がこの会社を興して以来、</span><span class="phrase">私の信念は変わりません。</span><span class="phrase">それは「どこまでも真面目に</span><span class="phrase">現場と向き合うこと」です。</span><span class="phrase">解体は次なる建設への第一歩。</span><span class="phrase">だからこそ、私たちが残す更地は、</span><span class="phrase">未来への希望が描けるほど</span><span class="phrase">美しくなければならないと</span><span class="phrase">考えています。</span>
                 </p>
-                <!-- 署名 -->
                 <div class="text-right mt-12">
                     <p class="text-slate-900 font-bold serif leading-loose tracking-widest phrase text-right">
                         株式会社 成王建設<br>代表取締役 菅 正行
@@ -267,10 +264,10 @@
                             089-924-6604
                         </span>
                     </a>
-                    <a href="mailto:masa.kan8588@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans">
+                    <a href="mailto:naruo.kaitai@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans">
                         <span class="flex items-center justify-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-8 md:h-8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                            masa.kan8588@gmail.com
+                            naruo.kaitai@gmail.com
                         </span>
                     </a>
                 </div>
