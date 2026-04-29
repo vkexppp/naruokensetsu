@@ -6,7 +6,7 @@
     <title>株式会社 成王建設 | 誠実な解体</title>
     
     <!-- アイコン設定: logo.png を使用 -->
-    <link rel="icon" type="image/png" href="logo.png?v=4">
+    <link rel="icon" type="image/png" href="logo.png?v=5">
 
     <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,7 +35,7 @@
         }
         
         .nav-glass {
-            background-color: rgba(255, 255, 255, 0.96);
+            background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
         }
         
@@ -69,20 +69,10 @@
         .address-unit { display: inline-block; white-space: nowrap; }
         .text-waseda { color: #890a1e; }
         
-        /* 振り仮名（ルビ）の調整 */
-        ruby rt {
-            font-family: 'Shippori Mincho', serif;
-            font-size: 0.55em;
-            letter-spacing: 0.2em;
-            color: #0f172a;
-            font-weight: 700;
-        }
-        
-        /* ロゴとテキストの配置調整 */
+        /* ロゴとテキストの垂直センター合わせ */
         .brand-logo-wrap {
             display: flex;
-            align-items: flex-end; /* ロゴの底辺に文字を合わせることでズレを解消 */
-            padding-bottom: 2px;
+            align-items: center;
         }
     </style>
 </head>
@@ -90,12 +80,12 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <!-- ロゴと社名: スマホでも明朝体・大サイズを維持 -->
-            <div class="brand-logo-wrap gap-2 md:gap-3">
-                <img src="logo.png" alt="NARUOU" class="h-10 md:h-12 w-auto object-contain">
-                <h1 class="text-lg md:text-xl font-bold tracking-[0.05em] md:tracking-[0.15em] text-slate-900 serif leading-none flex items-center">
-                    <span>株式会社 <ruby>成王<rt>なるおう</rt></ruby>建設</span>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <!-- ロゴと社名: items-center で垂直中央を完全に固定 -->
+            <div class="brand-logo-wrap gap-3 md:gap-5">
+                <img src="logo.png" alt="NARUOU" class="h-9 md:h-12 w-auto object-contain">
+                <h1 class="text-[16px] md:text-2xl font-bold tracking-[0.15em] md:tracking-[0.25em] text-slate-900 serif leading-none">
+                    株式会社 成王建設
                 </h1>
             </div>
             
@@ -104,7 +94,6 @@
                 <a href="#service" class="hover:text-slate-900 transition-colors">事業内容</a>
                 <a href="#projects" class="hover:text-slate-900 transition-colors">実績紹介</a>
                 <a href="#ceo" class="hover:text-slate-900 transition-colors">代表挨拶</a>
-                <!-- Instagram PCリンク -->
                 <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="hover:text-pink-600 transition-colors flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
@@ -153,16 +142,18 @@
         </div>
     </section>
 
-    <!-- お知らせセクション (刷新版) -->
-    <section class="py-12 bg-white px-6">
-        <div class="max-w-4xl mx-auto fade-in bg-slate-50 border border-slate-100 rounded-lg p-6 md:p-8">
-            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                <div class="flex items-center gap-4 shrink-0">
-                    <span class="text-xs tracking-widest font-bold text-white bg-slate-800 px-3 py-1.5 rounded-sm serif">お知らせ</span>
+    <!-- お知らせセクション (簡略版) -->
+    <section class="py-8 bg-white px-6">
+        <div class="max-w-4xl mx-auto fade-in bg-slate-50 border border-slate-100 rounded-lg p-5 md:p-6 text-center">
+            <div class="flex flex-col md:flex-row md:items-center justify-center gap-4 md:gap-10">
+                <div class="flex items-center justify-center gap-4">
+                    <span class="text-xs tracking-widest font-bold text-white bg-slate-800 px-3 py-1 rounded-sm serif">お知らせ</span>
                     <span class="text-sm text-slate-500 font-mono">2026年4月19日</span>
                 </div>
-                <div class="flex-grow">
-                    <p class="text-sm md:text-base font-bold text-slate-800 leading-relaxed">公式Instagramアカウントを開設いたしました。施工実績や現場の様子を随時更新してまいります。</p>
+                <div>
+                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-base md:text-lg font-bold text-slate-900 hover:text-pink-600 transition-colors border-b-2 border-slate-900 hover:border-pink-600 pb-0.5">
+                        公式 Instagram 開設！
+                    </a>
                 </div>
             </div>
         </div>
@@ -183,7 +174,7 @@
                         <span class="phrase">愛媛の地で、</span><br class="md:hidden"><span class="phrase">信頼されて<span class="text-slate-800">30年。</span></span>
                     </h3>
                     <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
-                        <span class="phrase"><ruby>成王<rt>なるおう</rt></ruby>建設は</span><span class="phrase">解体事業に特化した</span><span class="phrase">専門集団です。</span><span class="phrase">創業以来磨き上げた</span><span class="phrase">「誠実」と「技術」を武器に、</span><span class="phrase">数多くの現場と向き合って</span><span class="phrase">まいりました。</span><span class="phrase">地域社会の再生を担う責任を胸に、</span><span class="phrase">安全・丁寧な施工を</span><span class="phrase">お約束いたします。</span>
+                        <span class="phrase">成王建設は</span><span class="phrase">解体事業に特化した</span><span class="phrase">専門集団です。</span><span class="phrase">創業以来磨き上げた</span><span class="phrase">「誠実」と「技術」を武器に、</span><span class="phrase">数多くの現場と向き合って</span><span class="phrase">まいりました。</span><span class="phrase">地域社会の再生を担う責任を胸に、</span><span class="phrase">安全・丁寧な施工を</span><span class="phrase">お約束いたします。</span>
                     </p>
                 </div>
             </div>
@@ -195,7 +186,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="mb-10 md:mb-24 fade-in flex flex-col items-center">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Services</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block text-slate-900">サービス内容</h3>
+                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block">サービス内容</h3>
                 <div class="inline-block border border-slate-200 p-6 md:p-10 rounded-sm">
                     <p class="text-sm md:text-lg tracking-widest font-bold leading-relaxed text-slate-800">
                         <span class="phrase">建物の大小・構造を問わず、</span><br class="md:hidden">
@@ -229,7 +220,7 @@
                     <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans font-bold">04</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 phrase">アスベスト除去</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider font-medium text-slate-600">
-                        <span class="phrase">法令を遵守し、</span><span class="phrase">専門スタッフが</span><span class="phrase">飛散防止対策を講じて</span><span class="phrase">確実に除去。</span><span class="phrase">一気通貫で対応いたします。</span>
+                        <span class="phrase">法令を遵守し、</span><span class="phrase">専門スタッフが</span><span class="phrase">最新の飛散防止対策を講じて</span><span class="phrase">確実に除去。</span><span class="phrase">一気通貫で対応いたします。</span>
                     </p>
                 </div>
             </div>
@@ -242,7 +233,7 @@
             <div class="flex justify-between items-end mb-10 md:mb-24 fade-in text-left">
                 <div>
                     <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Archive</span>
-                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 phrase text-slate-900">施工実績</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 phrase">施工実績</h3>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 text-left">
@@ -250,21 +241,21 @@
                     <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white">
                         <img src="600004840290779411.jpg" alt="安全管理" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
-                    <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-4 text-slate-900">
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase phrase">Safety Control</span>
                         <div class="flex-grow h-px bg-slate-200"></div>
                     </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 phrase text-slate-900">安全管理と近隣配慮の徹底</p>
+                    <p class="text-lg font-bold text-slate-800 serif mt-4 phrase">安全管理と近隣配慮の徹底</p>
                 </div>
-                <div class="fade-in group">
+                <div class="fade-in group text-slate-900">
                     <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white text-left">
                         <img src="600007693239321155.jpg" alt="施工風景" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
-                    <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-4 text-slate-900">
                         <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase phrase">Work Progress</span>
                         <div class="flex-grow h-px bg-slate-200"></div>
                     </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 phrase text-slate-900">環境に配慮した解体</p>
+                    <p class="text-lg font-bold text-slate-800 serif mt-4 phrase">環境に配慮した解体</p>
                 </div>
             </div>
         </div>
@@ -273,7 +264,7 @@
     <!-- 代表挨拶 -->
     <section id="ceo" class="py-12 md:py-32 px-6 bg-white border-b border-slate-100">
         <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 mb-10 md:mb-16 phrase text-slate-900">代表挨拶</h3>
+            <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 mb-10 md:mb-16 phrase">代表挨拶</h3>
             <div class="mb-10 md:mb-16 flex justify-center fade-in">
                 <div class="relative group max-w-lg w-full">
                     <img src="fatherbike.jpg" alt="代表取締役 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover">
@@ -282,8 +273,8 @@
                 </div>
             </div>
             <div class="fade-in text-left md:text-center max-w-2xl mx-auto text-slate-900">
-                <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-slate-900">
-                    <span class="phrase">私たちは愛媛の地で、</span><span class="phrase">解体という仕事を通じて</span><span class="phrase">街の再生を担ってまいりました。</span><span class="phrase">私がこの会社を興して以来、</span><span class="phrase">私の信念は変わりません。</span><span class="phrase">それは「どこまでも真面目に</span><span class="phrase">現場と向き合うこと」です。</span><span class="phrase">解体は次なる建設への第一歩。</span><span class="phrase">だからこそ、私たちが残す更地は、</span><span class="phrase">未来への希望が描けるほど</span><span class="phrase">美しくかなければならないと</span><span class="phrase">考えています。</span>
+                <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
+                    <span class="phrase">私たちは愛媛の地で、</span><span class="phrase">解体という仕事を通じて</span><span class="phrase">街の再生を担ってまいりました。</span><span class="phrase">私がこの会社を興して以来、</span><span class="phrase">私の信念は変わりません。</span><span class="phrase">それは「どこまでも真面目に</span><span class="phrase">現場と向き合うこと」です。</span><span class="phrase">解体は次なる建設への第一歩。</span><span class="phrase">だからこそ、私たちが残す更地は、</span><span class="phrase">未来への希望が描けるほど</span><span class="phrase">美しくなければならないと</span><span class="phrase">考えています。</span>
                 </p>
                 <div class="text-right mt-12">
                     <p class="text-slate-900 font-bold serif leading-loose tracking-widest phrase text-right">
@@ -302,22 +293,21 @@
                 <div class="w-12 h-px bg-slate-500 mx-auto mb-12 opacity-50"></div>
                 <div class="flex flex-col items-center space-y-6 md:space-y-10">
                     <a href="tel:0899246604" class="group block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">
-                        <span class="flex items-center justify-center gap-4 text-white">
+                        <span class="flex items-center justify-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-12 md:h-12"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             089-924-6604
                         </span>
                     </a>
-                    <a href="mailto:naruo.kaitai@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans text-white">
-                        <span class="flex items-center justify-center gap-4 text-white">
+                    <a href="mailto:naruo.kaitai@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans">
+                        <span class="flex items-center justify-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-8 md:h-8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                             naruo.kaitai@gmail.com
                         </span>
                     </a>
                     
-                    <!-- インスタボタン（フッター用） -->
                     <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full transition-all border border-white/20 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                        <span class="text-sm font-bold tracking-widest text-white">公式Instagram</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <span class="text-sm font-bold tracking-widest">公式Instagram</span>
                     </a>
                 </div>
             </div>
@@ -343,7 +333,7 @@
                             </div>
                         </div>
                         <div class="text-sm leading-loose text-slate-600 mb-4 text-slate-900">
-                            <div class="flex flex-col sm:flex-row sm:items-start text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-start text-left text-slate-900">
                                 <span class="w-16 shrink-0 font-bold text-slate-400 phrase text-left">業務内容</span>
                                 <span class="phrase text-left">土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</span>
                             </div>
