@@ -6,7 +6,7 @@
     <title>株式会社 成王建設 | 誠実な解体</title>
     
     <!-- アイコン設定: logo.png を使用 -->
-    <link rel="icon" type="image/png" href="logo.png?v=5">
+    <link rel="icon" type="image/png" href="logo.png?v=6">
 
     <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -81,11 +81,15 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-            <!-- ロゴと社名: 株式会社を除き、中央揃えを維持 -->
+            <!-- ロゴと社名: 株式会社を縦積み、成王建設はルビ無し・間隔詰め -->
             <div class="brand-logo-wrap gap-3 md:gap-5">
                 <img src="logo.png" alt="NARUOU" class="h-9 md:h-12 w-auto object-contain">
-                <h1 class="text-[18px] md:text-2xl font-bold tracking-tight text-slate-900 serif leading-none">
-                    成王建設（なるおう）
+                <h1 class="text-[18px] md:text-2xl font-bold tracking-tight text-slate-900 serif leading-none flex items-center">
+                    <span class="inline-flex flex-col text-[8px] md:text-[11px] leading-[1.1] mr-1.5 md:mr-2 font-normal serif">
+                        <span>株式</span>
+                        <span>会社</span>
+                    </span>
+                    <span class="tracking-normal">成王建設</span>
                 </h1>
             </div>
             
@@ -142,7 +146,7 @@
         </div>
     </section>
 
-    <!-- お知らせセクション (簡略版) -->
+    <!-- お知らせセクション -->
     <section class="py-8 bg-white px-6">
         <div class="max-w-4xl mx-auto fade-in bg-slate-50 border border-slate-100 rounded-lg p-5 md:p-6 text-center">
             <div class="flex flex-col md:flex-row md:items-center justify-center gap-4 md:gap-10">
@@ -151,8 +155,8 @@
                     <span class="text-sm text-slate-500 font-mono">2026年4月19日</span>
                 </div>
                 <div>
-                    <!-- 太字を解除 -->
-                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-base md:text-lg font-normal text-slate-900 hover:text-pink-600 transition-colors border-b-2 border-slate-900 hover:border-pink-600 pb-0.5">
+                    <!-- font-normal にて太字を解除 -->
+                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-base md:text-lg font-normal text-slate-900 hover:text-pink-600 transition-colors border-b border-slate-900 hover:border-pink-600 pb-0.5">
                         公式 Instagram 開設
                     </a>
                 </div>
@@ -174,7 +178,7 @@
                     <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 leading-tight mb-8 md:mb-12">
                         <span class="phrase">愛媛の地で、</span><br class="md:hidden"><span class="phrase">信頼されて<span class="text-slate-800">30年。</span></span>
                     </h3>
-                    <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
+                    <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-slate-900">
                         <span class="phrase">成王建設は</span><span class="phrase">解体事業に特化した</span><span class="phrase">専門集団です。</span><span class="phrase">創業以来磨き上げた</span><span class="phrase">「誠実」と「技術」を武器に、</span><span class="phrase">数多くの現場と向き合って</span><span class="phrase">まいりました。</span><span class="phrase">地域社会の再生を担う責任を胸に、</span><span class="phrase">安全・丁寧な施工を</span><span class="phrase">お約束いたします。</span>
                     </p>
                 </div>
@@ -187,7 +191,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="mb-10 md:mb-24 fade-in flex flex-col items-center">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Services</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block">サービス内容</h3>
+                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block text-slate-900">サービス内容</h3>
                 <div class="inline-block border border-slate-200 p-6 md:p-10 rounded-sm">
                     <p class="text-sm md:text-lg tracking-widest font-bold leading-relaxed text-slate-800">
                         <span class="phrase">建物の大小・構造を問わず、</span><br class="md:hidden">
@@ -234,11 +238,11 @@
             <div class="flex justify-between items-end mb-10 md:mb-24 fade-in text-left">
                 <div>
                     <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Archive</span>
-                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 phrase">施工実績</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 phrase text-slate-900">施工実績</h3>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 text-left">
-                <div class="fade-in group">
+                <div class="fade-in group text-slate-900">
                     <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white">
                         <img src="600004840290779411.jpg" alt="安全管理" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
                     </div>
@@ -277,7 +281,7 @@
                 <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-slate-900">
                     <span class="phrase">私たちは愛媛の地で、</span><span class="phrase">解体という仕事を通じて</span><span class="phrase">街の再生を担ってまいりました。</span><span class="phrase">私がこの会社を興して以来、</span><span class="phrase">私の信念は変わりません。</span><span class="phrase">それは「どこまでも真面目に</span><span class="phrase">現場と向き合うこと」です。</span><span class="phrase">解体は次なる建設への第一歩。</span><span class="phrase">だからこそ、私たちが残す更地は、</span><span class="phrase">未来への希望が描けるほど</span><span class="phrase">美しくなければならないと</span><span class="phrase">考えています。</span>
                 </p>
-                <div class="text-right mt-12">
+                <div class="text-right mt-12 text-slate-900">
                     <p class="text-slate-900 font-bold serif leading-loose tracking-widest phrase text-right">
                         株式会社 成王建設<br>代表取締役 菅 正行
                     </p>
@@ -290,7 +294,7 @@
     <footer id="contact" class="bg-slate-50 pt-20 md:pt-32 pb-12 px-6 text-center">
         <div class="max-w-5xl mx-auto">
             <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm fade-in mb-16 md:mb-24 shadow-xl">
-                <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider phrase text-white">ご相談・お見積もり</h3>
+                <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider phrase text-white text-center">ご相談・お見積もり</h3>
                 <div class="w-12 h-px bg-slate-500 mx-auto mb-12 opacity-50"></div>
                 <div class="flex flex-col items-center space-y-6 md:space-y-10">
                     <a href="tel:0899246604" class="group block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">
@@ -299,7 +303,7 @@
                             089-924-6604
                         </span>
                     </a>
-                    <a href="mailto:naruo.kaitai@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans text-white">
+                    <a href="mailto:naruo.kaitai@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans text-white text-center">
                         <span class="flex items-center justify-center gap-4 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-8 md:h-8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                             naruo.kaitai@gmail.com
@@ -314,7 +318,7 @@
             </div>
 
             <div class="fade-in text-slate-800 text-left">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start text-slate-900">
                     <div class="md:col-span-4 space-y-1">
                         <h4 class="text-2xl font-bold serif phrase mb-4 text-left text-slate-900">株式会社 成王建設</h4>
                         <div class="text-sm leading-loose tracking-widest text-slate-600 font-medium space-y-1 text-left text-slate-900">
@@ -324,22 +328,22 @@
                     </div>
                     <div class="md:col-span-8 space-y-6">
                         <div class="text-sm leading-loose tracking-widest text-slate-600 space-y-3 text-slate-900">
-                            <div class="flex flex-col sm:flex-row sm:items-start text-left">
-                                <span class="w-16 shrink-0 font-bold text-slate-400 phrase">所在地</span>
-                                <span class="address-unit">〒791-8017 愛媛県松山市西長戸町250-6</span>
-                            </div>
-                            <div class="flex flex-col sm:flex-row sm:items-start text-left">
-                                <span class="w-16 shrink-0 font-bold text-slate-400 phrase">事業場</span>
-                                <span class="address-unit text-left">〒799-2652 愛媛県松山市福角町甲909番2、甲925番2、乙601番2</span>
-                            </div>
-                        </div>
-                        <div class="text-sm leading-loose text-slate-600 mb-4 text-slate-900">
                             <div class="flex flex-col sm:flex-row sm:items-start text-left text-slate-900">
-                                <span class="w-16 shrink-0 font-bold text-slate-400 phrase text-left">業務内容</span>
-                                <span class="phrase text-left">土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</span>
+                                <span class="w-16 shrink-0 font-bold text-slate-400 phrase text-left">所在地</span>
+                                <span class="address-unit text-left">〒791-8017 愛媛県松山市西長戸町250-6</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-start text-left text-slate-900">
+                                <span class="w-16 shrink-0 font-bold text-slate-400 phrase text-left">事業場</span>
+                                <span class="address-unit text-left text-left">〒799-2652 愛媛県松山市福角町甲909番2、甲925番2、乙601番2</span>
                             </div>
                         </div>
-                        <div class="bg-white p-6 border border-slate-200 rounded-sm text-slate-900">
+                        <div class="text-sm leading-loose text-slate-600 mb-4 text-slate-900 text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-start text-left">
+                                <span class="w-16 shrink-0 font-bold text-slate-400 phrase text-left">業務内容</span>
+                                <span class="phrase text-left text-left">土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 border border-slate-200 rounded-sm text-slate-900 text-left">
                             <p class="text-[11px] tracking-[0.4em] text-slate-900 font-bold mb-4 uppercase font-sans phrase text-left">許認可</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-xs text-slate-500 text-left">
                                 <div class="flex justify-between border-b border-slate-100 pb-1"><span>建設業許可</span><span class="text-slate-900 font-bold address-unit">愛媛県知事 第014057号</span></div>
