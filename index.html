@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社 成王建設 | 誠実な解体</title>
     
-    <!-- アイコン設定: キャッシュを強制更新するための ?v=2 を追加 -->
-    <link rel="icon" type="image/png" href="logo.png?v=2">
+    <!-- アイコン設定: logo.png を使用 -->
+    <link rel="icon" type="image/png" href="logo.png?v=3">
 
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
@@ -19,20 +21,26 @@
             color: #2d2d2d;
         }
         .serif { font-family: 'Shippori Mincho', serif; }
+        
+        /* フェードインアニメーション */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* お問い合わせブロックの背景 */
         .bg-contact-block {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+        
         .nav-glass {
             background-color: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(12px);
         }
+        
         .vertical-line {
             width: 1px;
             height: 40px;
@@ -41,11 +49,13 @@
             opacity: 0.4;
         }
         @media (min-width: 768px) { .vertical-line { height: 80px; } }
+        
         #mobile-menu {
             transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
             transform: translateX(100%);
         }
         #mobile-menu.active { transform: translateX(0); }
+        
         .service-card {
             background-color: #ffffff;
             border: 1.5px solid #cbd5e1;
@@ -56,17 +66,24 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: #0f172a;
         }
+        
         .phrase { display: inline-block; white-space: normal; }
         .address-unit { display: inline-block; white-space: nowrap; }
         .text-waseda { color: #890a1e; }
         
-        /* 振り仮名（ルビ）のスタイル修正 */
+        /* 振り仮名（ルビ）の調整: 本体と同じ明朝体で黒字 */
         ruby rt {
-            font-family: 'Shippori Mincho', serif; /* 本体と同じ明朝体に設定 */
+            font-family: 'Shippori Mincho', serif;
             font-size: 0.55em;
             letter-spacing: 0.2em;
-            color: #0f172a; /* 黒（濃い紺）に変更 */
+            color: #0f172a;
             font-weight: 700;
+        }
+        
+        /* ロゴとテキストの垂直センター合わせ用 */
+        .brand-logo-wrap {
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
@@ -74,51 +91,83 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="NARUOU" class="h-8 md:h-10 w-auto">
-                <h1 class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-900 serif">
-                    株式会社 <ruby>成王<rt>なるおう</rt></ruby>建設
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <!-- ロゴと社名: スマホでもズレないよう items-center を適用 -->
+            <div class="brand-logo-wrap gap-2 md:gap-3">
+                <img src="logo.png" alt="NARUOU" class="h-10 md:h-12 w-auto object-contain">
+                <h1 class="text-[15px] md:text-xl font-bold tracking-[0.05em] md:tracking-[0.15em] text-slate-900 serif leading-none flex items-center">
+                    <span>株式会社 <ruby>成王<rt>なるおう</rt></ruby>建設</span>
                 </h1>
             </div>
             
-            <div class="hidden lg:flex items-center space-x-10 text-[12px] font-bold tracking-[0.1em] text-slate-600">
+            <div class="hidden lg:flex items-center space-x-8 text-[12px] font-bold tracking-[0.1em] text-slate-600">
                 <a href="#history" class="hover:text-slate-900 transition-colors">歩み</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">事業内容</a>
                 <a href="#projects" class="hover:text-slate-900 transition-colors">実績紹介</a>
                 <a href="#ceo" class="hover:text-slate-900 transition-colors">代表挨拶</a>
-                <a href="#contact" class="bg-slate-900 text-white px-6 py-3 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm">お問い合わせ・お見積もり</a>
+                <!-- Instagram PCリンク -->
+                <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="hover:text-pink-600 transition-colors flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <a href="#contact" class="bg-slate-900 text-white px-5 py-2.5 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm">お問い合わせ</a>
             </div>
 
-            <button id="menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50">
-                <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
-                <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
-                <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
-            </button>
+            <!-- スマホ用アイコンエリア -->
+            <div class="flex items-center gap-4 lg:hidden">
+                <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-slate-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <button id="menu-btn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50">
+                    <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
+                    <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
+                    <span class="block w-6 h-px bg-slate-900 transition-all duration-300"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-10 text-xl tracking-[0.2em] serif text-slate-900">
-        <a href="#history" class="mobile-link phrase">歩み</a>
-        <a href="#service" class="mobile-link phrase">事業内容</a>
-        <a href="#projects" class="mobile-link phrase">実績紹介</a>
-        <a href="#ceo" class="mobile-link phrase">代表挨拶</a>
-        <a href="#contact" class="mobile-link bg-slate-900 text-white px-10 py-4 rounded-sm mt-6 shadow-lg text-lg phrase text-center">お問い合わせ・お見積もり</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
+        <a href="#history" class="mobile-link">歩み</a>
+        <a href="#service" class="mobile-link">事業内容</a>
+        <a href="#projects" class="mobile-link">実績紹介</a>
+        <a href="#ceo" class="mobile-link">代表挨拶</a>
+        <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="mobile-link flex items-center gap-2">
+            Instagram <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a href="#contact" class="mobile-link bg-slate-900 text-white px-8 py-4 rounded-sm mt-4 shadow-lg text-lg text-center text-white">お問い合わせ</a>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col items-center pt-24 md:pt-48 pb-10 bg-white">
-        <div class="text-center px-6 z-10 fade-in mb-6 md:mb-16">
-            <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.8em] mb-8 md:mb-16 serif uppercase font-bold phrase">Integrity in Demolition</p>
-            <h2 class="text-slate-900 text-3xl md:text-6xl lg:text-7xl font-bold tracking-hero serif mb-8 md:mb-16 leading-tight">
+    <section class="relative min-h-[70vh] md:min-h-[90vh] w-full flex flex-col items-center pt-24 md:pt-40 pb-10 bg-white">
+        <div class="text-center px-6 z-10 fade-in mb-8">
+            <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.8em] mb-6 md:mb-12 serif uppercase font-bold phrase">Integrity in Demolition</p>
+            <h2 class="text-slate-900 text-3xl md:text-6xl lg:text-7xl font-bold tracking-hero serif mb-8 md:mb-12 leading-tight">
                 <span class="phrase">価値を繋ぐ、</span><br class="md:hidden"><span class="phrase">「解体」の技術</span>
             </h2>
             <div class="vertical-line"></div>
         </div>
-        <div class="w-full px-6 md:px-24 max-w-7xl mx-auto fade-in">
+        <div class="w-full px-4 md:px-24 max-w-7xl mx-auto fade-in">
             <div class="relative overflow-hidden shadow-2xl rounded-sm">
-                <img src="600004693690679420.jpg" alt="成王建設 旗艦重機" class="w-full h-auto object-cover md:object-contain bg-white transition-transform duration-[3000ms] hover:scale-105">
+                <img src="600004693690679420.jpg" alt="重機" class="w-full h-auto object-cover bg-white transition-transform duration-[3000ms] hover:scale-105">
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section (Instagram Announcement) -->
+    <section class="py-12 bg-white px-6">
+        <div class="max-w-4xl mx-auto fade-in border-t border-b border-slate-100 py-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                <div class="flex items-center gap-4 shrink-0">
+                    <span class="text-[10px] tracking-widest font-bold text-slate-400 uppercase bg-slate-50 px-2 py-1">Notice</span>
+                    <span class="text-xs text-slate-500 font-mono">2026.04.19</span>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm md:text-base font-bold text-slate-800">公式Instagramアカウントを開設いたしました</p>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-xs font-bold text-slate-900 border-b border-slate-900 pb-0.5 hover:text-pink-600 hover:border-pink-600 transition-all">Instagramで実績を見る</a>
+                </div>
             </div>
         </div>
     </section>
@@ -151,7 +200,6 @@
             <div class="mb-10 md:mb-24 fade-in flex flex-col items-center">
                 <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase font-bold phrase">Services</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block">サービス内容</h3>
-                
                 <div class="inline-block border border-slate-200 p-6 md:p-10 rounded-sm">
                     <p class="text-sm md:text-lg tracking-widest font-bold leading-relaxed text-slate-800">
                         <span class="phrase">建物の大小・構造を問わず、</span><br class="md:hidden">
@@ -159,41 +207,40 @@
                     </p>
                 </div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left">
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans">01</span>
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans font-bold">01</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 phrase">住宅解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider font-medium text-slate-600">
-                        <span class="phrase">一棟全解体から、</span><span class="phrase">半分残して半分を壊す</span><span class="phrase">高度な「切り離し解体」まで。</span><span class="phrase">近隣への配慮を徹底し、</span><span class="phrase">次なる建築に最適な</span><span class="phrase">更地へと仕上げます。</span>
+                        <span class="phrase">一棟全解体から、</span><span class="phrase">半分残して半分を壊す</span><span class="phrase">高度な「切り離し解体」まで。</span><span class="phrase">近隣への配慮を徹底し、</span><span class="phrase">更地へと仕上げます。</span>
                     </p>
                 </div>
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans">02</span>
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans font-bold">02</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 phrase">鉄骨・RC造解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider font-medium text-slate-600">
-                        <span class="phrase">ビル、店舗、工場など、</span><span class="phrase">建物の構造を問わず</span><span class="phrase">全ての解体が可能です。</span><span class="phrase">熟練のオペレーターが</span><span class="phrase">安全かつ迅速に施工します。</span>
+                        <span class="phrase">ビル、店舗、工場など、</span><span class="phrase">建物の構造を問わず</span><span class="phrase">全ての解体が可能です。</span><span class="phrase">熟練の技術で</span><span class="phrase">安全かつ迅速に施工します。</span>
                     </p>
                 </div>
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans">03</span>
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans font-bold">03</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 phrase">内装解体</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider font-medium text-slate-600">
-                        <span class="phrase">店舗やオフィスの</span><span class="phrase">スケルトン工事。</span><span class="phrase">限られた工期内で、</span><span class="phrase">正確な分別と</span><span class="phrase">徹底した現場管理により</span><span class="phrase">高品質な更地へと仕上げます。</span>
+                        <span class="phrase">店舗やオフィスの</span><span class="phrase">スケルトン工事。</span><span class="phrase">正確な分別と管理により</span><span class="phrase">高品質な更地へと</span><span class="phrase">仕上げます。</span>
                     </p>
                 </div>
                 <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans">04</span>
+                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 uppercase font-sans font-bold">04</span>
                     <h4 class="text-xl font-bold mb-6 serif text-slate-900 phrase">アスベスト除去</h4>
                     <p class="text-slate-500 text-xs leading-[2.4] tracking-wider font-medium text-slate-600">
-                        <span class="phrase">法令を遵守し、</span><span class="phrase">専門スタッフが</span><span class="phrase">最新の飛散防止対策を講じて</span><span class="phrase">確実に除去。</span><span class="phrase">一気通貫での対応で</span><span class="phrase">手間とコストを削減します。</span>
+                        <span class="phrase">法令を遵守し、</span><span class="phrase">専門スタッフが</span><span class="phrase">飛散防止対策を講じて</span><span class="phrase">確実に除去。</span><span class="phrase">一気通貫で対応し、</span><span class="phrase">安心を届けます。</span>
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Gallery -->
+    <!-- 実績紹介 -->
     <section id="projects" class="py-12 md:py-32 px-6 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-10 md:mb-24 fade-in text-left">
@@ -227,7 +274,7 @@
         </div>
     </section>
 
-    <!-- CEO Section -->
+    <!-- 代表挨拶 -->
     <section id="ceo" class="py-12 md:py-32 px-6 bg-white border-b border-slate-100">
         <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 mb-10 md:mb-16 phrase">代表挨拶</h3>
@@ -240,7 +287,7 @@
             </div>
             <div class="fade-in text-left md:text-center max-w-2xl mx-auto">
                 <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base">
-                    <span class="phrase">私たちは愛媛の地で、</span><span class="phrase">解体という仕事を通じて</span><span class="phrase">街の再生を担ってまいりました。</span><span class="phrase">私がこの会社を興して以来、</span><span class="phrase">私の信念は変わりません。</span><span class="phrase">それは「どこまでも真面目に</span><span class="phrase">現場と向き合うこと」です。</span><span class="phrase">解体は次なる建設への第一歩。</span><span class="phrase">だからこそ、私たちが残す更地は、</span><span class="phrase">未来への希望が描けるほど</span><span class="phrase">美しくなければならないと</span><span class="phrase">考えています。</span>
+                    <span class="phrase">私たちは愛媛の地で、</span><span class="phrase">解体という仕事を通じて</span><span class="phrase">街の再生を担ってまいりました。</span><span class="phrase">私がこの会社を興して以来、</span><span class="phrase">私の信念は変わりません。</span><span class="phrase">それは「どこまでも真面目に</span><span class="phrase">現場と向き合うこと」です。</span><span class="phrase">解体は次なる建設への第一歩。</span><span class="phrase">だからこそ、私たちが残す更地は、</span><span class="phrase">未来への希望が描けるほど</span><span class="phrase">美しくかなければならないと</span><span class="phrase">考えています。</span>
                 </p>
                 <div class="text-right mt-12">
                     <p class="text-slate-900 font-bold serif leading-loose tracking-widest phrase text-right">
@@ -251,13 +298,13 @@
         </div>
     </section>
 
-    <!-- Highlighted Contact & Company Info -->
+    <!-- Footer & Contact -->
     <footer id="contact" class="bg-slate-50 pt-20 md:pt-32 pb-12 px-6 text-center">
         <div class="max-w-5xl mx-auto">
             <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm fade-in mb-16 md:mb-24 shadow-xl">
                 <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider phrase">ご相談・お見積もり</h3>
                 <div class="w-12 h-px bg-slate-500 mx-auto mb-12 opacity-50"></div>
-                <div class="flex flex-col items-center space-y-10">
+                <div class="flex flex-col items-center space-y-6 md:space-y-10">
                     <a href="tel:0899246604" class="group block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">
                         <span class="flex items-center justify-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-12 md:h-12"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -270,12 +317,17 @@
                             naruo.kaitai@gmail.com
                         </span>
                     </a>
+                    
+                    <!-- インスタボタン（フッター用） -->
+                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full transition-all border border-white/20 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <span class="text-sm font-bold tracking-widest">公式Instagram</span>
+                    </a>
                 </div>
             </div>
 
             <div class="fade-in text-slate-800 text-left">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                    <!-- 基本情報 -->
                     <div class="md:col-span-4 space-y-1">
                         <h4 class="text-2xl font-bold serif phrase mb-4 text-left">株式会社 成王建設</h4>
                         <div class="text-sm leading-loose tracking-widest text-slate-600 font-medium space-y-1 text-left">
@@ -283,7 +335,6 @@
                             <p class="phrase">資本金：5,000千円</p>
                         </div>
                     </div>
-                    <!-- 所在地・許認可 -->
                     <div class="md:col-span-8 space-y-6">
                         <div class="text-sm leading-loose tracking-widest text-slate-600 space-y-3">
                             <div class="flex flex-col sm:flex-row sm:items-start text-left">
@@ -301,37 +352,19 @@
                                 <span class="phrase text-left">土木工事 / 建築工事 / とび・土工工事 / 解体工事一式</span>
                             </div>
                         </div>
-                        <!-- 許認可ブロック -->
                         <div class="bg-white p-6 border border-slate-200 rounded-sm">
                             <p class="text-[11px] tracking-[0.4em] text-slate-900 font-bold mb-4 uppercase font-sans phrase text-left">許認可</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-xs text-slate-500 text-left">
-                                <div class="flex justify-between border-b border-slate-100 pb-1">
-                                    <span class="phrase">建設業許可</span>
-                                    <span class="text-slate-900 font-bold address-unit">愛媛県知事 第014057号</span>
-                                </div>
-                                <div class="flex justify-between border-b border-slate-100 pb-1">
-                                    <span class="phrase text-left">産廃収集運搬（愛媛県）</span>
-                                    <span class="text-slate-900 font-bold address-unit">第03802100626号</span>
-                                </div>
-                                <div class="flex justify-between border-b border-slate-100 pb-1">
-                                    <span class="phrase text-left">産廃収集運搬（松山市）</span>
-                                    <span class="text-slate-900 font-bold address-unit">第08910100626号</span>
-                                </div>
-                                <div class="flex justify-between border-b border-slate-100 pb-1">
-                                    <span class="phrase text-left">一般廃棄物運搬（松山市）</span>
-                                    <span class="text-slate-900 font-bold address-unit">第20081001201号</span>
-                                </div>
-                                <div class="flex justify-between border-b border-slate-100 pb-1">
-                                    <span class="phrase text-left">産業廃棄物処分業</span>
-                                    <span class="text-slate-900 font-bold address-unit">第08920100626号</span>
-                                </div>
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>建設業許可</span><span class="text-slate-900 font-bold address-unit">愛媛県知事 第014057号</span></div>
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>産廃収集運搬（愛媛県）</span><span class="text-slate-900 font-bold address-unit">第03802100626号</span></div>
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>産廃収集運搬（松山市）</span><span class="text-slate-900 font-bold address-unit">第08910100626号</span></div>
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>一般廃棄物運搬（松山市）</span><span class="text-slate-900 font-bold address-unit">第20081001201号</span></div>
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>産業廃棄物処分業</span><span class="text-slate-900 font-bold address-unit">第08920100626号</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div class="mt-20 md:mt-32 pt-10 border-t border-slate-200 text-center">
                 <p class="text-[10px] tracking-[0.6em] text-slate-400 uppercase font-bold font-sans phrase">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
             </div>
@@ -339,16 +372,13 @@
     </footer>
 
     <script>
-        // フェードインアニメーション
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // スムーズスクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -363,7 +393,6 @@
             });
         });
 
-        // モバイルメニュー制御
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if (menuBtn && mobileMenu) {
