@@ -3,152 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社 成王建設 | 誠実な解体</title>
+    <title>株式会社 成王建設｜愛媛県全域・松山市の解体工事</title>
+    <meta name="description" content="愛媛県全域・松山市の解体工事は信頼と実績の成王建設へ。丁寧で真面目な職人が、住宅解体・鉄骨/RC造・内装解体・アスベスト除去まで誠実に対応。現地調査・お見積もりは完全無料。かんたん見積もりシミュレーションも。">
 
-    <!-- アイコン設定 -->
     <link rel="icon" type="image/png" href="logo.png?v=16">
-    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: #ffffff;
-            color: #2d2d2d;
-        }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #ffffff; color: #2d2d2d; }
         .serif { font-family: 'Shippori Mincho', serif; }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1.2s cubic-bezier(0.22,1,0.36,1), transform 1.2s cubic-bezier(0.22,1,0.36,1); }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .bg-contact-block {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
+        .bg-dark { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .nav-glass { background-color: rgba(255,255,255,0.98); backdrop-filter: blur(12px); }
 
-        .nav-glass {
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-        }
-
-        .vertical-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, #0f172a, transparent);
-            margin: 0 auto;
-            opacity: 0.4;
-        }
-        @media (min-width: 768px) { .vertical-line { height: 80px; } }
-
-        #mobile-menu {
-            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-            transform: translateX(100%);
-        }
+        #mobile-menu { transition: transform 0.6s cubic-bezier(0.77,0,0.175,1); transform: translateX(100%); }
         #mobile-menu.active { transform: translateX(0); }
 
-        .service-card {
-            background-color: #ffffff;
-            border: 1.5px solid #cbd5e1;
-            transition: all 0.4s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: #0f172a;
-        }
+        .service-card { background-color:#fff; border:1.5px solid #e2e8f0; transition: all .35s ease; }
+        .service-card:hover { transform: translateY(-4px); box-shadow:0 18px 30px -12px rgba(0,0,0,.18); border-color:#0f172a; }
 
-        /* スライダークラス */
-        .slider-container {
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .slider-container::-webkit-scrollbar { display: none; }
-        .slide-item { scroll-snap-align: start; }
-        /* タブのスタイル */
-        .tab-btn {
-            white-space: nowrap;
-            border-bottom: 2px solid transparent;
-        }
-        .tab-btn.active {
-            color: #0f172a;
-            border-bottom: 2px solid #0f172a;
-        }
+        /* シミュレーター */
+        .sim-struct-btn { border:1.5px solid #334155; transition:all .25s ease; background:rgba(255,255,255,.04); color:#e2e8f0; }
+        .sim-struct-btn.active { border-color:#fff; background:#fff; color:#0f172a; }
+        .sim-struct-btn.active .sim-sub { color:#475569; }
+        .sim-sub { color:#94a3b8; }
+        .sim-opt { border:1.5px solid #334155; transition:all .2s ease; cursor:pointer; color:#cbd5e1; }
+        .sim-opt:hover { border-color:#64748b; }
+        .sim-opt.active { border-color:#fff; background:rgba(255,255,255,.08); color:#fff; }
+        .sim-check { transition:all .2s ease; border:2px solid #475569; }
+        .sim-opt.active .sim-check { background:#fff; border-color:#fff; }
+        .sim-opt.active .sim-check svg { opacity:1; }
 
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        .brand-logo-wrap {
-            display: flex;
-            align-items: center;
-        }
-
-        /* === 見積シミュレーター用スタイル（追加） === */
-        .sim-struct-btn {
-            border: 1.5px solid #cbd5e1;
-            transition: all 0.25s ease;
-            background-color: #ffffff;
-        }
-        .sim-struct-btn.active {
-            border-color: #0f172a;
-            background-color: #0f172a;
-            color: #ffffff;
-            box-shadow: 0 10px 20px -8px rgba(15, 23, 42, 0.5);
-        }
-        .sim-struct-btn.active .sim-struct-sub { color: #cbd5e1; }
-        .sim-opt {
-            border: 1.5px solid #e2e8f0;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .sim-opt:hover { border-color: #94a3b8; }
-        .sim-opt.active {
-            border-color: #0f172a;
-            background-color: #f8fafc;
-        }
-        .sim-opt .sim-check {
-            transition: all 0.2s ease;
-            border: 2px solid #cbd5e1;
-        }
-        .sim-opt.active .sim-check {
-            background-color: #0f172a;
-            border-color: #0f172a;
-        }
-        .sim-opt.active .sim-check svg { opacity: 1; }
+        /* FAQ アコーディオン */
+        details.faq { border:1px solid #e2e8f0; background:#fff; border-radius:8px; transition: box-shadow .2s ease; }
+        details.faq[open] { box-shadow:0 10px 25px -15px rgba(0,0,0,.25); border-color:#cbd5e1; }
+        details.faq summary { list-style:none; cursor:pointer; }
+        details.faq summary::-webkit-details-marker { display:none; }
+        details.faq summary .chev { transition: transform .25s ease; }
+        details.faq[open] summary .chev { transform: rotate(180deg); }
+        .faq-hidden { display:none !important; }
     </style>
 </head>
 <body class="overflow-x-hidden text-slate-900">
-    <!-- Navigation -->
+
+    <!-- ===== Navigation ===== -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center text-slate-900">
-            <div class="brand-logo-wrap gap-3 md:gap-5">
-                <img src="logo.png" alt="NARUOU" class="h-9 md:h-12 w-auto object-contain">
-                <h1 class="text-[18px] md:text-2xl font-bold tracking-tight text-slate-900 serif leading-none flex items-center">
-                    <span class="inline-flex flex-col text-[8px] md:text-[11px] leading-[1.1] mr-1.5 md:mr-2 font-normal serif text-slate-900">
-                        <span>株式</span>
-                        <span>会社</span>
-                    </span>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 md:gap-5">
+                <img src="logo.png" alt="成王建設" class="h-9 md:h-12 w-auto object-contain">
+                <h1 class="text-[18px] md:text-2xl font-bold tracking-tight serif leading-none flex items-center">
+                    <span class="inline-flex flex-col text-[8px] md:text-[11px] leading-[1.1] mr-1.5 md:mr-2 font-normal serif"><span>株式</span><span>会社</span></span>
                     <span class="tracking-normal">成王建設</span>
                 </h1>
             </div>
-
-            <div class="hidden lg:flex items-center space-x-8 text-[12px] font-bold tracking-[0.1em] text-slate-600">
-                <a href="#history" class="hover:text-slate-900 transition-colors">歩み</a>
-                <a href="#service" class="hover:text-slate-900 transition-colors">事業内容</a>
-                <a href="#simulator" class="hover:text-slate-900 transition-colors">概算見積</a>
-                <a href="#guide" class="hover:text-slate-900 transition-colors">なるおう解説</a>
-                <a href="#projects" class="hover:text-slate-900 transition-colors">実績紹介</a>
-                <a href="#ceo" class="hover:text-slate-900 transition-colors">代表挨拶</a>
+            <div class="hidden lg:flex items-center space-x-7 text-[12px] font-bold tracking-[0.1em] text-slate-600">
+                <a href="#simulator" class="hover:text-slate-900 transition-colors">見積もり</a>
+                <a href="#about" class="hover:text-slate-900 transition-colors">会社案内</a>
+                <a href="#service" class="hover:text-slate-900 transition-colors">対応工事</a>
+                <a href="#faq" class="hover:text-slate-900 transition-colors">よくある質問</a>
                 <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="hover:text-pink-600 transition-colors flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
-                <a href="#contact" class="bg-slate-900 text-white px-5 py-2.5 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm text-center">お問い合わせ</a>
+                <a href="#contact" class="bg-slate-900 text-white px-5 py-2.5 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm">お問い合わせ</a>
             </div>
             <div class="flex items-center gap-4 lg:hidden">
                 <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-slate-900">
@@ -162,169 +84,88 @@
             </div>
         </div>
     </nav>
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
-        <a href="#history" class="mobile-link">歩み</a>
-        <a href="#service" class="mobile-link">事業内容</a>
-        <a href="#simulator" class="mobile-link">概算見積</a>
-        <a href="#guide" class="mobile-link">なるおう解説</a>
-        <a href="#projects" class="mobile-link">実績紹介</a>
-        <a href="#ceo" class="mobile-link">代表挨拶</a>
-        <a href="#contact" class="mobile-link bg-slate-900 text-white px-8 py-4 rounded-sm mt-4 shadow-lg text-lg text-center text-white">お問い合わせ</a>
-    </div>
-    <!-- Hero Section -->
-    <section class="relative min-h-[70vh] md:min-h-[90vh] w-full flex flex-col items-center pt-24 md:pt-40 pb-10 bg-white text-slate-900">
-        <div class="text-center px-6 z-10 fade-in mb-8">
-            <!-- SEOと顧客へのアピールのための地域名追加 (デザイン修正) -->
-            <p class="text-sm md:text-base text-slate-500 tracking-[0.4em] mb-6 md:mb-10 serif font-bold">愛媛県全域対応・松山市の解体工事</p>
 
-            <h2 class="text-slate-900 text-3xl md:text-6xl lg:text-7xl font-bold tracking-hero serif mb-8 md:mb-12 leading-tight">
-                価値を繋ぐ、<br class="md:hidden">「解体」の技術
-            </h2>
-            <div class="vertical-line"></div>
-        </div>
-        <div class="w-full px-4 md:px-24 max-w-7xl mx-auto fade-in">
-            <div class="relative overflow-hidden shadow-2xl rounded-sm text-slate-900">
-                <img src="600004693690679420.jpg" alt="重機" class="w-full h-auto object-cover bg-white transition-transform duration-[3000ms] hover:scale-105">
-            </div>
-        </div>
-    </section>
-    <!-- お知らせ (News) -->
-    <section class="py-8 bg-white px-6">
-        <div class="max-w-4xl mx-auto fade-in bg-slate-50 border border-slate-100 rounded-lg p-6 md:p-8 space-y-4 text-slate-900 shadow-sm">
-            <!-- ライブラリ公開のお知らせ -->
-            <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-                <div class="flex items-center gap-4 shrink-0">
-                    <span class="text-[10px] tracking-widest font-bold text-white bg-slate-800 px-2 py-1 rounded-sm serif uppercase">New</span>
-                    <span class="text-sm text-slate-500 font-mono">2026年5月16日</span>
-                </div>
-                <div class="flex-grow">
-                    <a href="#guide" class="text-sm md:text-base font-normal text-slate-900 hover:text-blue-600 transition-colors border-b border-slate-300 hover:border-blue-600">なるおう解説ライブラリを公開</a>
-                </div>
-            </div>
-            <div class="h-px bg-slate-200 w-full"></div>
-            <!-- インスタ開設のお知らせ -->
-            <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-                <div class="flex items-center gap-4 shrink-0 text-slate-900">
-                    <span class="text-[10px] tracking-widest font-bold text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-sm serif uppercase">Notice</span>
-                    <span class="text-sm text-slate-500 font-mono">2026年4月19日</span>
-                </div>
-                <div>
-                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-sm md:text-base font-normal text-slate-900 hover:text-pink-600 transition-colors border-b border-slate-300 hover:border-pink-600 pb-0.5">
-                        公式 Instagram 開設
+    <!-- ===== Mobile Menu ===== -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
+        <a href="#simulator" class="mobile-link">見積もり</a>
+        <a href="#about" class="mobile-link">会社案内</a>
+        <a href="#service" class="mobile-link">対応工事</a>
+        <a href="#faq" class="mobile-link">よくある質問</a>
+        <a href="#contact" class="mobile-link bg-slate-900 text-white px-8 py-4 rounded-sm mt-4 shadow-lg text-lg">お問い合わせ</a>
+    </div>
+
+    <!-- ===== HERO（白） ===== -->
+    <section class="relative w-full pt-28 md:pt-40 pb-12 md:pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <!-- コピー -->
+                <div class="fade-in order-1 text-center lg:text-left">
+                    <p class="inline-block text-xs md:text-sm text-white bg-slate-900 px-4 py-1.5 rounded-full tracking-[0.2em] font-bold mb-6">愛媛県全域・松山市の解体工事</p>
+                    <h2 class="serif font-bold text-slate-900 leading-[1.3] text-3xl md:text-5xl mb-6">
+                        圧倒的な信頼と<br>実績の、<span class="text-[#890a1e]">30年。</span>
+                    </h2>
+                    <p class="text-base md:text-lg text-slate-600 font-bold tracking-wider leading-relaxed mb-8">
+                        丁寧で真面目な職人が、<br class="md:hidden">誠実に解体します。
+                    </p>
+                    <!-- 強み3点 -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-10">
+                        <span class="text-xs md:text-sm font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-full">創業30年の安心</span>
+                        <span class="text-xs md:text-sm font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-full">現地調査・見積もり無料</span>
+                        <span class="text-xs md:text-sm font-bold text-slate-700 bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-full">強引な営業なし</span>
+                    </div>
+                    <!-- CTA：すぐ見積もり -->
+                    <a href="#simulator" class="group inline-flex items-center gap-3 bg-[#890a1e] text-white px-7 py-4 md:px-9 md:py-5 rounded-sm shadow-xl hover:bg-[#6f0818] transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        <span class="text-left leading-tight">
+                            <span class="block font-bold text-base md:text-lg tracking-wider">かんたん見積もりシミュレーション</span>
+                            <span class="block text-[11px] md:text-xs text-white/80 font-normal">最短30秒・かんたん入力ですぐわかる</span>
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- History Section -->
-    <section id="history" class="py-12 md:py-32 px-6 bg-slate-50 border-y border-slate-200/80">
-        <div class="max-w-7xl mx-auto text-left text-slate-900">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-center text-slate-900">
-                <div class="order-2 md:order-1 fade-in">
-                    <div class="relative group overflow-hidden shadow-2xl rounded-sm">
-                        <img src="600009998998962196.jpg" alt="現場" class="w-full h-[260px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105">
+                <!-- 画像：左ユンボ・右社長 -->
+                <div class="fade-in order-2 grid grid-cols-2 gap-3 md:gap-4">
+                    <div class="relative overflow-hidden rounded-sm shadow-2xl">
+                        <img src="600004693690679420.jpg" alt="松山市で解体工事を行う成王建設の重機（ユンボ）" class="w-full h-64 md:h-[460px] object-cover transition-transform duration-[3000ms] hover:scale-105">
+                        <span class="absolute bottom-0 left-0 bg-slate-900/80 text-white text-[10px] md:text-xs px-3 py-1.5 tracking-widest">確かな技術</span>
                     </div>
-                </div>
-                <div class="order-1 md:order-2 fade-in text-slate-900">
-                    <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 md:mb-8 uppercase">Trusted for 30 Years</span>
-                    <h3 class="text-3xl md:text-5xl font-bold serif leading-tight mb-8 md:mb-12">
-                        愛媛の地で、<br class="md:hidden">信頼されて<span class="text-slate-800">30年。</span>
-                    </h3>
-                    <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-slate-900">成王建設は解体事業に特化した専門集団です。創業以来磨き上げた「誠実」と「技術」を武器に、数多くの現場と向き合ってまいりました。地域社会の再生を担う責任を胸に、安全・丁寧な施工をお約束いたします。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Service Section -->
-    <section id="service" class="bg-white py-12 md:py-32 px-6 text-center text-slate-900">
-        <div class="max-w-7xl mx-auto text-slate-900">
-            <div class="mb-10 md:mb-24 fade-in flex flex-col items-center">
-                <span class="text-slate-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-slate-300">Services</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-10 w-full block">サービス内容</h3>
-                <div class="inline-block border border-slate-200 p-6 md:p-10 rounded-sm">
-                    <p class="text-sm md:text-lg tracking-widest font-bold leading-relaxed text-slate-800 text-center">
-                        建物的の大小・構造を問わず、<br class="md:hidden">
-                        <span class="text-[#890a1e] font-bold">全て</span>の解体に対応いたします
-                    </p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left text-slate-900">
-                <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 font-sans">01</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900">住宅解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-slate-900">一棟全解体から切り離し解体まで。近隣への配慮を徹底し、更地へと仕上げます。</p>
-                </div>
-                <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 font-sans">02</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900">鉄骨・RC造解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-slate-900">ビル、店舗、工場など、構造を問わず全ての解体が可能です。熟練の技術で安全・迅速に施工します。</p>
-                </div>
-                <div class="fade-in service-card p-8 md:p-10 shadow-sm">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 font-sans">03</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900">内装解体</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider text-slate-900">店舗やオフィスのスケルトン工事。正確な分別と管理により高品質な更地へと仕上げます。</p>
-                </div>
-                <div class="fade-in service-card p-8 md:p-10 shadow-sm text-slate-900">
-                    <span class="text-slate-400 text-[10px] tracking-widest font-bold block mb-6 font-sans">04</span>
-                    <h4 class="text-xl font-bold mb-6 serif text-slate-900">アスベスト除去</h4>
-                    <p class="text-slate-500 text-xs leading-[2.4] tracking-wider">法令を遵守し、専門スタッフが最新の飛散防止対策を講じて確実に除去。一気通貫で対応します。</p>
+                    <div class="relative overflow-hidden rounded-sm shadow-2xl">
+                        <img src="fatherbike.jpg" alt="株式会社成王建設 代表取締役 菅 正行" class="w-full h-64 md:h-[460px] object-cover transition-transform duration-[3000ms] hover:scale-105">
+                        <span class="absolute bottom-0 left-0 bg-[#890a1e]/90 text-white text-[10px] md:text-xs px-3 py-1.5 tracking-widest">代表 菅 正行</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================= -->
-    <!-- 概算見積シミュレーション（追加セクション）                      -->
-    <!-- 過去230件以上の成王建設の実績データ（構造別 坪単価）に基づく概算 -->
-    <!-- ============================================================= -->
-    <section id="simulator" class="py-16 md:py-32 px-6 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-4xl mx-auto">
-            <div class="mb-10 md:mb-16 fade-in text-center">
-                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Quick Estimate</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-6">概算見積シミュレーション</h3>
-                <p class="text-slate-500 text-sm md:text-base leading-[2] tracking-wider">
-                    建物の構造と広さを選ぶだけで、解体費用の<span class="font-bold text-slate-800">概算</span>がその場でわかります。<br class="hidden md:block">
-                    成王建設の<span class="font-bold text-slate-800">過去230件以上の実績データ</span>をもとに自動計算します。
+    <!-- ===== 見積もりシミュレーション（濃紺・目立たせる） ===== -->
+    <section id="simulator" class="py-16 md:py-28 px-6 bg-dark text-white border-y-4 border-[#890a1e]">
+        <div class="max-w-3xl mx-auto">
+            <div class="fade-in text-center mb-10">
+                <span class="text-blue-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Quick Simulation</span>
+                <h3 class="text-3xl md:text-4xl font-bold serif mb-5">かんたん見積もりシミュレーション</h3>
+                <p class="text-slate-300 text-sm md:text-base leading-[2] tracking-wider">
+                    選んで入力するだけ。<span class="text-white font-bold">最短30秒</span>で解体費用の目安がわかります。<br class="hidden md:block">
+                    成王建設の<span class="text-white font-bold">過去230件以上の実績データ</span>から自動計算します。
                 </p>
             </div>
 
-            <div class="fade-in bg-white rounded-lg shadow-xl border border-slate-100 p-6 md:p-12">
-                <!-- STEP 1 構造 -->
-                <div class="mb-10">
-                    <div class="flex items-center gap-3 mb-5">
-                        <span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">1</span>
-                        <h4 class="text-lg font-bold serif text-slate-900">建物の構造を選ぶ</h4>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="sim-structs">
-                        <button type="button" data-rate="50000" class="sim-struct-btn active p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
-                            <span class="block font-bold text-base">木造</span>
-                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">一般住宅・空き家</span>
-                        </button>
-                        <button type="button" data-rate="70000" class="sim-struct-btn p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
-                            <span class="block font-bold text-base">軽量鉄骨</span>
-                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">プレハブ・アパート</span>
-                        </button>
-                        <button type="button" data-rate="80000" class="sim-struct-btn p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
-                            <span class="block font-bold text-base">鉄骨造</span>
-                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">店舗・工場</span>
-                        </button>
-                        <button type="button" data-rate="90000" class="sim-struct-btn p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
-                            <span class="block font-bold text-base">RC造</span>
-                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">ビル・マンション</span>
-                        </button>
+            <div class="fade-in bg-white text-slate-900 rounded-lg shadow-2xl p-6 md:p-10">
+                <!-- STEP1 構造 -->
+                <div class="mb-8">
+                    <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">1</span><span class="text-base font-bold serif">建物の構造</span></p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="sim-structs" style="--tw:0">
+                        <button type="button" data-rate="50000" data-name="木造" class="sim-struct-btn-l active p-4 rounded-sm text-center" onclick="simSelectStruct(this)"><span class="block font-bold">木造</span><span class="block text-[10px] mt-1 text-slate-400">住宅・空き家</span></button>
+                        <button type="button" data-rate="70000" data-name="軽量鉄骨" class="sim-struct-btn-l p-4 rounded-sm text-center" onclick="simSelectStruct(this)"><span class="block font-bold">軽量鉄骨</span><span class="block text-[10px] mt-1 text-slate-400">プレハブ・アパート</span></button>
+                        <button type="button" data-rate="80000" data-name="鉄骨造" class="sim-struct-btn-l p-4 rounded-sm text-center" onclick="simSelectStruct(this)"><span class="block font-bold">鉄骨造</span><span class="block text-[10px] mt-1 text-slate-400">店舗・工場</span></button>
+                        <button type="button" data-rate="90000" data-name="RC造" class="sim-struct-btn-l p-4 rounded-sm text-center" onclick="simSelectStruct(this)"><span class="block font-bold">RC造</span><span class="block text-[10px] mt-1 text-slate-400">ビル・マンション</span></button>
                     </div>
                 </div>
-
-                <!-- STEP 2 広さ -->
-                <div class="mb-10">
-                    <div class="flex items-center gap-3 mb-5">
-                        <span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">2</span>
-                        <h4 class="text-lg font-bold serif text-slate-900">延床面積を入力する</h4>
-                    </div>
+                <!-- STEP2 面積 -->
+                <div class="mb-8">
+                    <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">2</span><span class="text-base font-bold serif">延床面積</span></p>
                     <div class="flex items-center gap-3 flex-wrap">
-                        <input type="number" id="sim-area" min="0" inputmode="decimal" placeholder="例：30" oninput="simCalc()"
-                            class="w-32 md:w-40 border-2 border-slate-300 rounded-sm px-4 py-3 text-lg font-bold text-slate-900 focus:border-slate-900 focus:outline-none">
+                        <input type="number" id="sim-area" min="0" inputmode="decimal" placeholder="例：30" oninput="simCalc()" class="w-32 md:w-40 border-2 border-slate-300 rounded-sm px-4 py-3 text-lg font-bold focus:border-slate-900 focus:outline-none">
                         <div class="inline-flex border border-slate-300 rounded-sm overflow-hidden text-sm font-bold">
                             <button type="button" id="sim-unit-tsubo" class="px-4 py-3 bg-slate-900 text-white" onclick="simSetUnit('tsubo')">坪</button>
                             <button type="button" id="sim-unit-sqm" class="px-4 py-3 bg-white text-slate-500" onclick="simSetUnit('sqm')">㎡</button>
@@ -332,365 +173,400 @@
                         <span class="text-xs text-slate-400">（1坪 ≒ 3.3㎡）</span>
                     </div>
                 </div>
-
-                <!-- STEP 3 条件 -->
-                <div class="mb-10">
-                    <div class="flex items-center gap-3 mb-5">
-                        <span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">3</span>
-                        <h4 class="text-lg font-bold serif text-slate-900">当てはまる条件を選ぶ<span class="text-xs font-normal text-slate-400 ml-2">（任意・複数可）</span></h4>
-                    </div>
+                <!-- STEP3 条件 -->
+                <div class="mb-8">
+                    <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">3</span><span class="text-base font-bold serif">当てはまる条件<span class="text-xs font-normal text-slate-400 ml-1">（任意・複数可）</span></span></p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="sim-options">
-                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.15" onclick="simToggleOpt(this)">
-                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
-                            <span class="text-sm text-slate-700">アスベスト含有の可能性がある<span class="block text-[10px] text-slate-400">（古い外壁・屋根材など／別途事前調査）</span></span>
-                        </div>
-                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.10" onclick="simToggleOpt(this)">
-                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
-                            <span class="text-sm text-slate-700">ブロック塀・外構が多い<span class="block text-[10px] text-slate-400">（塀・門柱・土間など）</span></span>
-                        </div>
-                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.08" onclick="simToggleOpt(this)">
-                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
-                            <span class="text-sm text-slate-700">庭木・植栽が多い<span class="block text-[10px] text-slate-400">（樹木・竹・雑草の撤去）</span></span>
-                        </div>
-                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.08" onclick="simToggleOpt(this)">
-                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
-                            <span class="text-sm text-slate-700">家具・家電などの残置物が多い<span class="block text-[10px] text-slate-400">（室内に物が残っている）</span></span>
-                        </div>
-                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.12" onclick="simToggleOpt(this)">
-                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
-                            <span class="text-sm text-slate-700">前面道路が狭い・重機が入りにくい<span class="block text-[10px] text-slate-400">（手壊し作業が増える）</span></span>
-                        </div>
-                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.05" onclick="simToggleOpt(this)">
-                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
-                            <span class="text-sm text-slate-700">浄化槽・便槽がある<span class="block text-[10px] text-slate-400">（地中埋設物の撤去）</span></span>
-                        </div>
+                        <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.15" data-label="アスベストの可能性" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">アスベスト含有の可能性<span class="block text-[10px] text-slate-400">古い外壁・屋根材／別途調査</span></span></div>
+                        <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.10" data-label="ブロック塀・外構が多い" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">ブロック塀・外構が多い<span class="block text-[10px] text-slate-400">塀・門柱・土間など</span></span></div>
+                        <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.08" data-label="庭木・植栽が多い" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">庭木・植栽が多い<span class="block text-[10px] text-slate-400">樹木・竹・雑草の撤去</span></span></div>
+                        <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.08" data-label="残置物が多い" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">家具・家電などの残置物が多い<span class="block text-[10px] text-slate-400">室内に物が残っている</span></span></div>
+                        <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.12" data-label="前面道路が狭い" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">前面道路が狭い・重機が入りにくい<span class="block text-[10px] text-slate-400">手壊し作業が増える</span></span></div>
+                        <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.05" data-label="浄化槽・便槽あり" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">浄化槽・便槽がある<span class="block text-[10px] text-slate-400">地中埋設物の撤去</span></span></div>
                     </div>
                 </div>
 
-                <!-- 結果 -->
-                <div class="bg-contact-block text-white rounded-lg p-8 md:p-10 text-center">
-                    <p class="text-blue-300 text-xs tracking-[0.3em] font-bold uppercase mb-3">概算費用（税込）</p>
-                    <div id="sim-result" class="serif font-bold leading-tight mb-2">
-                        <span class="text-2xl md:text-3xl text-slate-300">建物の広さを入力してください</span>
+                <!-- STEP4 名前・メール（必須ゲート） -->
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 md:p-6 mb-6">
+                    <p class="flex items-center gap-3 mb-2"><span class="bg-[#890a1e] text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">4</span><span class="text-base font-bold serif">お名前とメールアドレスを入力</span></p>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">結果の表示にはご入力が必要です。担当より、より正確なお見積もりのご案内も可能です。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input type="text" id="sim-name" placeholder="お名前（例：成王 太郎）" class="border-2 border-slate-300 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
+                        <input type="email" id="sim-email" placeholder="メールアドレス" class="border-2 border-slate-300 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
                     </div>
-                    <p id="sim-result-note" class="text-[11px] text-slate-400 tracking-wider"></p>
+                    <p id="sim-error" class="text-xs text-[#890a1e] font-bold mt-2 hidden">お名前と正しいメールアドレスをご入力ください。</p>
+                    <button type="button" id="sim-unlock-btn" onclick="simUnlock()" class="w-full mt-4 bg-slate-900 text-white py-4 rounded-sm font-bold tracking-widest hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        見積もり結果を見る
+                    </button>
                 </div>
 
-                <p class="text-[11px] text-slate-400 leading-relaxed tracking-wider mt-6">
-                    ※ 本シミュレーションは過去の実績データに基づく<span class="font-bold text-slate-500">概算（目安）</span>です。建物の状態・立地・付帯工事・廃材量などにより実際の金額は変動します。正確な金額は、<span class="font-bold text-slate-500">無料の現地調査・お見積もり</span>にてご確認ください。
-                </p>
+                <!-- 結果（ロック中はぼかし） -->
+                <div class="relative">
+                    <div id="sim-lock-overlay" class="absolute inset-0 bg-white/70 backdrop-blur-sm rounded-lg flex items-center justify-center z-10">
+                        <span class="text-slate-500 text-sm font-bold flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>上記を入力すると表示されます</span>
+                    </div>
+                    <div class="bg-dark text-white rounded-lg p-8 md:p-10 text-center">
+                        <p class="text-blue-300 text-xs tracking-[0.3em] font-bold uppercase mb-3">解体費用の目安（税込）</p>
+                        <div id="sim-result" class="serif font-bold leading-tight mb-2"><span class="text-2xl md:text-3xl text-slate-300">建物の広さを入力してください</span></div>
+                        <p id="sim-result-note" class="text-[11px] text-slate-400 tracking-wider"></p>
+                    </div>
+                </div>
 
-                <!-- CTA -->
-                <div class="flex flex-col sm:flex-row gap-3 mt-8">
-                    <a href="tel:0899246604" class="flex-1 flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-sm font-bold tracking-widest hover:bg-slate-700 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        電話で無料相談
-                    </a>
-                    <a href="#contact" class="flex-1 flex items-center justify-center gap-2 bg-white border-2 border-slate-900 text-slate-900 py-4 rounded-sm font-bold tracking-widest hover:bg-slate-50 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        無料見積もりを依頼
-                    </a>
+                <p class="text-[11px] text-slate-400 leading-relaxed tracking-wider mt-5">※ 実績データに基づく目安です。建物の状態・立地・付帯工事・廃材量などにより実際の金額は変動します。正確な金額は無料の現地調査・お見積もりにてご確認ください。</p>
+
+                <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                    <a href="tel:0899246604" class="flex-1 flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-sm font-bold tracking-widest hover:bg-slate-700 transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>電話で相談（無料）</a>
+                    <a href="#contact" class="flex-1 flex items-center justify-center gap-2 bg-white border-2 border-slate-900 text-slate-900 py-4 rounded-sm font-bold tracking-widest hover:bg-slate-50 transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>フォームで見積もり依頼</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- なるおう解説ライブラリ -->
-    <section id="guide" class="py-16 md:py-32 bg-slate-50 overflow-hidden border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-900">
-            <div class="mb-12 md:mb-16 fade-in text-slate-900 text-slate-900">
-                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-slate-400">Instagram Knowledge</span>
-                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-8">なるおう解説ライブラリ</h3>
+    <!-- ===== 会社案内（歩み＋実績を統合・白） ===== -->
+    <section id="about" class="py-14 md:py-28 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="fade-in text-center mb-10 md:mb-16">
+                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">About / Works</span>
+                <h3 class="text-3xl md:text-4xl font-bold serif">愛媛で信頼されて、30年。</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
+                <div class="fade-in">
+                    <p class="text-slate-600 leading-[2.2] tracking-wider text-sm md:text-base mb-8">成王建設は、愛媛県松山市を拠点に解体事業に特化した専門集団です。創業以来磨き上げた「誠実」と「技術」を武器に、地域の数多くの現場と向き合ってまいりました。安全管理と近隣への配慮を徹底し、未来への希望が描けるほど美しい更地に仕上げます。</p>
+                    <div class="grid grid-cols-3 gap-3 mb-8">
+                        <div class="text-center bg-slate-50 border border-slate-100 rounded-lg py-4"><span class="block text-2xl md:text-3xl font-bold serif text-[#890a1e]">30<span class="text-sm">年</span></span><span class="block text-[10px] text-slate-500 mt-1 tracking-wider">創業からの歩み</span></div>
+                        <div class="text-center bg-slate-50 border border-slate-100 rounded-lg py-4"><span class="block text-2xl md:text-3xl font-bold serif text-[#890a1e]">230<span class="text-sm">件+</span></span><span class="block text-[10px] text-slate-500 mt-1 tracking-wider">施工実績</span></div>
+                        <div class="text-center bg-slate-50 border border-slate-100 rounded-lg py-4"><span class="block text-2xl md:text-3xl font-bold serif text-[#890a1e]">全域</span><span class="block text-[10px] text-slate-500 mt-1 tracking-wider">愛媛県対応</span></div>
+                    </div>
+                    <div class="text-sm leading-loose tracking-wider text-slate-600 border-t border-slate-200 pt-5">
+                        <p class="font-bold serif text-slate-900 text-base mb-2">株式会社 成王建設</p>
+                        <p>代表取締役：菅 正行 ／ 資本金：5,000千円</p>
+                        <p>〒791-8017 愛媛県松山市西長戸町250-6</p>
+                        <p class="text-xs text-slate-500 mt-2">建設業許可 愛媛県知事 第014057号 ／ 産廃収集運搬 第03802100626号 ほか</p>
+                    </div>
+                </div>
+                <div class="fade-in grid grid-cols-2 gap-3 md:gap-4">
+                    <img src="600004840290779411.jpg" alt="松山市での解体工事 施工実績" class="w-full h-40 md:h-60 object-cover rounded-sm shadow-lg col-span-2">
+                    <img src="600009998998962196.jpg" alt="解体工事現場" class="w-full h-32 md:h-44 object-cover rounded-sm shadow-lg">
+                    <img src="600007693239321155.jpg" alt="環境に配慮した解体工事" class="w-full h-32 md:h-44 object-cover rounded-sm shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="flex justify-start md:justify-center overflow-x-auto gap-4 md:gap-8 border-b border-slate-200 pb-2 scrollbar-hide text-slate-900">
-                    <button onclick="changeTheme('flow')" id="btn-flow" class="tab-btn active px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">工事の流れ</button>
-                    <button onclick="changeTheme('types')" id="btn-types" class="tab-btn px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">建物の種類</button>
-                    <button onclick="changeTheme('choosing')" id="btn-choosing" class="tab-btn px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">業者の選び方</button>
-                    <button onclick="changeTheme('procedures')" id="btn-procedures" class="tab-btn px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">届出・手続き</button>
-                    <button onclick="changeTheme('asbestos')" id="btn-asbestos" class="tab-btn px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">アスベスト</button>
-                </div>
-            </div>
-            <div class="relative max-w-2xl mx-auto fade-in">
-                <div id="guide-slider" class="slider-container flex overflow-x-auto gap-4 pb-12">
-                    <!-- JSで挿入 -->
-                </div>
-
-                <button onclick="scrollSlider(-1)" class="hidden md:flex absolute -left-20 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm hover:bg-slate-50 transition-all text-slate-400 hover:text-slate-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-                </button>
-                <button onclick="scrollSlider(1)" class="hidden md:flex absolute -right-20 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm hover:bg-slate-50 transition-all text-slate-400 hover:text-slate-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-                </button>
-                <div class="mt-4 text-xs text-slate-400 font-medium">左右にスワイプ、または矢印でめくれます</div>
-            </div>
-        </div>
-    </section>
-    <!-- 実績紹介 -->
-    <section id="projects" class="py-12 md:py-32 px-6 bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto text-slate-900">
-            <div class="flex justify-between items-end mb-10 md:mb-24 fade-in text-left">
-                <div>
-                    <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-slate-400">Archive</span>
-                    <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900">施工実績</h3>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 text-left text-slate-900">
-                <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white">
-                        <img src="600004840290779411.jpg" alt="実績1" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-slate-400 text-slate-400">Safety Control</span>
-                        <div class="flex-grow h-px bg-slate-200"></div>
-                    </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 text-slate-900">安全管理と近隣配慮の徹底</p>
-                </div>
-                <div class="fade-in group">
-                    <div class="relative overflow-hidden shadow-2xl mb-6 md:mb-8 border border-white text-left text-slate-900">
-                        <img src="600007693239321155.jpg" alt="実績2" class="w-full h-64 md:h-[500px] object-cover transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0">
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <span class="text-[9px] tracking-widest text-slate-400 font-bold uppercase text-slate-400 text-slate-400">Work Progress</span>
-                        <div class="flex-grow h-px bg-slate-200"></div>
-                    </div>
-                    <p class="text-lg font-bold text-slate-800 serif mt-4 text-slate-900">環境に配慮した解体</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- 代表挨拶 -->
-    <section id="ceo" class="py-12 md:py-32 px-6 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-4xl mx-auto text-center text-slate-900">
-            <h3 class="text-3xl md:text-5xl font-bold serif text-slate-900 mb-10 md:mb-16 text-center text-slate-900">代表挨拶</h3>
-            <div class="mb-10 md:mb-16 flex justify-center fade-in">
-                <div class="relative group max-w-lg w-full text-slate-900">
-                    <img src="fatherbike.jpg" alt="代表 菅 正行" class="w-full h-auto shadow-2xl rounded-sm object-cover">
-                    <div class="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-slate-200 text-slate-900 text-slate-900"></div>
-                    <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-slate-200"></div>
-                </div>
-            </div>
-            <div class="fade-in text-left md:text-center max-w-2xl mx-auto text-slate-900">
-                <p class="text-slate-500 leading-[2.2] md:leading-[2.6] tracking-widest text-sm md:text-base text-slate-900">私たちは愛媛の地で、解体という仕事を通じて街の再生を担ってまいりました。創業以来、信念は変わりません。それは「どこまでも真面目に現場と向き合うこと」です。私たちが残す更地は、未来への希望が描けるほど美しくなければならないと考えています。</p>
-                <div class="text-right mt-12 text-slate-900">
-                    <p class="text-slate-900 font-bold serif leading-loose tracking-widest text-right">
-                        株式会社 成王建設<br>代表取締役 菅 正行
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer & Contact -->
-    <footer id="contact" class="bg-white pt-20 md:pt-32 pb-12 px-6 text-center text-slate-900">
+    <!-- ===== 対応工事（サービス・簡潔/slate-50） ===== -->
+    <section id="service" class="py-14 md:py-24 px-6 bg-slate-50 border-y border-slate-200">
         <div class="max-w-5xl mx-auto">
-            <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm fade-in mb-16 md:mb-24 shadow-xl text-center">
-                <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider text-white text-center">ご相談・お見積もり</h3>
-
-                <!-- 安心感を与える一言を追加 -->
-                <p class="text-sm md:text-base text-slate-300 mb-10 tracking-widest leading-relaxed font-bold">
-                    現地調査・お見積もりは完全無料です。<br class="md:hidden">
-                    強引な営業は一切いたしませんので、<br class="md:hidden">お気軽にご相談ください。
-                </p>
-                <div class="w-12 h-px bg-slate-500 mx-auto mb-12 opacity-50"></div>
-                <div class="flex flex-col items-center space-y-6 md:space-y-10 text-white">
-                    <a href="tel:0899246604" class="group block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">
-                        <span class="flex items-center justify-center gap-4 text-white text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-12 md:h-12"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            089-924-6604
-                        </span>
-                    </a>
-                    <a href="mailto:naruo.kaitai@gmail.com" class="group block text-lg md:text-2xl font-light tracking-tight hover:text-blue-400 transition-colors break-all font-sans text-center">
-                        <span class="flex items-center justify-center gap-4 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="md:w-8 md:h-8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                            naruo.kaitai@gmail.com
-                        </span>
-                    </a>
-                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full transition-all border border-white/20 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                        <span class="text-sm font-bold tracking-widest text-white">公式Instagram</span>
-                    </a>
+            <div class="fade-in text-center mb-10">
+                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Services</span>
+                <h3 class="text-2xl md:text-3xl font-bold serif mb-3">対応している解体工事</h3>
+                <p class="text-sm text-slate-500 tracking-wider">建物の大小・構造を問わず、<span class="text-[#890a1e] font-bold">全て</span>対応します。</p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+                <div class="fade-in service-card p-5 md:p-7 rounded-sm text-center">
+                    <svg class="mx-auto mb-3 text-slate-700" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+                    <h4 class="font-bold serif mb-1.5">住宅解体</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">一棟解体から切り離しまで。近隣配慮を徹底。</p>
+                </div>
+                <div class="fade-in service-card p-5 md:p-7 rounded-sm text-center">
+                    <svg class="mx-auto mb-3 text-slate-700" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01"/></svg>
+                    <h4 class="font-bold serif mb-1.5">鉄骨・RC造</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">ビル・店舗・工場。構造を問わず安全・迅速に。</p>
+                </div>
+                <div class="fade-in service-card p-5 md:p-7 rounded-sm text-center">
+                    <svg class="mx-auto mb-3 text-slate-700" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 20h20"/><path d="M4 20V8l8-5 8 5v12"/><path d="M9 20v-6h6v6"/></svg>
+                    <h4 class="font-bold serif mb-1.5">内装解体</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">店舗・オフィスのスケルトン。正確な分別管理。</p>
+                </div>
+                <div class="fade-in service-card p-5 md:p-7 rounded-sm text-center">
+                    <svg class="mx-auto mb-3 text-slate-700" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+                    <h4 class="font-bold serif mb-1.5">アスベスト除去</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">法令遵守・飛散防止対策で確実に除去。</p>
                 </div>
             </div>
-            <div class="fade-in text-slate-800 text-left text-slate-900 mt-16 text-left">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start text-slate-900">
-                    <div class="md:col-span-4 space-y-1 text-left text-slate-900 text-left">
-                        <h4 class="text-2xl font-bold serif mb-4 text-slate-900 text-left">株式会社 成王建設</h4>
-                        <div class="text-sm leading-loose tracking-widest text-slate-600 font-medium text-left text-slate-900">
-                            <p>代表者名：菅 正行</p>
-                            <p>資本金：5,000千円</p>
+        </div>
+    </section>
+
+    <!-- ===== 知りたいことは何ですか？（FAQ検索＋ドロップダウン・白） ===== -->
+    <section id="faq" class="py-14 md:py-28 px-6 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="fade-in text-center mb-8 md:mb-12">
+                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Knowledge</span>
+                <h3 class="text-3xl md:text-4xl font-bold serif mb-4">知りたいことは何ですか？</h3>
+                <p class="text-sm text-slate-500 tracking-wider mb-6">キーワードで検索、または項目をタップすると答えが開きます。</p>
+                <!-- 検索 -->
+                <div class="relative max-w-md mx-auto mb-5">
+                    <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="text" id="faq-search" oninput="faqFilter()" placeholder="例：費用 / 補助金 / 流れ / 立ち会い" class="w-full border-2 border-slate-200 rounded-full pl-11 pr-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
+                </div>
+                <!-- カテゴリ -->
+                <div class="flex flex-wrap justify-center gap-2" id="faq-cats">
+                    <button class="faq-cat active text-xs font-bold px-4 py-2 rounded-full border border-slate-300 bg-slate-900 text-white" data-cat="all" onclick="faqCat(this)">すべて</button>
+                    <button class="faq-cat text-xs font-bold px-4 py-2 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100" data-cat="flow" onclick="faqCat(this)">解体の流れ</button>
+                    <button class="faq-cat text-xs font-bold px-4 py-2 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100" data-cat="cost" onclick="faqCat(this)">費用・お見積もり</button>
+                    <button class="faq-cat text-xs font-bold px-4 py-2 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100" data-cat="hojo" onclick="faqCat(this)">補助金・手続き</button>
+                    <button class="faq-cat text-xs font-bold px-4 py-2 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100" data-cat="asb" onclick="faqCat(this)">アスベスト</button>
+                    <button class="faq-cat text-xs font-bold px-4 py-2 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-100" data-cat="other" onclick="faqCat(this)">その他</button>
+                </div>
+            </div>
+
+            <div class="space-y-3" id="faq-list">
+                <!-- JSで生成 -->
+            </div>
+            <p id="faq-empty" class="text-center text-sm text-slate-400 mt-8 hidden">該当する質問が見つかりませんでした。お気軽に直接お問い合わせください。</p>
+
+            <div class="text-center mt-10">
+                <p class="text-sm text-slate-500 mb-3">解決しないことは、お気軽にご質問ください。</p>
+                <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-sm font-bold text-sm tracking-widest hover:bg-slate-700 transition-colors">質問・相談する<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== お問い合わせ（フォーム＋連絡先・濃紺） ===== -->
+    <section id="contact" class="py-16 md:py-28 px-6 bg-dark text-white border-t-4 border-[#890a1e]">
+        <div class="max-w-5xl mx-auto">
+            <div class="fade-in text-center mb-10 md:mb-14">
+                <span class="text-blue-300 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Contact</span>
+                <h3 class="text-3xl md:text-5xl font-bold serif mb-5">ご相談・お見積もり</h3>
+                <p class="text-slate-300 text-sm md:text-base tracking-widest leading-relaxed font-bold">現地調査・お見積もりは完全無料です。<br class="md:hidden">強引な営業は一切いたしません。</p>
+            </div>
+
+            <div id="contact-thanks" class="hidden max-w-2xl mx-auto mb-8 bg-green-500/20 border border-green-400/40 text-green-100 rounded-lg p-5 text-center text-sm">
+                お問い合わせありがとうございます。担当より折り返しご連絡いたします。
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+                <!-- フォーム -->
+                <div class="lg:col-span-3 fade-in bg-white text-slate-900 rounded-lg shadow-2xl p-6 md:p-8">
+                    <p class="font-bold serif text-lg mb-1">フォームでお問い合わせ</p>
+                    <p class="text-xs text-slate-500 mb-5">必要事項をご記入のうえ送信してください（<span class="text-[#890a1e] font-bold">*</span> は必須）。</p>
+                    <form action="https://formsubmit.co/naruo.kaitai@gmail.com" method="POST" class="space-y-4">
+                        <!-- FormSubmit 設定 -->
+                        <input type="hidden" name="_subject" value="【HP】お問い合わせがありました">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://naruo-kaitai.com/?contact=done#contact">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1.5">お名前 <span class="text-[#890a1e]">*</span></label>
+                            <input type="text" name="お名前" required placeholder="成王 太郎" class="w-full border-2 border-slate-200 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
                         </div>
-                    </div>
-                    <div class="md:col-span-8 space-y-6 text-left text-slate-900 text-left text-slate-900 text-slate-900">
-                        <div class="text-sm leading-loose tracking-widest text-slate-600 space-y-3">
-                            <p>〒791-8017 愛媛県松山市西長戸町250-6</p>
-                            <p>〒799-2652 愛媛県松山市福角町甲909番2 ほか</p>
-                        </div>
-                        <div class="bg-white p-6 border border-slate-200 rounded-sm text-slate-900 text-left text-slate-900 shadow-sm">
-                            <p class="text-[11px] tracking-[0.4em] text-slate-900 font-bold mb-4 uppercase text-left text-slate-900">許認可</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-xs text-slate-500 text-left text-slate-900">
-                                <div class="flex justify-between border-b border-slate-100 pb-1 text-slate-900"><span>建設業許可</span><span class="text-slate-900 font-bold text-slate-900">愛媛県知事 第014057号</span></div>
-                                <div class="flex justify-between border-b border-slate-100 pb-1 text-slate-900"><span>産廃収集運搬</span><span class="text-slate-900 font-bold text-slate-900">第03802100626号 ほか</span></div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1.5">メールアドレス <span class="text-[#890a1e]">*</span></label>
+                                <input type="email" name="メールアドレス" required placeholder="example@mail.com" class="w-full border-2 border-slate-200 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1.5">電話番号</label>
+                                <input type="tel" name="電話番号" placeholder="090-0000-0000" class="w-full border-2 border-slate-200 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
                             </div>
                         </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1.5">建物の種類</label>
+                                <select name="建物の種類" class="w-full border-2 border-slate-200 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none bg-white">
+                                    <option value="未選択">選択してください</option>
+                                    <option>木造</option><option>軽量鉄骨</option><option>鉄骨造</option><option>RC造</option><option>その他・不明</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1.5">解体予定の場所（エリア）</label>
+                                <input type="text" name="解体予定の場所" placeholder="松山市〇〇町 など" class="w-full border-2 border-slate-200 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1.5">お問い合わせ内容 <span class="text-[#890a1e]">*</span></label>
+                            <textarea name="お問い合わせ内容" required rows="4" placeholder="解体時期・建物の広さ・ご質問など、わかる範囲でご記入ください。" class="w-full border-2 border-slate-200 rounded-sm px-4 py-3 text-sm focus:border-slate-900 focus:outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#890a1e] text-white py-4 rounded-sm font-bold tracking-widest hover:bg-[#6f0818] transition-colors flex items-center justify-center gap-2">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                            無料で相談・見積もりを依頼する
+                        </button>
+                        <p class="text-[10px] text-slate-400 text-center leading-relaxed">送信いただいた内容は naruo.kaitai@gmail.com に届きます。</p>
+                    </form>
+                </div>
+
+                <!-- 連絡先 -->
+                <div class="lg:col-span-2 fade-in space-y-6">
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+                        <p class="text-blue-300 text-[10px] tracking-[0.3em] font-bold uppercase mb-3">お電話（受付 平日8:00-18:00）</p>
+                        <a href="tel:0899246604" class="block text-3xl md:text-4xl font-light tracking-tight hover:text-blue-400 transition-colors">089-924-6604</a>
                     </div>
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+                        <p class="text-blue-300 text-[10px] tracking-[0.3em] font-bold uppercase mb-3">メール</p>
+                        <a href="mailto:naruo.kaitai@gmail.com" class="block text-base md:text-lg font-light hover:text-blue-400 transition-colors break-all">naruo.kaitai@gmail.com</a>
+                    </div>
+                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 px-6 py-4 rounded-full transition-all border border-white/20">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <span class="text-sm font-bold tracking-widest">公式Instagram</span>
+                    </a>
                 </div>
             </div>
-            <div class="mt-20 md:mt-32 pt-10 border-t border-slate-200 text-center text-slate-400">
+
+            <div class="mt-16 pt-8 border-t border-white/10 text-center text-slate-500">
                 <p class="text-[10px] tracking-[0.6em] uppercase font-bold">&copy; NARUO CONSTRUCTION. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
-    </footer>
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        // --- ライブラリデータ ---
-        const themes = {
-            flow: { title: '工事の流れ', prefix: 'guide1' },
-            types: { title: '建物の種類', prefix: 'guide2' },
-            choosing: { title: '業者の選び方', prefix: 'guide3' },
-            procedures: { title: '届出・手続き', prefix: 'guide4' },
-            asbestos: { title: 'アスベスト', prefix: 'guide5' }
-        };
-        const slider = document.getElementById('guide-slider');
-        function changeTheme(themeKey) {
-            const data = themes[themeKey];
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${themeKey}`).classList.add('active');
-            let html = '';
-            for (let i = 1; i <= 10; i++) {
-                const imgName = `${data.prefix}_${i}.png`;
-                html += `
-                    <div class="slide-item shrink-0 w-full aspect-square bg-white shadow-xl rounded-lg overflow-hidden border border-slate-100">
-                        <img src="${imgName}" alt="${data.title}${i}" class="w-full h-full object-cover" onerror="this.src='https://placehold.jp/24/0f172a/ffffff/600x600.png?text=${encodeURIComponent(data.title + i + '枚目')}%0A%28画像未アップロード%29'">
-                    </div>
-                `;
-            }
+    </section>
 
-            html += `
-                <div class="slide-item shrink-0 w-full aspect-square bg-slate-900 flex flex-col items-center justify-center text-center p-10 rounded-lg text-white">
-                    <img src="logo.png" class="h-16 mb-8 brightness-0 invert">
-                    <h4 class="text-xl font-bold serif mb-6 tracking-widest">続きはInstagramで</h4>
-                    <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="bg-white text-slate-900 px-8 py-3 rounded-full font-bold text-sm tracking-widest hover:bg-slate-200 transition-all flex items-center gap-3">フォローする</a>
-                </div>
-            `;
-            slider.innerHTML = html;
-            slider.scrollTo({ left: 0, behavior: 'smooth' });
-        }
-        function scrollSlider(direction) {
-            slider.scrollBy({ left: slider.offsetWidth * direction, behavior: 'smooth' });
-        }
-        window.onload = () => { changeTheme('flow'); };
-        // スムーズスクロール & メニュー閉じ
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(href);
-                    if (targetElement) {
-                        const headerHeight = 80;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    }
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if(mobileMenu && mobileMenu.classList.contains('active')){
-                        mobileMenu.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
+    <script>
+        /* ===== fade-in ===== */
+        const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+        document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+        /* ===== モバイルメニュー ===== */
+        const menuBtn=document.getElementById('menu-btn');
+        const mobileMenu=document.getElementById('mobile-menu');
+        if(menuBtn&&mobileMenu){menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('active');document.body.style.overflow=mobileMenu.classList.contains('active')?'hidden':'';});}
+
+        /* ===== スムーズスクロール ===== */
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click',function(e){
+                const href=this.getAttribute('href');
+                if(href.length>1&&href.startsWith('#')){
+                    const t=document.querySelector(href);
+                    if(t){e.preventDefault();const y=t.getBoundingClientRect().top+window.pageYOffset-72;window.scrollTo({top:y,behavior:'smooth'});}
+                    if(mobileMenu&&mobileMenu.classList.contains('active')){mobileMenu.classList.remove('active');document.body.style.overflow='';}
                 }
             });
         });
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-            });
-        }
-    </script>
 
-    <!-- ============================================================= -->
-    <!-- 概算見積シミュレーター ロジック（追加）                          -->
-    <!-- 構造別 坪単価は成王建設の過去実績（税込）の中央値ベース：        -->
-    <!--   木造 5.0万 / 軽量鉄骨 7.0万 / 鉄骨造 8.0万 / RC造 9.0万（円/坪） -->
-    <!-- ============================================================= -->
-    <script>
-        const SIM = {
-            rate: 50000,      // 採用中の坪単価（税込）
-            unit: 'tsubo',    // 'tsubo' or 'sqm'
-            SQM_PER_TSUBO: 3.305785,
-            MIN_PRICE: 300000 // 小規模でも回送・諸経費がかかるため下限
-        };
-
+        /* ===== 見積もりシミュレーター ===== */
+        const SIM={rate:50000,structName:'木造',unit:'tsubo',SQM:3.305785,MIN:300000,unlocked:false};
         function simSelectStruct(btn){
-            document.querySelectorAll('#sim-structs .sim-struct-btn').forEach(b=>b.classList.remove('active'));
+            document.querySelectorAll('#sim-structs .sim-struct-btn-l').forEach(b=>{b.classList.remove('active','sim-struct-btn');b.classList.remove('active');});
+            document.querySelectorAll('#sim-structs .sim-struct-btn-l').forEach(b=>b.classList.remove('active'));
+            // 見た目クラス適用
+            document.querySelectorAll('#sim-structs .sim-struct-btn-l').forEach(b=>{b.style.borderColor='#cbd5e1';b.style.background='#fff';b.style.color='#0f172a';});
+            btn.style.borderColor='#0f172a';btn.style.background='#0f172a';btn.style.color='#fff';
             btn.classList.add('active');
-            SIM.rate = parseFloat(btn.dataset.rate);
-            simCalc();
+            SIM.rate=parseFloat(btn.dataset.rate);SIM.structName=btn.dataset.name;simCalc();
         }
-        function simSetUnit(unit){
-            SIM.unit = unit;
-            const t = document.getElementById('sim-unit-tsubo');
-            const s = document.getElementById('sim-unit-sqm');
-            if(unit==='tsubo'){
-                t.className='px-4 py-3 bg-slate-900 text-white';
-                s.className='px-4 py-3 bg-white text-slate-500';
-            }else{
-                s.className='px-4 py-3 bg-slate-900 text-white';
-                t.className='px-4 py-3 bg-white text-slate-500';
-            }
+        function simSetUnit(u){
+            SIM.unit=u;
+            const t=document.getElementById('sim-unit-tsubo'),s=document.getElementById('sim-unit-sqm');
+            if(u==='tsubo'){t.className='px-4 py-3 bg-slate-900 text-white';s.className='px-4 py-3 bg-white text-slate-500';}
+            else{s.className='px-4 py-3 bg-slate-900 text-white';t.className='px-4 py-3 bg-white text-slate-500';}
             simCalc();
         }
         function simToggleOpt(el){
-            el.classList.toggle('active');
+            const on=el.getAttribute('data-on')==='1';
+            if(on){el.setAttribute('data-on','0');el.style.borderColor='#e2e8f0';el.style.background='#fff';el.querySelector('.sim-check-l').style.background='#fff';el.querySelector('.sim-check-l').style.borderColor='#cbd5e1';el.querySelector('svg').style.opacity='0';}
+            else{el.setAttribute('data-on','1');el.style.borderColor='#0f172a';el.style.background='#f8fafc';el.querySelector('.sim-check-l').style.background='#0f172a';el.querySelector('.sim-check-l').style.borderColor='#0f172a';el.querySelector('svg').style.opacity='1';}
             simCalc();
         }
-        function simYen(n){
-            return '¥' + Math.round(n).toLocaleString('ja-JP');
+        function simYen(n){return '¥'+Math.round(n).toLocaleString('ja-JP');}
+        function simData(){
+            const areaInput=parseFloat(document.getElementById('sim-area').value);
+            let addRatio=0;const labels=[];
+            document.querySelectorAll('#sim-options .sim-opt-l').forEach(o=>{if(o.getAttribute('data-on')==='1'){addRatio+=parseFloat(o.dataset.add);labels.push(o.dataset.label);}});
+            return {areaInput,addRatio,labels};
         }
         function simCalc(){
-            const areaInput = parseFloat(document.getElementById('sim-area').value);
-            const resultEl = document.getElementById('sim-result');
-            const noteEl = document.getElementById('sim-result-note');
-
-            if(!areaInput || areaInput <= 0){
-                resultEl.innerHTML = '<span class="text-2xl md:text-3xl text-slate-300">建物の広さを入力してください</span>';
-                noteEl.textContent = '';
-                return;
+            const {areaInput,addRatio,labels}=simData();
+            const resultEl=document.getElementById('sim-result'),noteEl=document.getElementById('sim-result-note');
+            if(!areaInput||areaInput<=0){resultEl.innerHTML='<span class="text-2xl md:text-3xl text-slate-300">建物の広さを入力してください</span>';noteEl.textContent='';return null;}
+            let tsubo=SIM.unit==='tsubo'?areaInput:areaInput/SIM.SQM;
+            let total=tsubo*SIM.rate*(1+addRatio);
+            if(total<SIM.MIN)total=SIM.MIN;
+            const low=Math.round(total*0.85/10000)*10000, high=Math.round(total*1.15/10000)*10000;
+            if(SIM.unlocked){
+                resultEl.innerHTML='<span class="text-3xl md:text-5xl text-white">'+simYen(low)+'</span><span class="text-xl md:text-2xl text-slate-400 mx-2">〜</span><span class="text-3xl md:text-5xl text-white">'+simYen(high)+'</span>';
+                const td=Math.round(tsubo*10)/10;
+                noteEl.textContent='想定延床：約'+td+'坪（'+SIM.structName+'）'+(addRatio>0?'／追加条件 +'+Math.round(addRatio*100)+'%':'')+'（税込・目安）';
             }
-
-            // 坪に換算
-            let tsubo = SIM.unit === 'tsubo' ? areaInput : areaInput / SIM.SQM_PER_TSUBO;
-
-            // 基本費用（税込）
-            let base = tsubo * SIM.rate;
-
-            // 条件による加算割合の合計
-            let addRatio = 0;
-            document.querySelectorAll('#sim-options .sim-opt.active').forEach(o=>{
-                addRatio += parseFloat(o.dataset.add);
-            });
-            let total = base * (1 + addRatio);
-
-            // 下限の適用
-            if(total < SIM.MIN_PRICE) total = SIM.MIN_PRICE;
-
-            // 概算レンジ（±15%）
-            const low = Math.round(total * 0.85 / 10000) * 10000;
-            const high = Math.round(total * 1.15 / 10000) * 10000;
-
-            resultEl.innerHTML =
-                '<span class="text-3xl md:text-5xl text-white">'+ simYen(low) +'</span>' +
-                '<span class="text-xl md:text-2xl text-slate-400 mx-2">〜</span>' +
-                '<span class="text-3xl md:text-5xl text-white">'+ simYen(high) +'</span>';
-
-            const tsuboDisp = Math.round(tsubo * 10) / 10;
-            noteEl.textContent = '想定延床：約' + tsuboDisp + '坪' + (addRatio>0 ? '／追加条件 +'+Math.round(addRatio*100)+'%' : '') + '（税込・目安）';
+            return {tsubo:Math.round(tsubo*10)/10,low,high,labels};
         }
-        // 初期表示
-        simCalc();
+        function simUnlock(){
+            const name=document.getElementById('sim-name').value.trim();
+            const email=document.getElementById('sim-email').value.trim();
+            const err=document.getElementById('sim-error');
+            const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            const area=parseFloat(document.getElementById('sim-area').value);
+            if(!name||!emailOk){err.classList.remove('hidden');return;}
+            err.classList.add('hidden');
+            if(!area||area<=0){alert('STEP2の延床面積を入力してください。');return;}
+            SIM.unlocked=true;
+            document.getElementById('sim-lock-overlay').style.display='none';
+            const d=simCalc();
+            // リードをnaruoへ自動通知（best-effort）
+            try{
+                fetch('https://formsubmit.co/ajax/naruo.kaitai@gmail.com',{
+                    method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+                    body:JSON.stringify({_subject:'【見積シミュレーション】新規リード',_template:'table',
+                        お名前:name,メールアドレス:email,建物構造:SIM.structName,
+                        延床面積:(d?d.tsubo:'')+'坪',該当条件:(d&&d.labels.length?d.labels.join('、'):'なし'),
+                        費用目安:(d?simYen(d.low)+'〜'+simYen(d.high):'')})
+                }).catch(()=>{});
+            }catch(e){}
+            // 結果へスクロール
+            document.getElementById('sim-result').scrollIntoView({behavior:'smooth',block:'center'});
+        }
+        // 初期化：構造ボタンの選択スタイルと単位
+        (function(){
+            document.querySelectorAll('#sim-structs .sim-struct-btn-l').forEach(b=>{b.style.borderColor='#cbd5e1';b.style.background='#fff';b.style.color='#0f172a';});
+            const first=document.querySelector('#sim-structs .sim-struct-btn-l.active');
+            if(first){first.style.borderColor='#0f172a';first.style.background='#0f172a';first.style.color='#fff';}
+        })();
+        simSetUnit('tsubo');simCalc();
+
+        /* ===== FAQ ===== */
+        const FAQ=[
+            {cat:'flow',c:'解体の流れ',q:'お問い合わせから工事完了までの流れは？',a:'①お問い合わせ・ご相談 → ②現地調査（無料）→ ③お見積もり提出 → ④ご契約 → ⑤近隣へのご挨拶・各種届出 → ⑥解体工事 → ⑦廃材の分別・搬出 → ⑧整地・お引き渡し、という流れです。各段階でご不明な点は丁寧にご説明します。'},
+            {cat:'flow',c:'解体の流れ',q:'工期はどれくらいかかりますか？',a:'一般的な木造住宅（30坪前後）で、解体作業は1〜2週間程度が目安です。建物の規模・構造・立地、廃材量、天候により前後します。正確な工期はお見積もり時にご案内します。'},
+            {cat:'flow',c:'解体の流れ',q:'解体に立ち会いは必要ですか？',a:'必須ではありません。多くのお客様は着工前のご説明と完了確認のみご都合の良いタイミングで立ち会われます。遠方の方や立ち会いが難しい方も、写真や連絡でこまめにご報告しますのでご安心ください。'},
+            {cat:'cost',c:'費用',q:'解体費用はどうやって決まりますか？',a:'主に「建物の構造（木造・鉄骨・RCなど）」「延床面積（坪数）」で基本費用が決まり、これに「付帯工事（ブロック塀・庭木・残置物・浄化槽など）」「立地条件（道路の広さ・重機の入りやすさ）」「廃材の処分量」などが加わって決まります。'},
+            {cat:'cost',c:'費用',q:'お見積もりは無料ですか？',a:'はい、現地調査・お見積もりは完全無料です。お見積もり後に強引な営業を行うことも一切ありませんので、お気軽にご依頼ください。'},
+            {cat:'cost',c:'費用',q:'あとから追加費用は発生しませんか？',a:'地中埋設物（古い基礎・浄化槽・廃棄物など）が掘削後に判明した場合など、事前に確認できない事象では追加が生じることがあります。その場合も必ず事前にご説明・ご相談のうえ進め、勝手に作業・請求することはありません。'},
+            {cat:'cost',c:'費用',q:'まずだいたいの金額だけ知りたいのですが？',a:'ページ上部の「かんたん見積もりシミュレーション」で、構造と広さを選ぶだけで費用の目安がすぐ分かります。より正確な金額は無料の現地調査でご案内します。'},
+            {cat:'hojo',c:'補助金・手続き',q:'松山市に解体の補助金はありますか？',a:'松山市では、老朽化して危険な空き家の解体に対する補助制度があります（年度や要件により内容が変わります）。対象となるかの確認や申請書類の準備は手間がかかるため、当社で申請のサポートも行っています。まずはご相談ください。'},
+            {cat:'hojo',c:'補助金・手続き',q:'解体後に必要な手続きはありますか？',a:'建物を解体したら、法務局で「建物滅失登記」が必要です（解体後1ヶ月以内が原則）。当社で完了後にお渡しする書類（取毀証明書など）をもとに手続きできます。司法書士・土地家屋調査士のご紹介も可能です。'},
+            {cat:'hojo',c:'補助金・手続き',q:'解体工事の届出は誰がしますか？',a:'一定規模以上の解体では建設リサイクル法の届出などが必要ですが、これらの法的な届出は施工業者である当社が責任を持って行います。お客様にお手間はかけません。'},
+            {cat:'asb',c:'アスベスト',q:'アスベストの調査は必要ですか？',a:'2022年以降、解体・改修工事では事前のアスベスト含有調査が法律で義務付けられています。古い建材（外壁・屋根・天井など）に含まれている可能性があるため、当社が有資格者による事前調査を実施します。'},
+            {cat:'asb',c:'アスベスト',q:'アスベストが見つかったらどうなりますか？',a:'含有が確認された場合は、法令に基づき飛散防止対策を講じた専門的な除去作業を行います。調査から除去まで一気通貫で対応できますので、別途業者を探す必要はありません。費用は事前にご説明します。'},
+            {cat:'other',c:'その他',q:'家具や家電が残ったままでも解体できますか？',a:'はい、可能です。室内の残置物（家具・家電・生活用品など）もまとめて処分できます。残す物・処分する物が分かれている場合は事前にお知らせください。分別・適正処分いたします。'},
+            {cat:'other',c:'その他',q:'近隣への配慮はしてもらえますか？',a:'創業以来、近隣配慮を最優先しています。着工前のご挨拶回り、防音・防塵の養生、散水によるホコリ対策、車両の誘導など、トラブルを防ぐ対策を徹底します。'},
+            {cat:'other',c:'その他',q:'対応エリアはどこまでですか？',a:'松山市を中心に、愛媛県全域に対応しています。県内であればお気軽にご相談ください。エリアによっては重機回送費などが変わる場合があります。'}
+        ];
+        const faqList=document.getElementById('faq-list');
+        function faqRender(){
+            faqList.innerHTML=FAQ.map((f,i)=>`
+                <details class="faq" data-cat="${f.cat}" data-text="${(f.q+f.a+f.c).replace(/"/g,'')}">
+                    <summary class="flex items-start gap-3 p-4 md:p-5">
+                        <span class="shrink-0 mt-0.5 text-[10px] font-bold text-white bg-slate-700 px-2 py-1 rounded-sm">${f.c}</span>
+                        <span class="flex-grow font-bold text-sm md:text-base text-slate-800 leading-relaxed">Q. ${f.q}</span>
+                        <svg class="chev shrink-0 mt-1 text-slate-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+                    <div class="px-4 md:px-5 pb-5 pt-0 text-sm text-slate-600 leading-[2] tracking-wide border-t border-slate-100">
+                        <p class="pt-4"><span class="font-bold text-[#890a1e] mr-1">A.</span>${f.a}</p>
+                    </div>
+                </details>`).join('');
+        }
+        faqRender();
+        let faqCurrentCat='all';
+        function faqApply(){
+            const kw=document.getElementById('faq-search').value.trim().toLowerCase();
+            let shown=0;
+            document.querySelectorAll('#faq-list .faq').forEach(d=>{
+                const catOk=faqCurrentCat==='all'||d.dataset.cat===faqCurrentCat;
+                const kwOk=!kw||d.dataset.text.toLowerCase().includes(kw);
+                if(catOk&&kwOk){d.classList.remove('faq-hidden');shown++;}else{d.classList.add('faq-hidden');d.open=false;}
+            });
+            document.getElementById('faq-empty').classList.toggle('hidden',shown>0);
+        }
+        function faqFilter(){faqApply();}
+        function faqCat(btn){
+            faqCurrentCat=btn.dataset.cat;
+            document.querySelectorAll('#faq-cats .faq-cat').forEach(b=>{b.classList.remove('bg-slate-900','text-white');b.classList.add('text-slate-600');});
+            btn.classList.add('bg-slate-900','text-white');btn.classList.remove('text-slate-600');
+            faqApply();
+        }
+
+        /* ===== 送信完了バナー（FormSubmitの_next戻り） ===== */
+        if(new URLSearchParams(location.search).get('contact')==='done'){
+            const t=document.getElementById('contact-thanks');if(t)t.classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
