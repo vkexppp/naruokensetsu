@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社 成王建設 | 誠実な解体</title>
-    
+
     <!-- アイコン設定 -->
     <link rel="icon" type="image/png" href="logo.png?v=16">
-
     <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
@@ -21,24 +20,24 @@
             color: #2d2d2d;
         }
         .serif { font-family: 'Shippori Mincho', serif; }
-        
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-        
+
         .bg-contact-block {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        
+
         .nav-glass {
             background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
         }
-        
+
         .vertical-line {
             width: 1px;
             height: 40px;
@@ -47,13 +46,13 @@
             opacity: 0.4;
         }
         @media (min-width: 768px) { .vertical-line { height: 80px; } }
-        
+
         #mobile-menu {
             transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
             transform: translateX(100%);
         }
         #mobile-menu.active { transform: translateX(0); }
-        
+
         .service-card {
             background-color: #ffffff;
             border: 1.5px solid #cbd5e1;
@@ -64,7 +63,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border-color: #0f172a;
         }
-        
+
         /* スライダークラス */
         .slider-container {
             scroll-snap-type: x mandatory;
@@ -73,7 +72,6 @@
         }
         .slider-container::-webkit-scrollbar { display: none; }
         .slide-item { scroll-snap-align: start; }
-
         /* タブのスタイル */
         .tab-btn {
             white-space: nowrap;
@@ -83,18 +81,49 @@
             color: #0f172a;
             border-bottom: 2px solid #0f172a;
         }
-        
+
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
         .brand-logo-wrap {
             display: flex;
             align-items: center;
         }
+
+        /* === 見積シミュレーター用スタイル（追加） === */
+        .sim-struct-btn {
+            border: 1.5px solid #cbd5e1;
+            transition: all 0.25s ease;
+            background-color: #ffffff;
+        }
+        .sim-struct-btn.active {
+            border-color: #0f172a;
+            background-color: #0f172a;
+            color: #ffffff;
+            box-shadow: 0 10px 20px -8px rgba(15, 23, 42, 0.5);
+        }
+        .sim-struct-btn.active .sim-struct-sub { color: #cbd5e1; }
+        .sim-opt {
+            border: 1.5px solid #e2e8f0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .sim-opt:hover { border-color: #94a3b8; }
+        .sim-opt.active {
+            border-color: #0f172a;
+            background-color: #f8fafc;
+        }
+        .sim-opt .sim-check {
+            transition: all 0.2s ease;
+            border: 2px solid #cbd5e1;
+        }
+        .sim-opt.active .sim-check {
+            background-color: #0f172a;
+            border-color: #0f172a;
+        }
+        .sim-opt.active .sim-check svg { opacity: 1; }
     </style>
 </head>
 <body class="overflow-x-hidden text-slate-900">
-
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center text-slate-900">
@@ -108,10 +137,11 @@
                     <span class="tracking-normal">成王建設</span>
                 </h1>
             </div>
-            
+
             <div class="hidden lg:flex items-center space-x-8 text-[12px] font-bold tracking-[0.1em] text-slate-600">
                 <a href="#history" class="hover:text-slate-900 transition-colors">歩み</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">事業内容</a>
+                <a href="#simulator" class="hover:text-slate-900 transition-colors">概算見積</a>
                 <a href="#guide" class="hover:text-slate-900 transition-colors">なるおう解説</a>
                 <a href="#projects" class="hover:text-slate-900 transition-colors">実績紹介</a>
                 <a href="#ceo" class="hover:text-slate-900 transition-colors">代表挨拶</a>
@@ -120,7 +150,6 @@
                 </a>
                 <a href="#contact" class="bg-slate-900 text-white px-5 py-2.5 rounded-sm hover:bg-slate-700 transition duration-300 shadow-sm text-center">お問い合わせ</a>
             </div>
-
             <div class="flex items-center gap-4 lg:hidden">
                 <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="text-slate-900">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -133,23 +162,22 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
         <a href="#history" class="mobile-link">歩み</a>
         <a href="#service" class="mobile-link">事業内容</a>
+        <a href="#simulator" class="mobile-link">概算見積</a>
         <a href="#guide" class="mobile-link">なるおう解説</a>
         <a href="#projects" class="mobile-link">実績紹介</a>
         <a href="#ceo" class="mobile-link">代表挨拶</a>
         <a href="#contact" class="mobile-link bg-slate-900 text-white px-8 py-4 rounded-sm mt-4 shadow-lg text-lg text-center text-white">お問い合わせ</a>
     </div>
-
     <!-- Hero Section -->
     <section class="relative min-h-[70vh] md:min-h-[90vh] w-full flex flex-col items-center pt-24 md:pt-40 pb-10 bg-white text-slate-900">
         <div class="text-center px-6 z-10 fade-in mb-8">
             <!-- SEOと顧客へのアピールのための地域名追加 (デザイン修正) -->
             <p class="text-sm md:text-base text-slate-500 tracking-[0.4em] mb-6 md:mb-10 serif font-bold">愛媛県全域対応・松山市の解体工事</p>
-            
+
             <h2 class="text-slate-900 text-3xl md:text-6xl lg:text-7xl font-bold tracking-hero serif mb-8 md:mb-12 leading-tight">
                 価値を繋ぐ、<br class="md:hidden">「解体」の技術
             </h2>
@@ -161,7 +189,6 @@
             </div>
         </div>
     </section>
-
     <!-- お知らせ (News) -->
     <section class="py-8 bg-white px-6">
         <div class="max-w-4xl mx-auto fade-in bg-slate-50 border border-slate-100 rounded-lg p-6 md:p-8 space-y-4 text-slate-900 shadow-sm">
@@ -190,7 +217,6 @@
             </div>
         </div>
     </section>
-
     <!-- History Section -->
     <section id="history" class="py-12 md:py-32 px-6 bg-slate-50 border-y border-slate-200/80">
         <div class="max-w-7xl mx-auto text-left text-slate-900">
@@ -210,7 +236,6 @@
             </div>
         </div>
     </section>
-
     <!-- Service Section -->
     <section id="service" class="bg-white py-12 md:py-32 px-6 text-center text-slate-900">
         <div class="max-w-7xl mx-auto text-slate-900">
@@ -249,13 +274,134 @@
         </div>
     </section>
 
+    <!-- ============================================================= -->
+    <!-- 概算見積シミュレーション（追加セクション）                      -->
+    <!-- 過去230件以上の成王建設の実績データ（構造別 坪単価）に基づく概算 -->
+    <!-- ============================================================= -->
+    <section id="simulator" class="py-16 md:py-32 px-6 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-10 md:mb-16 fade-in text-center">
+                <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase">Quick Estimate</span>
+                <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-6">概算見積シミュレーション</h3>
+                <p class="text-slate-500 text-sm md:text-base leading-[2] tracking-wider">
+                    建物の構造と広さを選ぶだけで、解体費用の<span class="font-bold text-slate-800">概算</span>がその場でわかります。<br class="hidden md:block">
+                    成王建設の<span class="font-bold text-slate-800">過去230件以上の実績データ</span>をもとに自動計算します。
+                </p>
+            </div>
+
+            <div class="fade-in bg-white rounded-lg shadow-xl border border-slate-100 p-6 md:p-12">
+                <!-- STEP 1 構造 -->
+                <div class="mb-10">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">1</span>
+                        <h4 class="text-lg font-bold serif text-slate-900">建物の構造を選ぶ</h4>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="sim-structs">
+                        <button type="button" data-rate="50000" class="sim-struct-btn active p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
+                            <span class="block font-bold text-base">木造</span>
+                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">一般住宅・空き家</span>
+                        </button>
+                        <button type="button" data-rate="70000" class="sim-struct-btn p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
+                            <span class="block font-bold text-base">軽量鉄骨</span>
+                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">プレハブ・アパート</span>
+                        </button>
+                        <button type="button" data-rate="80000" class="sim-struct-btn p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
+                            <span class="block font-bold text-base">鉄骨造</span>
+                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">店舗・工場</span>
+                        </button>
+                        <button type="button" data-rate="90000" class="sim-struct-btn p-4 rounded-sm text-center" onclick="simSelectStruct(this)">
+                            <span class="block font-bold text-base">RC造</span>
+                            <span class="sim-struct-sub block text-[10px] text-slate-400 mt-1">ビル・マンション</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2 広さ -->
+                <div class="mb-10">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">2</span>
+                        <h4 class="text-lg font-bold serif text-slate-900">延床面積を入力する</h4>
+                    </div>
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <input type="number" id="sim-area" min="0" inputmode="decimal" placeholder="例：30" oninput="simCalc()"
+                            class="w-32 md:w-40 border-2 border-slate-300 rounded-sm px-4 py-3 text-lg font-bold text-slate-900 focus:border-slate-900 focus:outline-none">
+                        <div class="inline-flex border border-slate-300 rounded-sm overflow-hidden text-sm font-bold">
+                            <button type="button" id="sim-unit-tsubo" class="px-4 py-3 bg-slate-900 text-white" onclick="simSetUnit('tsubo')">坪</button>
+                            <button type="button" id="sim-unit-sqm" class="px-4 py-3 bg-white text-slate-500" onclick="simSetUnit('sqm')">㎡</button>
+                        </div>
+                        <span class="text-xs text-slate-400">（1坪 ≒ 3.3㎡）</span>
+                    </div>
+                </div>
+
+                <!-- STEP 3 条件 -->
+                <div class="mb-10">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">3</span>
+                        <h4 class="text-lg font-bold serif text-slate-900">当てはまる条件を選ぶ<span class="text-xs font-normal text-slate-400 ml-2">（任意・複数可）</span></h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="sim-options">
+                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.15" onclick="simToggleOpt(this)">
+                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span class="text-sm text-slate-700">アスベスト含有の可能性がある<span class="block text-[10px] text-slate-400">（古い外壁・屋根材など／別途事前調査）</span></span>
+                        </div>
+                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.10" onclick="simToggleOpt(this)">
+                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span class="text-sm text-slate-700">ブロック塀・外構が多い<span class="block text-[10px] text-slate-400">（塀・門柱・土間など）</span></span>
+                        </div>
+                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.08" onclick="simToggleOpt(this)">
+                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span class="text-sm text-slate-700">庭木・植栽が多い<span class="block text-[10px] text-slate-400">（樹木・竹・雑草の撤去）</span></span>
+                        </div>
+                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.08" onclick="simToggleOpt(this)">
+                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span class="text-sm text-slate-700">家具・家電などの残置物が多い<span class="block text-[10px] text-slate-400">（室内に物が残っている）</span></span>
+                        </div>
+                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.12" onclick="simToggleOpt(this)">
+                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span class="text-sm text-slate-700">前面道路が狭い・重機が入りにくい<span class="block text-[10px] text-slate-400">（手壊し作業が増える）</span></span>
+                        </div>
+                        <div class="sim-opt flex items-center gap-3 p-4 rounded-sm" data-add="0.05" onclick="simToggleOpt(this)">
+                            <span class="sim-check w-5 h-5 rounded-sm flex items-center justify-center shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span class="text-sm text-slate-700">浄化槽・便槽がある<span class="block text-[10px] text-slate-400">（地中埋設物の撤去）</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 結果 -->
+                <div class="bg-contact-block text-white rounded-lg p-8 md:p-10 text-center">
+                    <p class="text-blue-300 text-xs tracking-[0.3em] font-bold uppercase mb-3">概算費用（税込）</p>
+                    <div id="sim-result" class="serif font-bold leading-tight mb-2">
+                        <span class="text-2xl md:text-3xl text-slate-300">建物の広さを入力してください</span>
+                    </div>
+                    <p id="sim-result-note" class="text-[11px] text-slate-400 tracking-wider"></p>
+                </div>
+
+                <p class="text-[11px] text-slate-400 leading-relaxed tracking-wider mt-6">
+                    ※ 本シミュレーションは過去の実績データに基づく<span class="font-bold text-slate-500">概算（目安）</span>です。建物の状態・立地・付帯工事・廃材量などにより実際の金額は変動します。正確な金額は、<span class="font-bold text-slate-500">無料の現地調査・お見積もり</span>にてご確認ください。
+                </p>
+
+                <!-- CTA -->
+                <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                    <a href="tel:0899246604" class="flex-1 flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-sm font-bold tracking-widest hover:bg-slate-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        電話で無料相談
+                    </a>
+                    <a href="#contact" class="flex-1 flex items-center justify-center gap-2 bg-white border-2 border-slate-900 text-slate-900 py-4 rounded-sm font-bold tracking-widest hover:bg-slate-50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        無料見積もりを依頼
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- なるおう解説ライブラリ -->
     <section id="guide" class="py-16 md:py-32 bg-slate-50 overflow-hidden border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6 text-center text-slate-900">
             <div class="mb-12 md:mb-16 fade-in text-slate-900 text-slate-900">
                 <span class="text-slate-400 text-[10px] tracking-[0.5em] font-bold block mb-4 uppercase text-slate-400">Instagram Knowledge</span>
                 <h3 class="text-3xl md:text-4xl font-bold serif text-slate-900 mb-8">なるおう解説ライブラリ</h3>
-                
+
                 <div class="flex justify-start md:justify-center overflow-x-auto gap-4 md:gap-8 border-b border-slate-200 pb-2 scrollbar-hide text-slate-900">
                     <button onclick="changeTheme('flow')" id="btn-flow" class="tab-btn active px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">工事の流れ</button>
                     <button onclick="changeTheme('types')" id="btn-types" class="tab-btn px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">建物の種類</button>
@@ -264,24 +410,21 @@
                     <button onclick="changeTheme('asbestos')" id="btn-asbestos" class="tab-btn px-2 md:px-4 py-2 text-xs md:text-base font-bold text-slate-400 transition-all">アスベスト</button>
                 </div>
             </div>
-
             <div class="relative max-w-2xl mx-auto fade-in">
                 <div id="guide-slider" class="slider-container flex overflow-x-auto gap-4 pb-12">
                     <!-- JSで挿入 -->
                 </div>
-                
+
                 <button onclick="scrollSlider(-1)" class="hidden md:flex absolute -left-20 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm hover:bg-slate-50 transition-all text-slate-400 hover:text-slate-900">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
                 <button onclick="scrollSlider(1)" class="hidden md:flex absolute -right-20 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm hover:bg-slate-50 transition-all text-slate-400 hover:text-slate-900">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
-
                 <div class="mt-4 text-xs text-slate-400 font-medium">左右にスワイプ、または矢印でめくれます</div>
             </div>
         </div>
     </section>
-
     <!-- 実績紹介 -->
     <section id="projects" class="py-12 md:py-32 px-6 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto text-slate-900">
@@ -315,7 +458,6 @@
             </div>
         </div>
     </section>
-
     <!-- 代表挨拶 -->
     <section id="ceo" class="py-12 md:py-32 px-6 bg-slate-50 border-b border-slate-200">
         <div class="max-w-4xl mx-auto text-center text-slate-900">
@@ -337,19 +479,17 @@
             </div>
         </div>
     </section>
-
     <!-- Footer & Contact -->
     <footer id="contact" class="bg-white pt-20 md:pt-32 pb-12 px-6 text-center text-slate-900">
         <div class="max-w-5xl mx-auto">
             <div class="bg-contact-block text-white p-10 md:p-20 rounded-sm fade-in mb-16 md:mb-24 shadow-xl text-center">
                 <h3 class="text-3xl md:text-5xl font-bold serif mb-10 tracking-wider text-white text-center">ご相談・お見積もり</h3>
-                
+
                 <!-- 安心感を与える一言を追加 -->
                 <p class="text-sm md:text-base text-slate-300 mb-10 tracking-widest leading-relaxed font-bold">
                     現地調査・お見積もりは完全無料です。<br class="md:hidden">
                     強引な営業は一切いたしませんので、<br class="md:hidden">お気軽にご相談ください。
                 </p>
-
                 <div class="w-12 h-px bg-slate-500 mx-auto mb-12 opacity-50"></div>
                 <div class="flex flex-col items-center space-y-6 md:space-y-10 text-white">
                     <a href="tel:0899246604" class="group block text-4xl md:text-6xl font-light tracking-tighter hover:text-blue-400 transition-colors">
@@ -370,7 +510,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="fade-in text-slate-800 text-left text-slate-900 mt-16 text-left">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start text-slate-900">
                     <div class="md:col-span-4 space-y-1 text-left text-slate-900 text-left">
@@ -400,13 +539,11 @@
             </div>
         </div>
     </footer>
-
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
         // --- ライブラリデータ ---
         const themes = {
             flow: { title: '工事の流れ', prefix: 'guide1' },
@@ -415,14 +552,11 @@
             procedures: { title: '届出・手続き', prefix: 'guide4' },
             asbestos: { title: 'アスベスト', prefix: 'guide5' }
         };
-
         const slider = document.getElementById('guide-slider');
-
         function changeTheme(themeKey) {
             const data = themes[themeKey];
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${themeKey}`).classList.add('active');
-
             let html = '';
             for (let i = 1; i <= 10; i++) {
                 const imgName = `${data.prefix}_${i}.png`;
@@ -432,7 +566,7 @@
                     </div>
                 `;
             }
-            
+
             html += `
                 <div class="slide-item shrink-0 w-full aspect-square bg-slate-900 flex flex-col items-center justify-center text-center p-10 rounded-lg text-white">
                     <img src="logo.png" class="h-16 mb-8 brightness-0 invert">
@@ -440,17 +574,13 @@
                     <a href="https://www.instagram.com/naruo.kaitai/" target="_blank" class="bg-white text-slate-900 px-8 py-3 rounded-full font-bold text-sm tracking-widest hover:bg-slate-200 transition-all flex items-center gap-3">フォローする</a>
                 </div>
             `;
-
             slider.innerHTML = html;
             slider.scrollTo({ left: 0, behavior: 'smooth' });
         }
-
         function scrollSlider(direction) {
             slider.scrollBy({ left: slider.offsetWidth * direction, behavior: 'smooth' });
         }
-
         window.onload = () => { changeTheme('flow'); };
-
         // スムーズスクロール & メニュー閉じ
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -471,7 +601,6 @@
                 }
             });
         });
-
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if (menuBtn && mobileMenu) {
@@ -480,6 +609,88 @@
                 document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
             });
         }
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- 概算見積シミュレーター ロジック（追加）                          -->
+    <!-- 構造別 坪単価は成王建設の過去実績（税込）の中央値ベース：        -->
+    <!--   木造 5.0万 / 軽量鉄骨 7.0万 / 鉄骨造 8.0万 / RC造 9.0万（円/坪） -->
+    <!-- ============================================================= -->
+    <script>
+        const SIM = {
+            rate: 50000,      // 採用中の坪単価（税込）
+            unit: 'tsubo',    // 'tsubo' or 'sqm'
+            SQM_PER_TSUBO: 3.305785,
+            MIN_PRICE: 300000 // 小規模でも回送・諸経費がかかるため下限
+        };
+
+        function simSelectStruct(btn){
+            document.querySelectorAll('#sim-structs .sim-struct-btn').forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+            SIM.rate = parseFloat(btn.dataset.rate);
+            simCalc();
+        }
+        function simSetUnit(unit){
+            SIM.unit = unit;
+            const t = document.getElementById('sim-unit-tsubo');
+            const s = document.getElementById('sim-unit-sqm');
+            if(unit==='tsubo'){
+                t.className='px-4 py-3 bg-slate-900 text-white';
+                s.className='px-4 py-3 bg-white text-slate-500';
+            }else{
+                s.className='px-4 py-3 bg-slate-900 text-white';
+                t.className='px-4 py-3 bg-white text-slate-500';
+            }
+            simCalc();
+        }
+        function simToggleOpt(el){
+            el.classList.toggle('active');
+            simCalc();
+        }
+        function simYen(n){
+            return '¥' + Math.round(n).toLocaleString('ja-JP');
+        }
+        function simCalc(){
+            const areaInput = parseFloat(document.getElementById('sim-area').value);
+            const resultEl = document.getElementById('sim-result');
+            const noteEl = document.getElementById('sim-result-note');
+
+            if(!areaInput || areaInput <= 0){
+                resultEl.innerHTML = '<span class="text-2xl md:text-3xl text-slate-300">建物の広さを入力してください</span>';
+                noteEl.textContent = '';
+                return;
+            }
+
+            // 坪に換算
+            let tsubo = SIM.unit === 'tsubo' ? areaInput : areaInput / SIM.SQM_PER_TSUBO;
+
+            // 基本費用（税込）
+            let base = tsubo * SIM.rate;
+
+            // 条件による加算割合の合計
+            let addRatio = 0;
+            document.querySelectorAll('#sim-options .sim-opt.active').forEach(o=>{
+                addRatio += parseFloat(o.dataset.add);
+            });
+            let total = base * (1 + addRatio);
+
+            // 下限の適用
+            if(total < SIM.MIN_PRICE) total = SIM.MIN_PRICE;
+
+            // 概算レンジ（±15%）
+            const low = Math.round(total * 0.85 / 10000) * 10000;
+            const high = Math.round(total * 1.15 / 10000) * 10000;
+
+            resultEl.innerHTML =
+                '<span class="text-3xl md:text-5xl text-white">'+ simYen(low) +'</span>' +
+                '<span class="text-xl md:text-2xl text-slate-400 mx-2">〜</span>' +
+                '<span class="text-3xl md:text-5xl text-white">'+ simYen(high) +'</span>';
+
+            const tsuboDisp = Math.round(tsubo * 10) / 10;
+            noteEl.textContent = '想定延床：約' + tsuboDisp + '坪' + (addRatio>0 ? '／追加条件 +'+Math.round(addRatio*100)+'%' : '') + '（税込・目安）';
+        }
+        // 初期表示
+        simCalc();
     </script>
 </body>
 </html>
