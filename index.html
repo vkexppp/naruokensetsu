@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社成王建設｜愛媛県全域・松山市の解体専門業者</title>
-    <meta name="description" content="愛媛県全域・松山市の解体専門業者。真面目な人柄と確かな技術で、住宅解体・鉄骨/RC造・内装解体・アスベスト除去まで誠実に対応。現地調査・お見積は完全無料。見積シミュレーションも。">
+    <meta name="description" content="愛媛県全域・松山市の解体専門業者。真面目な人柄と確かな技術で、住宅解体・鉄骨/RC造・内装解体・アスベスト除去まで誠実に対応。現地調査・お見積は完全無料。補助金診断・見積シミュレーションも。">
     <link rel="icon" type="image/png" href="logo.png?v=16">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans JP', sans-serif; background-color: #ffffff; color: #2d2d2d; }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #ffffff; color: #2d2d2d; scroll-behavior: smooth; }
         .serif { font-family: 'Shippori Mincho', serif; }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1.2s cubic-bezier(0.22,1,0.36,1), transform 1.2s cubic-bezier(0.22,1,0.36,1); }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -24,19 +24,22 @@
         
         /* HERO */
         .hero-overlay { background: linear-gradient(to right, rgba(15,23,42,.78) 0%, rgba(15,23,42,.5) 45%, rgba(15,23,42,.15) 100%); }
-        .hero-img { object-position: top; } /* スマホは上基準を維持 */
+        .hero-img { object-position: top; }
         @media (max-width:768px){ .hero-overlay { background: linear-gradient(to top, rgba(15,23,42,.85) 0%, rgba(15,23,42,.45) 55%, rgba(15,23,42,.25) 100%); } }
-        /* PC版のみ、画像の位置を少し下にずらしてキャタピラを見せる設定 */
         @media (min-width:768px){ .hero-img { object-position: 50% 35%; } }
 
-        /* シミュレーター 斜め文字 */
+        /* シミュレーター */
         .badge-tilt { transform: rotate(-7deg); }
-        /* 構造ボタン（四角カード） */
         .struct-card { border:2px solid #cbd5e1; background:#fff; color:#0f172a; transition:all .2s ease; }
         .struct-card.active { border-color:#0f172a; background:#0f172a; color:#fff; }
         .struct-card.active .struct-sub { color:#cbd5e1; }
         .struct-sub { color:#94a3b8; }
         .sim-opt-l { transition:all .2s ease; }
+        
+        /* 補助金診断用 */
+        .hojo-btn { transition: all 0.2s ease; }
+        .hojo-btn:hover { transform: scale(1.02); }
+
         /* FAQ */
         details.faq { border:1px solid #e2e8f0; background:#fff; border-radius:8px; transition: box-shadow .2s ease; }
         details.faq[open] { box-shadow:0 10px 25px -15px rgba(0,0,0,.25); border-color:#cbd5e1; }
@@ -48,7 +51,6 @@
     </style>
 </head>
 <body class="overflow-x-hidden text-slate-900">
-    <!-- ===== Navigation ===== -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
             <div class="flex items-center gap-3 md:gap-5">
@@ -60,6 +62,7 @@
             </div>
             <div class="hidden lg:flex items-center space-x-7 text-[12px] font-bold tracking-[0.1em] text-slate-600">
                 <a href="#simulator" class="hover:text-slate-900 transition-colors">お見積り</a>
+                <a href="#subsidy" class="text-[#890a1e] hover:text-slate-900 transition-colors">補助金診断</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">対応工事</a>
                 <a href="#faq" class="hover:text-slate-900 transition-colors">よくあるご質問</a>
                 <a href="#about" class="hover:text-slate-900 transition-colors">会社案内</a>
@@ -80,26 +83,25 @@
             </div>
         </div>
     </nav>
-    <!-- ===== Mobile Menu ===== -->
+
     <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
         <a href="#simulator" class="mobile-link">お見積り</a>
+        <a href="#subsidy" class="mobile-link text-[#890a1e] font-bold">補助金診断</a>
         <a href="#service" class="mobile-link">対応工事</a>
         <a href="#faq" class="mobile-link">よくあるご質問</a>
         <a href="#about" class="mobile-link">会社案内</a>
         <a href="#contact" class="mobile-link bg-slate-900 text-white px-8 py-4 rounded-sm mt-4 shadow-lg text-lg">お問い合わせ</a>
     </div>
-    <!-- ===== HERO（ユンボ写真＋短文） ===== -->
+
     <section class="relative w-full min-h-[88vh] md:h-screen flex items-center overflow-hidden">
         <img src="600004693690679420.jpg" alt="松山市で解体工事を行う成王建設の重機（ユンボ）" class="hero-img absolute inset-0 w-full h-full object-cover">
         <div class="hero-overlay absolute inset-0"></div>
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10">
             <div class="fade-in max-w-3xl text-white">
-                <!-- エリアタグ（赤やめ・濃紺） -->
                 <span class="inline-flex items-center gap-2 serif text-sm md:text-base font-bold tracking-wider bg-slate-900/85 px-4 py-2 rounded-full mb-6">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                     愛媛県全域・松山の解体
                 </span>
-                <!-- 主役コピー -->
                 <h2 class="serif font-bold leading-[1.3] text-[2.4rem] md:text-7xl mb-8">
                     愛媛の、<br>紳士な解体。
                 </h2>
@@ -110,7 +112,7 @@
             </div>
         </div>
     </section>
-    <!-- ===== 見積シミュレーション（濃紺・focal） ===== -->
+
     <section id="simulator" class="py-16 md:py-28 px-6 bg-dark text-white">
         <div class="max-w-3xl mx-auto">
             <div class="fade-in text-center mb-10">
@@ -124,10 +126,8 @@
                 </p>
             </div>
             <div class="fade-in bg-white text-slate-900 rounded-lg shadow-2xl overflow-hidden">
-                <!-- 社長吹き出し写真（カード幅いっぱい・余白なし） -->
                 <img src="社長吹き出し写真.png" alt="代表 菅 正行からのご案内" class="block w-full h-auto">
               <div class="p-6 md:p-10">
-                <!-- STEP1 構造 -->
                 <div class="mb-8">
                     <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">1</span><span class="text-base font-bold serif">建物の構造</span></p>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="sim-structs">
@@ -137,7 +137,6 @@
                         <button type="button" data-rate="90000" data-name="RC造" class="struct-card rounded-md py-5 px-3 text-center" onclick="simSelectStruct(this)"><span class="block font-bold text-base md:text-lg">RC造</span><span class="struct-sub block text-[10px] mt-1.5">ビル・マンション</span></button>
                     </div>
                 </div>
-                <!-- STEP2 面積 -->
                 <div class="mb-8">
                     <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">2</span><span class="text-base font-bold serif">延床面積</span></p>
                     <div class="flex items-center gap-3 flex-wrap">
@@ -149,7 +148,6 @@
                         <span class="text-xs text-slate-400">（1坪 ≒ 3.3㎡）</span>
                     </div>
                 </div>
-                <!-- STEP3 条件 -->
                 <div class="mb-8">
                     <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">3</span><span class="text-base font-bold serif">当てはまる条件<span class="text-xs font-normal text-slate-400 ml-1">（任意・複数可）</span></span></p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="sim-options">
@@ -161,7 +159,6 @@
                         <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.05" data-label="浄化槽・便槽あり" data-on="0" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">浄化槽・便槽がある<span class="block text-[10px] text-slate-400">地中埋設物の撤去</span></span></div>
                     </div>
                 </div>
-                <!-- STEP4 名前・メール（必須ゲート） -->
                 <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 md:p-6 mb-6">
                     <p class="flex items-center gap-3 mb-2"><span class="bg-[#890a1e] text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">4</span><span class="text-base font-bold serif">お名前とメールアドレス</span></p>
                     <p class="text-xs text-slate-500 mb-4 leading-relaxed">結果の表示にはご入力が必要です。担当より、より正確なお見積のご案内も可能です。</p>
@@ -175,7 +172,6 @@
                     </button>
                     <p id="sim-error" class="text-xs text-[#890a1e] font-bold mt-2 text-center hidden">必須入力です</p>
                 </div>
-                <!-- 結果 -->
                 <div class="bg-dark text-white rounded-lg p-8 md:p-10 text-center">
                     <p class="text-blue-300 text-xs tracking-[0.3em] font-bold uppercase mb-3">解体費用の目安（税込）</p>
                     <div id="sim-result" class="serif font-bold leading-tight mb-2"><span class="text-xl sm:text-2xl md:text-3xl text-slate-300 whitespace-nowrap">建物情報を入力してください</span></div>
@@ -190,7 +186,85 @@
             </div>
         </div>
     </section>
-    <!-- ===== 対応工事（白） ===== -->
+
+    <section id="subsidy" class="py-16 md:py-24 px-6 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-3xl mx-auto relative z-10">
+            <div class="fade-in text-center mb-8">
+                <span class="inline-block bg-[#890a1e] text-white text-[10px] md:text-xs font-bold tracking-widest px-3 py-1 rounded-sm mb-3">お役立ち情報</span>
+                <h3 class="text-2xl md:text-3xl font-bold serif mb-4 text-slate-900">松山市の空き家解体 補助金診断</h3>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed tracking-wide">
+                    松山市では、老朽化した危険な空き家を解体する際、最大100万円の補助金が受けられる制度（老朽危険空家除却事業）があります。<br>
+                    あなたのご実家や所有物件が対象になる可能性があるか、5つの質問で診断してみましょう！
+                </p>
+            </div>
+
+            <div class="fade-in bg-white rounded-lg shadow-lg border border-slate-200 p-6 md:p-10 mb-10">
+                <div id="hojo-q-area" class="text-center">
+                    <p class="text-sm text-slate-400 font-bold mb-2 tracking-widest">QUESTION <span id="hojo-q-num">1</span>/5</p>
+                    <h4 id="hojo-q-text" class="text-lg md:text-xl font-bold serif text-slate-900 mb-8 min-h-[4rem] flex items-center justify-center">
+                        解体予定の建物は「松山市内」にありますか？
+                    </h4>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="hojoAnswer(true)" class="hojo-btn w-full sm:w-40 bg-[#890a1e] text-white py-4 rounded-full font-bold text-lg shadow-md hover:bg-[#6f0818]">はい</button>
+                        <button onclick="hojoAnswer(false)" class="hojo-btn w-full sm:w-40 bg-white text-slate-700 border-2 border-slate-200 py-4 rounded-full font-bold text-lg shadow-sm hover:bg-slate-50">いいえ</button>
+                    </div>
+                </div>
+
+                <div id="hojo-r-area" class="hidden text-center">
+                    <div id="hojo-r-icon" class="mb-4"></div>
+                    <h4 id="hojo-r-title" class="text-xl md:text-2xl font-bold serif text-slate-900 mb-4"></h4>
+                    <p id="hojo-r-desc" class="text-sm md:text-base text-slate-600 leading-relaxed tracking-wide mb-8 bg-slate-50 p-4 rounded-md border border-slate-100"></p>
+                    <button onclick="hojoReset()" class="text-sm text-slate-400 underline hover:text-slate-600">もう一度診断する</button>
+                </div>
+            </div>
+
+            <div class="fade-in bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-900 text-white px-6 py-4">
+                    <h4 class="font-bold serif tracking-wider text-center">松山市 老朽危険空家除却事業の概要</h4>
+                </div>
+                <div class="p-0 overflow-x-auto">
+                    <table class="w-full text-sm text-left text-slate-600">
+                        <thead class="text-xs text-slate-700 bg-slate-100 uppercase">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 border-b border-slate-200">主な要件・項目</th>
+                                <th scope="col" class="px-6 py-4 border-b border-slate-200">内容</th>
+                                <th scope="col" class="px-6 py-4 border-b border-slate-200 text-right">上限金額（円）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b border-slate-100">
+                                <td class="px-6 py-4 font-bold text-slate-900">対象エリア</td>
+                                <td class="px-6 py-4">松山市内全域</td>
+                                <td class="px-6 py-4 text-right">-</td>
+                            </tr>
+                            <tr class="bg-slate-50 border-b border-slate-100">
+                                <td class="px-6 py-4 font-bold text-slate-900">建物の状態</td>
+                                <td class="px-6 py-4">1年以上使用されていない老朽危険空家（市の判定で100点以上）</td>
+                                <td class="px-6 py-4 text-right">-</td>
+                            </tr>
+                            <tr class="bg-white border-b border-slate-100">
+                                <td class="px-6 py-4 font-bold text-slate-900">所有者条件</td>
+                                <td class="px-6 py-4">個人または法定相続人（市税滞納がないこと）</td>
+                                <td class="px-6 py-4 text-right">-</td>
+                            </tr>
+                            <tr class="bg-slate-50 border-b border-slate-100">
+                                <td class="px-6 py-4 font-bold text-slate-900">補助割合・一般</td>
+                                <td class="px-6 py-4">解体工事費用の5分の4</td>
+                                <td class="px-6 py-4 font-bold text-slate-900 text-right">1,000,000</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-6 py-4 font-bold text-slate-900">補助割合・島しょ部</td>
+                                <td class="px-6 py-4">解体工事費用の5分の4（忽那諸島など）</td>
+                                <td class="px-6 py-4 font-bold text-slate-900 text-right">1,600,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="text-[10px] text-slate-400 mt-3 text-right">※情報元：松山市公式ホームページ（令和8年度時点）。詳細は必ず市の最新情報をご確認ください。</p>
+        </div>
+    </section>
+
     <section id="service" class="py-16 md:py-24 px-6 bg-white">
         <div class="max-w-5xl mx-auto">
             <div class="fade-in text-center mb-10">
@@ -221,7 +295,7 @@
             </div>
         </div>
     </section>
-    <!-- ===== よくあるご質問（薄グレー） ===== -->
+
     <section id="faq" class="py-16 md:py-24 px-6 bg-slate-50">
         <div class="max-w-3xl mx-auto">
             <div class="fade-in text-center mb-8 md:mb-10">
@@ -247,7 +321,7 @@
             </div>
         </div>
     </section>
-    <!-- ===== お問い合わせ（濃紺） ===== -->
+
     <section id="contact" class="py-16 md:py-28 px-6 bg-dark text-white">
         <div class="max-w-5xl mx-auto">
             <div class="fade-in text-center mb-10 md:mb-14">
@@ -322,10 +396,9 @@
             </div>
         </div>
     </section>
-    <!-- ===== 会社案内（30年 / 白） ===== -->
+
     <section id="about" class="py-16 md:py-28 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
-            <!-- 見出し -->
             <div class="fade-in text-center mb-10 md:mb-14">
                 <h3 class="serif text-3xl md:text-5xl font-bold leading-tight text-slate-900 mb-4">
                     愛媛で信頼されて、30年。
@@ -336,19 +409,16 @@
                     未来への希望が描けるほど美しい更地に仕上げます。
                 </p>
             </div>
-            <!-- 解体の写真 -->
             <div class="fade-in grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-12">
                 <img src="600009998998962196.jpg" alt="松山市の解体工事現場" class="w-full h-44 md:h-64 object-cover rounded-lg shadow-md">
                 <img src="600004840290779411.jpg" alt="安全管理を徹底した解体工事" class="w-full h-44 md:h-64 object-cover rounded-lg shadow-md">
                 <img src="600007693239321155.jpg" alt="環境に配慮した解体工事" class="w-full h-44 md:h-64 object-cover rounded-lg shadow-md col-span-2 md:col-span-1">
             </div>
-            <!-- 強みの数字 -->
             <div class="fade-in grid grid-cols-3 gap-3 md:gap-5 max-w-3xl mx-auto mb-12">
                 <div class="bg-slate-50 border border-slate-100 rounded-lg py-6 text-center"><span class="block serif text-3xl md:text-4xl font-bold text-slate-900">30<span class="text-base">年</span></span><span class="block text-[10px] md:text-xs text-slate-500 tracking-wider mt-2">創業からの歩み</span></div>
                 <div class="bg-slate-50 border border-slate-100 rounded-lg py-6 text-center"><span class="block serif text-3xl md:text-4xl font-bold text-slate-900">愛媛<span class="text-base">全域</span></span><span class="block text-[10px] md:text-xs text-slate-500 tracking-wider mt-2">対応エリア</span></div>
                 <div class="bg-slate-50 border border-slate-100 rounded-lg py-6 text-center"><span class="block serif text-3xl md:text-4xl font-bold text-slate-900">無料</span><span class="block text-[10px] md:text-xs text-slate-500 tracking-wider mt-2">調査・見積</span></div>
             </div>
-            <!-- 会社概要 -->
             <div class="fade-in max-w-2xl mx-auto bg-slate-50 border border-slate-100 rounded-lg p-6 md:p-8 text-sm leading-loose tracking-wider text-slate-600">
                 <p class="serif text-lg text-slate-900 mb-4 text-center">株式会社 成王建設</p>
                 <div class="space-y-1.5">
@@ -367,7 +437,7 @@
             </div>
         </div>
     </section>
-    <!-- スマホ用 固定下部ボタン -->
+
     <div class="lg:hidden h-16"></div>
     <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.25)]">
         <a href="#simulator" class="flex-1 flex items-center justify-center gap-2 bg-[#890a1e] text-white py-4 font-bold text-sm tracking-wider">
@@ -379,7 +449,9 @@
             電話する
         </a>
     </div>
+
     <script>
+        // --- 共通・スクロール・メニュー関連 ---
         const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
         document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
         const menuBtn=document.getElementById('menu-btn');
@@ -395,7 +467,8 @@
                 }
             });
         });
-        /* ===== 見積シミュレーター ===== */
+
+        // --- 見積シミュレーター ---
         const SIM={rate:50000,structName:'木造',unit:'tsubo',SQM:3.305785,MIN:300000,unlocked:false};
         function simSelectStruct(btn){
             document.querySelectorAll('#sim-structs .struct-card').forEach(b=>b.classList.remove('active'));
@@ -458,7 +531,95 @@
             document.getElementById('sim-result').scrollIntoView({behavior:'smooth',block:'center'});
         }
         simSetUnit('tsubo');simCalc();
-        /* ===== FAQ ===== */
+
+        // --- 補助金診断システム (NEW) ---
+        const hojoQuestions = [
+            {
+                q: "解体予定の建物は「松山市内」にありますか？",
+                y: 1, n: "out_area"
+            },
+            {
+                q: "直近1年以上、誰も住んでいない（使っていない）「空き家」ですか？",
+                y: 2, n: "out_not_akiya"
+            },
+            {
+                q: "建物の所有者は「個人（またはその相続人）」ですか？<br><span class='text-sm text-slate-500 font-normal mt-2 block'>※法人所有ではない</span>",
+                y: 3, n: "out_hojin"
+            },
+            {
+                q: "すでに解体業者と「工事の契約」を結んでしまっていますか？",
+                y: "out_keiyaku", n: 4 // ここは「いいえ」が正解
+            },
+            {
+                q: "屋根・外壁・柱などが大きく傷んでおり、倒壊の危険があると感じますか？",
+                y: "ok", n: "out_not_kiken"
+            }
+        ];
+
+        const hojoResults = {
+            "ok": {
+                title: "対象の可能性大！最大100万円の補助対象かもしれません。",
+                desc: "松山市の「老朽危険空家除却事業」の要件を満たしている可能性が高いです！まずは市役所の職員による「不良度判定」を受ける必要があります。成王建設にご相談いただければ、判定の受け方から対象になった場合の解体まで、丁寧にサポートいたします。<br><br><a href='#contact' class='inline-block bg-[#890a1e] text-white px-6 py-3 rounded-full font-bold mt-2 hover:bg-[#6f0818]'>まずは無料で相談する</a>",
+                icon: '<svg class="mx-auto text-green-500 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+            },
+            "out_area": {
+                title: "残念ながら対象外です（松山市外）",
+                desc: "今回の補助金は松山市内の物件が対象となります。ただし、各市町村で独自の補助金制度がある場合がございますので、管轄の自治体窓口をご確認ください。愛媛県内の解体工事であれば成王建設にお任せください！",
+                icon: '<svg class="mx-auto text-slate-400 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+            },
+            "out_not_akiya": {
+                title: "今回は対象外となる可能性が高いです",
+                desc: "本補助金は「1年以上使用されていない空き家」が対象となります。現在お住まいの場合や、最近まで使用されていた場合は対象外となります。補助金なしでの適正価格によるお見積も無料で承っております。",
+                icon: '<svg class="mx-auto text-slate-400 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+            },
+            "out_hojin": {
+                title: "法人の場合は対象外となります",
+                desc: "本補助金は「個人またはその相続人」が所有する物件が対象です。法人所有の物件は対象外となりますが、店舗や工場の解体実績も豊富な成王建設まで、ぜひ一度ご相談ください。",
+                icon: '<svg class="mx-auto text-slate-400 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+            },
+            "out_keiyaku": {
+                title: "ご注意ください！契約後だと対象外になります",
+                desc: "松山市の解体補助金は、必ず【市の補助金交付決定が下りてから、業者と契約する】必要があります。すでに契約済みの場合は補助が受けられません。これからご検討の方は、ぜひ成王建設へご相談ください。",
+                icon: '<svg class="mx-auto text-yellow-500 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>'
+            },
+            "out_not_kiken": {
+                title: "対象外となる可能性があります",
+                desc: "本補助金は、倒壊の危険がある「老朽危険空家（市の判定で100点以上）」であることが条件です。建物の状態が良い場合は対象外となる可能性が高いです。通常解体の無料見積はいつでも承っております。",
+                icon: '<svg class="mx-auto text-slate-400 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+            }
+        };
+
+        let currentHojoQ = 0;
+        function hojoAnswer(isYes) {
+            const q = hojoQuestions[currentHojoQ];
+            const nextStep = isYes ? q.y : q.n;
+
+            if (typeof nextStep === "number") {
+                // 次の質問へ
+                currentHojoQ = nextStep;
+                document.getElementById('hojo-q-num').innerText = currentHojoQ + 1;
+                document.getElementById('hojo-q-text').innerHTML = hojoQuestions[currentHojoQ].q;
+            } else {
+                // 結果表示へ
+                const result = hojoResults[nextStep];
+                document.getElementById('hojo-q-area').classList.add('hidden');
+                document.getElementById('hojo-r-area').classList.remove('hidden');
+                
+                document.getElementById('hojo-r-icon').innerHTML = result.icon;
+                document.getElementById('hojo-r-title').innerHTML = result.title;
+                document.getElementById('hojo-r-desc').innerHTML = result.desc;
+            }
+        }
+
+        function hojoReset() {
+            currentHojoQ = 0;
+            document.getElementById('hojo-r-area').classList.add('hidden');
+            document.getElementById('hojo-q-area').classList.remove('hidden');
+            document.getElementById('hojo-q-num').innerText = 1;
+            document.getElementById('hojo-q-text').innerHTML = hojoQuestions[0].q;
+        }
+
+        // --- FAQ ---
         const FAQ=[
             {cat:'flow',c:'解体の流れ',q:'お問い合わせから工事完了までの流れは？',a:'①お問い合わせ・ご相談 → ②現地調査（無料）→ ③お見積提出 → ④ご契約 → ⑤近隣へのご挨拶・各種届出 → ⑥解体工事 → ⑦廃材の分別・搬出 → ⑧整地・お引き渡し、という流れです。各段階でご不明な点は丁寧にご説明します。'},
             {cat:'flow',c:'解体の流れ',q:'工期はどれくらいかかりますか？',a:'一般的な木造住宅（30坪前後）で、解体作業は1〜2週間程度が目安です。建物の規模・構造・立地、廃材量、天候により前後します。正確な工期はお見積時にご案内します。'},
@@ -467,7 +628,7 @@
             {cat:'cost',c:'費用',q:'お見積は無料ですか？',a:'はい、現地調査・お見積は完全無料です。お見積後に強引な営業を行うことも一切ありませんので、お気軽にご依頼ください。'},
             {cat:'cost',c:'費用',q:'あとから追加費用は発生しませんか？',a:'地中埋設物（古い基礎・浄化槽・廃棄物など）が掘削後に判明した場合など、事前に確認できない事象では追加が生じることがあります。その場合も必ず事前にご説明・ご相談のうえ進め、勝手に作業・請求することはありません。'},
             {cat:'cost',c:'費用',q:'まずだいたいの金額だけ知りたいのですが？',a:'ページ上部の「見積シミュレーション」で、構造と広さを選ぶだけで費用の目安がすぐ分かります。より正確な金額は無料の現地調査でご案内します。'},
-            {cat:'hojo',c:'補助金・手続き',q:'松山市に解体の補助金はありますか？',a:'松山市では、老朽化して危険な空き家の解体に対する補助制度があります（年度や要件により内容が変わります）。'},
+            {cat:'hojo',c:'補助金・手続き',q:'松山市に解体の補助金はありますか？',a:'はい、松山市には倒壊の危険がある空き家の解体に対して、費用の5分の4（上限100万円等）を補助する「老朽危険空家除却事業」がございます。ページ上部の「補助金診断」で要件をチェックしてみてください。'},
             {cat:'hojo',c:'補助金・手続き',q:'解体後に必要な手続きはありますか？',a:'建物を解体したら、法務局で「建物滅失登記」が必要です（解体後1ヶ月以内が原則）。当社で完了後にお渡しする書類（取毀証明書など）をもとに手続きできます。司法書士・土地家屋調査士のご紹介も可能です。'},
             {cat:'hojo',c:'補助金・手続き',q:'解体工事の届出は誰がしますか？',a:'一定規模以上の解体では建設リサイクル法の届出などが必要ですが、これらの法的な届出は施工業者である当社が責任を持って行います。お客様にお手間はかけません。'},
             {cat:'asb',c:'アスベスト',q:'アスベストの調査は必要ですか？',a:'2022年以降、解体・改修工事では事前のアスベスト含有調査が法律で義務付けられています。古い建材（外壁・屋根・天井など）に含まれている可能性があるため、当社が有資格者による事前調査を実施します。'},
