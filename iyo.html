@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>伊予市の空き家解体補助金（老朽危険空き家除却事業）診断｜株式会社成王建設</title>
-    <meta name="description" content="伊予市で空き家解体の補助金（老朽危険空き家除却事業）が受けられるか簡単診断。令和8年度は除却工事費の5分の4、上限80万円。対象条件、事前調査申込、必要書類、無料お見積りまでわかりやすく解説します。">
+    <meta name="description" content="伊予市で空き家解体の補助金（老朽危険空き家除却事業）が受けられるか簡単診断。令和8年度は除却工事費の5分の4、上限80万円。令和8年度より沿道要件を撤廃し対象範囲を拡大。対象条件、事前調査申込、必要書類、無料お見積りまでわかりやすく解説します。">
     <link rel="icon" type="image/png" href="logo.png?v=16">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
@@ -58,6 +58,9 @@
             <p class="text-xs text-slate-500 mt-3 leading-relaxed">
                 令和8年度の事前調査申込は、<span class="font-bold text-slate-800">令和8年4月1日〜7月31日</span>です。<br>
                 受付戸数は15戸のため、申込多数の場合は緊急性の高いものから選ばれます。
+            </p>
+            <p class="text-xs text-[#890a1e] font-bold mt-3 leading-relaxed bg-[#890a1e]/5 border border-[#890a1e]/20 rounded-lg px-4 py-3">
+                令和8年度より「沿道要件（道に面していること）」が撤廃され、補助対象の範囲が広がりました。
             </p>
         </div>
 
@@ -123,6 +126,7 @@
                     <li class="flex gap-3"><span class="font-bold text-slate-900">●</span><span>補助額は、除却工事費（消費税・地方消費税を除く）の5分の4以内。上限は80万円です。</span></li>
                     <li class="flex gap-3"><span class="font-bold text-slate-900">●</span><span>令和8年度の事前調査申込期間は、令和8年4月1日（水）〜7月31日（金）です。</span></li>
                     <li class="flex gap-3"><span class="font-bold text-slate-900">●</span><span>受付戸数は15戸。申込多数の場合は、不良度判定の結果、緊急性の高いものから補助されます。</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-slate-900">●</span><span>令和8年度より沿道要件（道に面していること）が撤廃され、補助対象の範囲が拡大しました。</span></li>
                     <li class="flex gap-3"><span class="font-bold text-slate-900">●</span><span>家財道具・機械・車両などの処分費は対象外です。除却工事に伴う廃棄物処分は対象に含まれます。</span></li>
                     <li class="flex gap-3"><span class="font-bold text-slate-900">●</span><span>令和9年2月末日までに工事を完了する必要があります。</span></li>
                 </ul>
@@ -292,13 +296,13 @@
             { q: "伊予市内にある、現在使っていない<br class='md:hidden'>空き家ですか？", y: 1, n: "out_area" },
             { q: "建物の所有者または相続人で、<br class='md:hidden'>法人ではありませんか？", y: 2, n: "out_owner" },
             { q: "すでに解体工事を契約・着工<br class='md:hidden'>してしまっていますか？", y: "out_started", n: 3 },
-            { q: "老朽化が進み、倒壊すると道路や<br class='md:hidden'>隣地へ被害が出そうですか？", y: "ok", n: "out_not_danger" }
+            { q: "老朽化が進み、倒壊すると周囲へ<br class='md:hidden'>被害が出るおそれがありますか？", y: "ok", n: "out_not_danger" }
         ];
 
         const hojoResults = {
             "ok": {
                 title: "対象の可能性があります！",
-                desc: "伊予市の補助金要件に当てはまる可能性があります。<br>ただし、最終的には伊予市の事前調査と不良度判定で決まります。<br>まずは下のマニュアルに沿って、伊予市役所への事前調査申込をご確認ください。並行して、成王建設へ無料の解体お見積りをご依頼いただけます。"
+                desc: "伊予市の補助金要件に当てはまる可能性があります。<br>ただし、最終的には伊予市の事前調査と不良度判定で決まります。<br>まずは下のマニュアルに沿って、伊予市役所への事前調査申込をご確認ください。並行して、成王建設へ無料の解体お見積りをご依頼いただけます。<br><span class='text-xs text-slate-500'>※令和8年度より沿道要件（道に面していること）が撤廃され、補助対象の範囲が広がりました。</span>"
             },
             "out_area": {
                 title: "今回は対象外となる可能性が高いです",
