@@ -18,12 +18,12 @@
 </head>
 <body class="overflow-x-hidden bg-white">
 
-    <!-- ナビゲーションバー（ロゴ付き） -->
+    <!-- ナビゲーションバー（トップページと同じサイズ・デザインに統一） -->
     <header class="bg-white border-b border-slate-200 py-3 px-4 md:px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm" style="background-color: rgba(255,255,255,0.98); backdrop-filter: blur(12px);">
-        <div class="flex items-center gap-3">
-            <img src="logo.png" alt="成王建設" class="h-8 md:h-11 w-auto object-contain">
-            <div class="text-[15px] md:text-xl font-bold tracking-tight serif leading-none flex items-center text-slate-900">
-                <span class="inline-flex flex-col text-[8px] md:text-[10px] leading-[1.1] mr-1.5 font-normal serif"><span>株式</span><span>会社</span></span>
+        <div class="flex items-center gap-3 md:gap-5">
+            <img src="logo.png" alt="成王建設" class="h-9 md:h-12 w-auto object-contain">
+            <div class="text-[18px] md:text-2xl font-bold tracking-tight serif leading-none flex items-center text-slate-900">
+                <span class="inline-flex flex-col text-[8px] md:text-[11px] leading-[1.1] mr-1.5 md:mr-2 font-normal serif"><span>株式</span><span>会社</span></span>
                 <span class="tracking-normal">成王建設</span>
             </div>
         </div>
@@ -39,62 +39,62 @@
         <!-- SEO用テキスト -->
         <p class="text-[10px] text-slate-400 text-center mb-6">松山市の空き家対策・老朽危険空家除却事業（解体補助金）のご案内</p>
         
-        <!-- タイトルエリア -->
-        <div class="text-center mb-10">
-            <div class="relative inline-block mt-4">
-                <!-- 15秒で診断！の吹き出し（文字と被らないよう右上に配置） -->
-                <div class="absolute -top-8 -right-6 md:-right-12 badge-tilt bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1.5 px-3.5 rounded-lg shadow-md whitespace-nowrap z-10">
+        <!-- タイトルエリア（成王ブルーの角丸四角） -->
+        <div class="text-center mb-6">
+            <div class="relative inline-block bg-slate-900 text-white rounded-xl shadow-lg p-6 md:p-10 max-w-xl mx-auto mt-4">
+                <!-- 15秒で診断！の吹き出し（右上に配置） -->
+                <div class="absolute -top-5 -right-4 md:-right-6 badge-tilt bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1.5 px-3.5 rounded-lg shadow-md whitespace-nowrap z-10">
                     15秒で診断！
                     <!-- しっぽ -->
                     <div class="absolute -bottom-1.5 left-4 w-3 h-3 bg-[#890a1e] transform rotate-45"></div>
                 </div>
-                <h1 class="text-2xl md:text-4xl font-bold serif leading-tight text-slate-900 relative z-0">
-                    松山市の空き家解体<br class="hidden md:block">補助金診断ツール
+                <h1 class="text-xl md:text-3xl font-bold serif leading-relaxed tracking-wide">
+                    松山市の空き家解体<br>補助金診断ツール
                 </h1>
             </div>
         </div>
 
-        <!-- 診断ツール本体（成王ブルーの角丸四角） -->
-        <div class="bg-slate-900 text-white rounded-xl shadow-xl p-8 md:p-12 mb-6 max-w-2xl mx-auto">
+        <!-- 補助金額の目安（背景白・文字色通常の本文色） -->
+        <div class="border-2 border-slate-200 text-slate-800 rounded-xl px-6 py-4 max-w-xl mx-auto shadow-sm text-center mb-10">
+            <p class="font-bold text-sm md:text-base tracking-wider serif leading-relaxed">
+                補助金額の目安：解体費用の<span class="text-[#ea580c] mx-0.5 text-lg">5分の4</span>を補助<br class="md:hidden">
+                <span class="inline-block">（上限<span class="text-[#ea580c] ml-1 text-lg">100万円</span>）</span>
+            </p>
+        </div>
+
+        <!-- 診断ツール本体（白背景） -->
+        <div class="bg-white rounded-lg shadow-xl border border-slate-200 p-6 md:p-10 mb-6 max-w-2xl mx-auto">
             <div id="hojo-q-area" class="text-center">
                 <p class="text-sm text-slate-400 font-bold mb-4 tracking-widest">QUESTION <span id="hojo-q-num">1</span>/4</p>
-                <h4 id="hojo-q-text" class="text-lg md:text-xl font-bold serif text-white mb-10 min-h-[4rem] flex flex-col justify-center leading-relaxed">
-                    直近1年以上、誰も住んでいない（使っていない）「空き家」ですか？
+                <h4 id="hojo-q-text" class="text-lg md:text-xl font-bold serif text-slate-900 mb-10 min-h-[4rem] flex flex-col justify-center leading-relaxed">
+                    直近1年以上、誰も住んでいない<br class="md:hidden">（使っていない）「空き家」ですか？
                 </h4>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button onclick="hojoAnswer(true)" class="hojo-btn w-full sm:w-44 bg-[#890a1e] text-white py-4 rounded-full font-bold text-lg shadow-md hover:bg-[#6f0818]">はい</button>
-                    <button onclick="hojoAnswer(false)" class="hojo-btn w-full sm:w-44 bg-white text-slate-900 py-4 rounded-full font-bold text-lg shadow-md hover:bg-slate-100">いいえ</button>
+                    <button onclick="hojoAnswer(false)" class="hojo-btn w-full sm:w-44 bg-white text-slate-700 border-2 border-slate-200 py-4 rounded-full font-bold text-lg shadow-sm hover:bg-slate-50">いいえ</button>
                 </div>
             </div>
 
-            <!-- 結果＆無料相談フォーム（青背景の中の表示） -->
+            <!-- 結果＆無料相談フォーム -->
             <div id="hojo-r-area" class="hidden text-center">
-                <h4 id="hojo-r-title" class="text-xl md:text-2xl font-bold serif text-white mb-4"></h4>
-                <p id="hojo-r-desc" class="text-sm text-slate-300 leading-loose mb-8 text-left"></p>
+                <h4 id="hojo-r-title" class="text-xl md:text-2xl font-bold serif text-slate-900 mb-4"></h4>
+                <p id="hojo-r-desc" class="text-sm text-slate-600 leading-loose mb-8 text-left"></p>
                 
-                <!-- 相談フォーム（白背景にして目立たせる） -->
-                <div class="bg-white text-slate-900 rounded-lg p-6 md:p-8 mb-6 text-left shadow-lg">
-                    <p class="font-bold text-lg mb-2 text-center text-[#890a1e] serif">解体の無料お見積り・ご相談</p>
-                    <p class="text-xs text-slate-600 mb-6 text-center leading-relaxed">
-                        ※補助金の申請には解体業者（成王建設）の見積書が必要です。<br>完全無料で現地調査とお見積りを作成いたします。
+                <div class="bg-slate-900 text-white rounded-lg p-6 md:p-8 mb-6 text-left shadow-lg">
+                    <p class="font-bold text-lg mb-2 text-center text-yellow-400 serif">解体の無料お見積り・ご相談</p>
+                    <p class="text-xs text-slate-300 mb-6 text-center leading-relaxed">
+                        ※補助金の申請には解体業者（成王建設）の<br class="md:hidden">見積書が必要です。<br>完全無料で現地調査とお見積りを作成いたします。
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
-                        <input type="text" id="hojo-name" placeholder="お名前" class="border-2 border-slate-200 rounded-md px-4 py-3 text-sm focus:border-[#890a1e] focus:outline-none">
-                        <input type="email" id="hojo-email" placeholder="メールアドレス" class="border-2 border-slate-200 rounded-md px-4 py-3 text-sm focus:border-[#890a1e] focus:outline-none">
+                        <input type="text" id="hojo-name" placeholder="お名前" class="border-2 border-slate-600 bg-slate-800 rounded-sm px-4 py-3 text-sm focus:border-white focus:outline-none text-white">
+                        <input type="email" id="hojo-email" placeholder="メールアドレス" class="border-2 border-slate-600 bg-slate-800 rounded-sm px-4 py-3 text-sm focus:border-white focus:outline-none text-white">
                     </div>
                     <button type="button" onclick="hojoSubmit()" class="w-full bg-[#890a1e] text-white py-4 rounded-md font-bold tracking-widest hover:bg-[#6f0818] transition-colors shadow-md">無料で相談する</button>
-                    <p id="hojo-form-msg" class="text-xs text-green-600 font-bold mt-3 hidden text-center">送信が完了しました。担当よりご連絡いたします。</p>
-                    <p id="hojo-form-err" class="text-xs text-[#890a1e] font-bold mt-3 hidden text-center">お名前とメールアドレスを入力してください。</p>
+                    <p id="hojo-form-msg" class="text-xs text-green-400 font-bold mt-3 hidden text-center">送信が完了しました。担当よりご連絡いたします。</p>
+                    <p id="hojo-form-err" class="text-xs text-red-400 font-bold mt-3 hidden text-center">お名前とメールアドレスを入力してください。</p>
                 </div>
-                <button onclick="location.reload()" class="text-sm text-slate-400 underline hover:text-slate-200">最初からやり直す</button>
+                <button onclick="location.reload()" class="text-sm text-slate-400 underline hover:text-slate-600">最初からやり直す</button>
             </div>
-        </div>
-
-        <!-- 補助金額の目安（背景白・文字色通常の本文色） -->
-        <div class="bg-white border-2 border-slate-200 text-slate-800 rounded-xl px-6 py-5 max-w-2xl mx-auto shadow-sm text-center">
-            <p class="font-bold text-sm md:text-base tracking-wider serif leading-relaxed">
-                補助金額の目安：解体費用の<span class="text-[#ea580c] mx-1 text-lg">5分の4</span>を補助（上限<span class="text-[#ea580c] ml-1 text-lg">100万円</span>）
-            </p>
         </div>
     </main>
 
@@ -103,18 +103,18 @@
         <div class="max-w-3xl mx-auto">
             
             <!-- マニュアルタイトル（成王ブルーの角丸四角） -->
-            <div class="bg-slate-900 text-white rounded-xl p-8 md:p-10 mb-12 text-center relative shadow-lg">
-                <!-- 吹き出し（15秒診断と同じ形・左上に配置） -->
-                <div class="absolute -top-5 -left-2 md:-left-6 badge-tilt bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1.5 px-4 rounded-lg shadow-md whitespace-nowrap z-10">
+            <div class="bg-slate-900 text-white rounded-xl p-8 md:p-10 mb-12 text-center relative shadow-lg max-w-xl mx-auto">
+                <!-- 吹き出し（右上に配置） -->
+                <div class="absolute -top-5 -right-4 md:-right-6 badge-tilt bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1.5 px-4 rounded-lg shadow-md whitespace-nowrap z-10">
                     これだけ見れば大丈夫！
                     <!-- しっぽ -->
-                    <div class="absolute -bottom-1.5 left-6 w-3 h-3 bg-[#890a1e] transform rotate-45"></div>
+                    <div class="absolute -bottom-1.5 left-4 w-3 h-3 bg-[#890a1e] transform rotate-45"></div>
                 </div>
-                <h2 class="text-2xl md:text-4xl font-bold serif leading-tight tracking-wide">
-                    松山市 補助金申請の<br class="md:hidden">完全マニュアル
+                <h2 class="text-xl md:text-3xl font-bold serif leading-relaxed tracking-wide">
+                    松山市 補助金申請の<br>完全マニュアル
                 </h2>
-                <p class="text-sm text-slate-300 mt-4 leading-relaxed font-bold">
-                    難しくて面倒な手続きも、この手順通りに進めれば安心です。
+                <p class="text-sm text-slate-300 mt-5 leading-relaxed font-bold">
+                    難しくて面倒な手続きも、<br class="md:hidden">この手順通りに進めれば安心です。
                 </p>
             </div>
 
@@ -132,18 +132,16 @@
                         <p class="text-sm text-slate-600 font-bold mb-3">
                             ▼ 詳細な条件や窓口へのアクセスはこちら
                         </p>
-                        <a href="https://www.city.matsuyama.ehime.jp/kurashi/kurashi/hojokin/akiyajokyaku.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[#890a1e] font-bold hover:underline text-sm md:text-base border-b border-[#890a1e] pb-0.5">
-                            松山市公式HP：空き家解体の補助金について
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <a href="https://www.city.matsuyama.ehime.jp/kurashi/kurashi/hojokin/akiyajokyaku.html" target="_blank" rel="noopener noreferrer" class="inline-block text-[#890a1e] font-bold hover:underline text-sm md:text-base border-b border-[#890a1e] pb-0.5">
+                            松山市公式HP：<br class="md:hidden">空き家解体の補助金について
                         </a>
                     </div>
                 </div>
 
-                <!-- STEP 2 -->
-                <div class="bg-white border-2 border-[#890a1e] p-6 md:p-8 rounded-lg shadow-md relative">
-                    <span class="absolute -top-3 left-6 bg-[#890a1e] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">成王建設の出番です！</span>
+                <!-- STEP 2 (シンプルな枠に変更) -->
+                <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-4 mt-2">
-                        <span class="bg-[#890a1e] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</span>
+                        <span class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</span>
                         <h3 class="font-bold text-lg text-slate-900">成王建設へ「無料見積り」をご依頼ください</h3>
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -162,7 +160,6 @@
                         当社の見積書がお手元に届いたら、市役所へ本申し込み（交付申請書の提出）を行います。以下の書類をすべて集めて提出します。
                     </p>
                     
-                    <!-- 書類リスト（自然な改行に任せるクリーンな構造） -->
                     <div class="bg-slate-50 p-5 rounded border border-slate-200 mb-6">
                         <p class="font-bold text-[#890a1e] mb-4 text-sm">【集める・記入する書類一式】</p>
                         <ul class="space-y-5 text-sm">
@@ -211,20 +208,18 @@
                         </ul>
                     </div>
                     
-                    <!-- 申請書のダウンロードリンク -->
                     <div class="mt-6 text-center bg-slate-100 p-5 rounded border border-slate-200">
                         <p class="text-sm text-slate-600 mb-3 font-bold">
-                            ▼ 申請に必要な書類（様式第1号など）のダウンロードはこちらから
+                            ▼ 申請に必要な書類（様式第1号など）の<br class="md:hidden">ダウンロードはこちらから
                         </p>
-                        <a href="https://www.city.matsuyama.ehime.jp/kurashi/kurashi/hojokin/akiyajokyaku.html#cms4FF9B" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[#890a1e] font-bold hover:underline text-sm md:text-base border-b border-[#890a1e] pb-0.5">
-                            松山市公式HP：申請書のダウンロードエリアへ
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <a href="https://www.city.matsuyama.ehime.jp/kurashi/kurashi/hojokin/akiyajokyaku.html#cms4FF9B" target="_blank" rel="noopener noreferrer" class="inline-block text-[#890a1e] font-bold hover:underline text-sm md:text-base border-b border-[#890a1e] pb-0.5">
+                            松山市公式HP：<br class="md:hidden">申請書のダウンロードエリアへ
                         </a>
                     </div>
                 </div>
 
-                <!-- STEP 4 -->
-                <div class="bg-white border-2 border-yellow-400 p-6 md:p-8 rounded-lg shadow-sm">
+                <!-- STEP 4 (シンプルな枠に変更) -->
+                <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
                         <span class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">4</span>
                         <h3 class="font-bold text-lg text-slate-900">決定通知が届いたら ➡ 工事の契約・スタート！</h3>
@@ -242,10 +237,10 @@
 
     <script>
         const hojoQuestions = [
-            { q: "直近1年以上、誰も住んでいない（使っていない）「空き家」ですか？", y: 1, n: "out_not_akiya" },
-            { q: "建物の所有者は「個人（またはその相続人）」ですか？", y: 2, n: "out_hojin" },
-            { q: "すでに解体業者と「工事の契約」を結んでしまっていますか？", y: "out_keiyaku", n: 3 },
-            { q: "屋根・外壁・柱などが大きく傷んでおり、倒壊の危険があると感じますか？", y: "ok", n: "out_not_kiken" }
+            { q: "直近1年以上、誰も住んでいない<br class='md:hidden'>（使っていない）「空き家」ですか？", y: 1, n: "out_not_akiya" },
+            { q: "建物の所有者は<br class='md:hidden'>「個人（またはその相続人）」ですか？", y: 2, n: "out_hojin" },
+            { q: "すでに解体業者と「工事の契約」を<br class='md:hidden'>結んでしまっていますか？", y: "out_keiyaku", n: 3 },
+            { q: "屋根・外壁・柱などが大きく傷んでおり、<br class='md:hidden'>倒壊の危険があると感じますか？", y: "ok", n: "out_not_kiken" }
         ];
 
         const hojoResults = {
@@ -280,7 +275,7 @@
             if (typeof nextStep === "number") {
                 currentHojoQ = nextStep;
                 document.getElementById('hojo-q-num').innerText = currentHojoQ + 1;
-                document.getElementById('hojo-q-text').innerText = hojoQuestions[currentHojoQ].q;
+                document.getElementById('hojo-q-text').innerHTML = hojoQuestions[currentHojoQ].q;
             } else {
                 const result = hojoResults[nextStep];
                 document.getElementById('hojo-q-area').classList.add('hidden');
