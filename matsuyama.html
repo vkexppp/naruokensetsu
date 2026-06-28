@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>松山市の空き家解体補助金診断｜株式会社成王建設</title>
+    <meta name="description" content="松山市で空き家解体の補助金（最大100万円）が受けられるか5つの質問で簡単診断。申請の条件や正しい流れ、無料お見積りのご依頼まで解説します。">
+    <link rel="icon" type="image/png" href="logo.png?v=16">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8fafc; color: #333; }
+        .serif { font-family: 'Shippori Mincho', serif; }
+        .hojo-btn { transition: transform 0.2s; }
+        .hojo-btn:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- シンプルなヘッダー -->
+    <header class="bg-white border-b border-slate-200 py-4 px-6 text-center">
+        <a href="index.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-slate-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+            トップページへ戻る
+        </a>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20">
+        <div class="text-center mb-10">
+            <h1 class="text-2xl md:text-4xl font-bold serif leading-tight mb-4 text-slate-900">松山市の空き家解体<br>補助金診断ツール</h1>
+            <p class="text-sm md:text-base text-slate-600">あなたの物件が補助金の対象になる可能性があるか診断します。</p>
+        </div>
+
+        <!-- 診断ツール -->
+        <div class="bg-white rounded-lg shadow-lg border border-slate-200 p-6 md:p-10 mb-12">
+            <div id="hojo-q-area" class="text-center">
+                <p class="text-sm text-slate-400 font-bold mb-3 tracking-widest">QUESTION <span id="hojo-q-num">1</span>/4</p>
+                <h4 id="hojo-q-text" class="text-lg md:text-xl font-bold serif text-slate-900 mb-8 min-h-[4rem] flex flex-col justify-center leading-relaxed">
+                    直近1年以上、誰も住んでいない（使っていない）「空き家」ですか？
+                </h4>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="hojoAnswer(true)" class="hojo-btn w-full sm:w-48 bg-[#890a1e] text-white py-4 rounded-full font-bold text-lg shadow-md">はい</button>
+                    <button onclick="hojoAnswer(false)" class="hojo-btn w-full sm:w-48 bg-white text-slate-700 border-2 border-slate-200 py-4 rounded-full font-bold text-lg">いいえ</button>
+                </div>
+            </div>
+
+            <!-- 結果＆無料相談フォーム -->
+            <div id="hojo-r-area" class="hidden text-center">
+                <h4 id="hojo-r-title" class="text-xl md:text-2xl font-bold serif text-slate-900 mb-4"></h4>
+                <p id="hojo-r-desc" class="text-sm text-slate-600 leading-loose mb-8 bg-slate-50 p-5 rounded-md text-left"></p>
+                
+                <div class="bg-slate-900 text-white rounded-lg p-6 mb-6 text-left">
+                    <p class="font-bold text-lg mb-2 text-center">解体の無料お見積り・ご相談</p>
+                    <p class="text-xs text-slate-300 mb-5 text-center">※補助金の申請には解体業者の見積書が必要です。成王建設が完全無料で現地調査とお見積りを作成いたします。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                        <input type="text" id="hojo-name" placeholder="お名前" class="border-2 border-slate-600 bg-slate-800 rounded-sm px-4 py-3 text-sm focus:border-white focus:outline-none text-white">
+                        <input type="email" id="hojo-email" placeholder="メールアドレス" class="border-2 border-slate-600 bg-slate-800 rounded-sm px-4 py-3 text-sm focus:border-white focus:outline-none text-white">
+                    </div>
+                    <button type="button" onclick="hojoSubmit()" class="w-full bg-[#890a1e] text-white py-4 rounded-sm font-bold tracking-widest hover:bg-[#6f0818] transition-colors">無料で相談する</button>
+                    <p id="hojo-form-msg" class="text-xs text-green-400 font-bold mt-3 hidden text-center">送信が完了しました。</p>
+                    <p id="hojo-form-err" class="text-xs text-red-400 font-bold mt-3 hidden text-center">入力が不足しています。</p>
+                </div>
+                <button onclick="location.reload()" class="text-sm text-slate-400 underline">最初からやり直す</button>
+            </div>
+        </div>
+
+        <!-- 申請の流れ -->
+        <h4 class="text-2xl font-bold serif mb-6 text-center text-slate-900">補助金申請の正しい流れ</h4>
+        <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg mb-12">
+            <ul class="space-y-6">
+                <li class="flex gap-4">
+                    <div class="shrink-0 bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <div>
+                        <p class="font-bold text-slate-900 mb-1">市役所へ事前相談・判定依頼</p>
+                        <p class="text-sm text-slate-600">お客様ご自身で松山市役所の窓口へご相談いただき、市の職員による現地の危険度判定（点数付け）を受けてください。</p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <div class="shrink-0 bg-[#890a1e] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <div>
+                        <p class="font-bold text-[#890a1e] mb-1">成王建設へ無料見積もりのご依頼</p>
+                        <p class="text-sm text-slate-600">補助金の申請には「解体工事の見積書」が必要です。当社にご連絡いただければ、無料で現地調査とお見積りを作成いたします。</p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <div class="shrink-0 bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <div>
+                        <p class="font-bold text-slate-900 mb-1">市へ補助金の交付申請</p>
+                        <p class="text-sm text-slate-600">当社の見積書などを添えて、市へ正式な交付申請を行います。</p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <div class="shrink-0 bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <div>
+                        <p class="font-bold text-slate-900 mb-1 border-b-2 border-yellow-400 inline-block">交付決定後にご契約・着工</p>
+                        <p class="text-sm text-slate-600 mt-1">市から「補助金を出します」という決定通知が届いてから、当社と解体工事の契約を結びます。<span class="font-bold text-red-600">※決定前に契約すると補助金が受け取れません。</span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 概要テーブル -->
+        <h4 class="text-2xl font-bold serif mb-6 text-center text-slate-900">松山市の要件概要</h4>
+        <div class="bg-white border border-slate-200 overflow-hidden mb-12">
+            <table class="w-full text-sm text-left text-slate-600">
+                <thead class="text-xs text-slate-700 bg-slate-100 uppercase">
+                    <tr>
+                        <th class="px-6 py-4 border-b border-slate-200">項目</th>
+                        <th class="px-6 py-4 border-b border-slate-200">内容</th>
+                        <th class="px-6 py-4 border-b border-slate-200 text-right">上限金額（円）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-bold text-slate-900">対象者</td>
+                        <td class="px-6 py-4">個人（市税滞納がないこと）</td>
+                        <td class="px-6 py-4 text-right">-</td>
+                    </tr>
+                    <tr class="bg-slate-50 border-b border-slate-100">
+                        <td class="px-6 py-4 font-bold text-slate-900">対象物件</td>
+                        <td class="px-6 py-4">市が判定する老朽危険空家</td>
+                        <td class="px-6 py-4 text-right">-</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 font-bold text-slate-900">補助割合</td>
+                        <td class="px-6 py-4">解体工事費用の5分の4</td>
+                        <td class="px-6 py-4 text-right font-bold text-slate-900">1,000,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-xs text-slate-400 text-center">詳細は松山市の公式ホームページ等で最新情報をご確認ください。</p>
+    </main>
+
+    <script>
+        const hojoQuestions = [
+            { q: "直近1年以上、誰も住んでいない（使っていない）「空き家」ですか？", y: 1, n: "out_not_akiya" },
+            { q: "建物の所有者は「個人（またはその相続人）」ですか？", y: 2, n: "out_hojin" },
+            { q: "すでに解体業者と「工事の契約」を結んでしまっていますか？", y: "out_keiyaku", n: 3 },
+            { q: "屋根・外壁・柱などが大きく傷んでおり、倒壊の危険があると感じますか？", y: "ok", n: "out_not_kiken" }
+        ];
+
+        const hojoResults = {
+            "ok": {
+                title: "対象の可能性大！",
+                desc: "要件を満たしている可能性が高いです。まずは松山市役所へ相談し、市の判定を受けてください。並行して、成王建設へ無料の解体お見積りをご依頼ください。"
+            },
+            "out_not_akiya": {
+                title: "今回は対象外となる可能性が高いです",
+                desc: "本補助金は「1年以上使用されていない空き家」が対象です。通常解体の適正価格によるお見積りは無料で承っております。"
+            },
+            "out_hojin": {
+                title: "法人の場合は対象外となります",
+                desc: "本補助金は個人の所有物件が対象です。法人所有の物件の解体実績も豊富な成王建設まで、ぜひ一度ご相談ください。"
+            },
+            "out_keiyaku": {
+                title: "ご注意ください！契約後だと対象外になります",
+                desc: "補助金は【市の決定が下りてから業者と契約する】必要があります。これからご検討の方は、ぜひ成王建設へご相談ください。"
+            },
+            "out_not_kiken": {
+                title: "対象外となる可能性があります",
+                desc: "本補助金は、倒壊の危険がある空き家であることが条件です。通常解体の無料見積はいつでも承っております。"
+            }
+        };
+
+        let currentHojoQ = 0;
+
+        function hojoAnswer(isYes) {
+            const q = hojoQuestions[currentHojoQ];
+            const nextStep = isYes ? q.y : q.n;
+
+            if (typeof nextStep === "number") {
+                currentHojoQ = nextStep;
+                document.getElementById('hojo-q-num').innerText = currentHojoQ + 1;
+                document.getElementById('hojo-q-text').innerHTML = hojoQuestions[currentHojoQ].q;
+            } else {
+                const result = hojoResults[nextStep];
+                document.getElementById('hojo-q-area').classList.add('hidden');
+                document.getElementById('hojo-r-area').classList.remove('hidden');
+                document.getElementById('hojo-r-title').innerText = result.title;
+                document.getElementById('hojo-r-desc').innerText = result.desc;
+            }
+        }
+
+        function hojoSubmit() {
+            const name = document.getElementById('hojo-name').value.trim();
+            const email = document.getElementById('hojo-email').value.trim();
+            const err = document.getElementById('hojo-form-err');
+            const msg = document.getElementById('hojo-form-msg');
+            
+            if(!name || !email){ err.classList.remove('hidden'); msg.classList.add('hidden'); return; }
+            err.classList.add('hidden'); msg.classList.remove('hidden');
+            
+            try{
+                fetch('https://formsubmit.co/ajax/naruo.kaitai@gmail.com',{
+                    method:'POST', headers:{'Content-Type':'application/json',Accept:'application/json'},
+                    body:JSON.stringify({ _subject:'【松山市補助金】無料相談の依頼', _template:'table', お名前: name, メールアドレス: email })
+                }).catch(()=>{});
+            }catch(e){}
+        }
+    </script>
+</body>
+</html>
