@@ -18,7 +18,7 @@
 </head>
 <body class="overflow-x-hidden bg-white">
 
-    <!-- ナビゲーションバー（トップページと同じサイズ・デザインに統一） -->
+    <!-- ナビゲーションバー -->
     <header class="bg-white border-b border-slate-200 py-3 px-4 md:px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm" style="background-color: rgba(255,255,255,0.98); backdrop-filter: blur(12px);">
         <div class="flex items-center gap-3 md:gap-5">
             <img src="logo.png" alt="成王建設" class="h-9 md:h-12 w-auto object-contain">
@@ -34,14 +34,13 @@
         </a>
     </header>
 
-    <!-- 診断ツールセクション（全体背景：白） -->
+    <!-- 診断ツールセクション -->
     <main class="max-w-3xl mx-auto px-6 py-10 md:py-16 bg-white">
-        <!-- SEO用テキスト -->
         <p class="text-[10px] text-slate-400 text-center mb-6">松山市の空き家対策・老朽危険空家除却事業（解体補助金）のご案内</p>
         
-        <!-- タイトルエリア（成王ブルーの角丸四角） -->
+        <!-- タイトルエリア -->
         <div class="relative bg-slate-900 text-white rounded-xl p-8 md:p-10 shadow-lg text-center max-w-xl mx-auto">
-            <!-- 15秒で診断！の吹き出し（右上に配置） -->
+            <!-- 15秒で診断！の吹き出し -->
             <div class="absolute -top-5 -right-2 md:-right-4 badge-tilt bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1.5 px-4 rounded-lg shadow-md whitespace-nowrap z-10">
                 15秒で診断！
                 <!-- しっぽ -->
@@ -52,16 +51,16 @@
             </h1>
         </div>
 
-        <!-- 補助金額の目安（枠なし・余白を詰める） -->
+        <!-- 補助金額の目安 -->
         <div class="text-slate-800 text-center mt-5 mb-5 max-w-xl mx-auto">
             <p class="font-bold text-sm md:text-base tracking-wider serif leading-relaxed">
-                補助金額の目安：解体費用の<span class="text-[#ea580c] mx-0.5 text-lg">5分の4</span>を補助<br class="md:hidden">
-                <span class="inline-block">（上限<span class="text-[#ea580c] ml-1 text-lg">100万円</span>）</span>
+                補助金額の目安：解体費用の<span class="text-[#890a1e] mx-0.5 text-lg">5分の4</span>を補助<br class="md:hidden">
+                <span class="inline-block">（上限<span class="text-[#890a1e] ml-1 text-lg">100万円</span>）</span>
             </p>
         </div>
 
-        <!-- 診断ツール本体（白背景） -->
-        <div class="bg-white rounded-lg shadow-xl border border-slate-200 px-6 py-6 md:px-10 md:py-8 mb-6 max-w-2xl mx-auto">
+        <!-- 診断ツール本体（黒枠に変更） -->
+        <div class="bg-white rounded-lg shadow-xl border-2 border-slate-900 px-6 py-6 md:px-10 md:py-8 mb-6 max-w-2xl mx-auto">
             <div id="hojo-q-area" class="text-center">
                 <p class="text-sm text-slate-400 font-bold mb-3 tracking-widest">QUESTION <span id="hojo-q-num">1</span>/4</p>
                 <h4 id="hojo-q-text" class="text-lg md:text-xl font-bold serif text-slate-900 mb-8 min-h-[4rem] flex flex-col justify-center leading-relaxed">
@@ -96,16 +95,14 @@
         </div>
     </main>
 
-    <!-- 申請マニュアルセクション（背景：白） -->
+    <!-- 申請マニュアルセクション -->
     <section class="py-12 md:py-20 px-6 bg-white border-t border-slate-100">
         <div class="max-w-3xl mx-auto">
             
-            <!-- マニュアルタイトル（成王ブルーの角丸四角） -->
+            <!-- マニュアルタイトル -->
             <div class="relative bg-slate-900 text-white rounded-xl p-8 md:p-10 mb-12 text-center shadow-lg max-w-xl mx-auto">
-                <!-- 吹き出し（右上に配置） -->
                 <div class="absolute -top-5 -right-2 md:-right-4 badge-tilt bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1.5 px-4 rounded-lg shadow-md whitespace-nowrap z-10">
                     これだけ見れば大丈夫！
-                    <!-- しっぽ -->
                     <div class="absolute -bottom-1.5 left-4 w-3 h-3 bg-[#890a1e] transform rotate-45"></div>
                 </div>
                 <h2 class="text-2xl md:text-4xl font-bold serif leading-tight tracking-wide">
@@ -116,7 +113,8 @@
                 </p>
             </div>
 
-            <div class="space-y-8">
+            <!-- ステップ間の矢印付きリスト -->
+            <div class="flex flex-col gap-4">
                 <!-- STEP 1 -->
                 <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
@@ -137,6 +135,11 @@
                     </div>
                 </div>
 
+                <!-- 矢印 -->
+                <div class="flex justify-center text-slate-300 py-1">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+
                 <!-- STEP 2 -->
                 <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-4 mt-2">
@@ -149,6 +152,11 @@
                     </p>
                 </div>
 
+                <!-- 矢印 -->
+                <div class="flex justify-center text-slate-300 py-1">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </div>
+
                 <!-- STEP 3 -->
                 <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
@@ -159,7 +167,6 @@
                         当社の見積書がお手元に届いたら、市役所へ本申し込み（交付申請書の提出）を行います。以下の書類をすべて集めて提出します。
                     </p>
                     
-                    <!-- 書類リスト -->
                     <div class="bg-slate-50 p-5 rounded border border-slate-200 mb-6">
                         <p class="font-bold text-[#890a1e] mb-4 text-sm">【集める・記入する書類一式】</p>
                         <ul class="space-y-5 text-sm">
@@ -208,7 +215,6 @@
                         </ul>
                     </div>
                     
-                    <!-- 申請書のダウンロードリンク -->
                     <div class="mt-6 text-center bg-slate-100 p-5 rounded border border-slate-200">
                         <p class="text-sm text-slate-600 mb-3 font-bold">
                             ▼ 申請に必要な書類（様式第1号など）の<br class="md:hidden">ダウンロードはこちらから
@@ -218,6 +224,11 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden md:inline"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </a>
                     </div>
+                </div>
+
+                <!-- 矢印 -->
+                <div class="flex justify-center text-slate-300 py-1">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M19 12l-7 7-7-7"/></svg>
                 </div>
 
                 <!-- STEP 4 -->
@@ -245,6 +256,7 @@
             { q: "屋根・外壁・柱などが大きく傷んでおり、<br class='md:hidden'>倒壊の危険があると感じますか？", y: "ok", n: "out_not_kiken" }
         ];
 
+        // 診断結果の改行位置を調整
         const hojoResults = {
             "ok": {
                 title: "対象の可能性大！",
@@ -252,19 +264,19 @@
             },
             "out_not_akiya": {
                 title: "今回は対象外となる可能性が高いです",
-                desc: "本補助金は「1年以上使用されていない空き家」が対象です。<br>通常解体の適正価格によるお見積りは無料で承っております。"
+                desc: "本補助金は「1年以上使用されていない空き家」が<br>対象です。通常解体の適正価格によるお見積りは無料で承っております。"
             },
             "out_hojin": {
                 title: "法人の場合は対象外となります",
-                desc: "本補助金は個人の所有物件が対象です。<br>法人所有の物件の解体実績も豊富な成王建設まで、ぜひ一度ご相談ください。"
+                desc: "本補助金は個人の所有物件が<br>対象です。法人所有の物件の解体実績も豊富な成王建設まで、ぜひ一度ご相談ください。"
             },
             "out_keiyaku": {
                 title: "ご注意ください！契約後だと対象外になります",
-                desc: "補助金は【市の決定が下りてから業者と契約する】必要があります。<br>これからご検討の方は、ぜひ成王建設へご相談ください。"
+                desc: "補助金は【市の決定が下りてから業者と契約する】<br>必要があります。これからご検討の方は、ぜひ成王建設へご相談ください。"
             },
             "out_not_kiken": {
                 title: "対象外となる可能性があります",
-                desc: "本補助金は、倒壊の危険がある空き家であることが条件です。<br>通常解体の無料見積はいつでも承っております。"
+                desc: "本補助金は、倒壊の危険がある空き家であることが<br>条件です。通常解体の無料見積はいつでも承っております。"
             }
         };
 
