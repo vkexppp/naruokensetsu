@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>松山市の空き家解体補助金診断｜株式会社成王建設</title>
-    <meta name="description" content="松山市で空き家解体の補助金（最大100万円）が受けられるか簡単診断。面倒な申請条件や書き方、正しい流れ、無料お見積りのご依頼まで完璧に解説します。">
+    <meta name="description" content="松山市で空き家解体の補助金（最大100万円）が受けられるか簡単診断。面倒な申請条件や書き方、正しい流れ、無料お見積りのご依頼まで解説します。">
     <link rel="icon" type="image/png" href="logo.png?v=16">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
@@ -13,12 +13,13 @@
         .serif { font-family: 'Shippori Mincho', serif; }
         .hojo-btn { transition: transform 0.2s; }
         .hojo-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .bg-guide { background-color: #f1f5f9; } /* 申請マニュアル部分の背景色 */
+        .bg-guide { background-color: #f1f5f9; }
+        .badge-tilt { transform: rotate(-7deg); }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- ナビゲーションバー（ロゴ付き） -->
+    <!-- ナビゲーションバー -->
     <header class="bg-white border-b border-slate-200 py-3 px-4 md:px-6 flex justify-between items-center sticky top-0 z-50 shadow-sm" style="background-color: rgba(255,255,255,0.98); backdrop-filter: blur(12px);">
         <div class="flex items-center gap-3">
             <img src="logo.png" alt="成王建設" class="h-8 md:h-11 w-auto object-contain">
@@ -37,12 +38,17 @@
     <!-- 診断ツールセクション（背景：白） -->
     <main class="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <div class="text-center mb-8">
-            <h1 class="text-2xl md:text-4xl font-bold serif leading-tight text-slate-900 mb-6">
-                <span class="inline-block">松山市の空き家解体</span><br class="hidden md:block"><span class="inline-block">補助金診断ツール</span>
-            </h1>
-            <!-- 金額の目安をタイトルの直下に配置 -->
-            <div class="inline-block bg-[#890a1e] text-white border-2 border-[#890a1e] rounded-md px-6 py-3 shadow-md">
-                <p class="font-bold text-sm md:text-lg tracking-wider">
+            <div class="relative inline-block mb-6">
+                <h1 class="text-2xl md:text-4xl font-bold serif leading-tight text-slate-900">
+                    <span class="inline-block">松山市の空き家解体</span><br class="hidden md:block"><span class="inline-block">補助金診断ツール</span>
+                </h1>
+                <!-- 右上に吹き出しバッジを追加 -->
+                <span class="badge-tilt absolute -top-5 -right-12 md:-right-16 bg-[#890a1e] text-white text-xs md:text-sm font-bold py-1 px-2.5 rounded-full whitespace-nowrap shadow-md">15秒で診断！</span>
+            </div>
+            <br>
+            <!-- 補助割合（成王ブルー #0f172a に変更） -->
+            <div class="inline-block bg-[#0f172a] text-white rounded-md px-6 py-3 shadow-md">
+                <p class="font-bold text-sm md:text-lg tracking-wider serif">
                     <span class="inline-block">補助金額の目安：</span><span class="inline-block">解体費用の5分の4</span><span class="inline-block">（上限 100万円）</span>
                 </p>
             </div>
@@ -84,7 +90,7 @@
         </div>
     </main>
 
-    <!-- 申請マニュアルセクション（背景色を変更して明確に分離） -->
+    <!-- 申請マニュアルセクション（背景：薄グレー） -->
     <section class="bg-guide py-16 md:py-20 px-6 border-t border-slate-200">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold serif mb-6 text-center text-slate-900 leading-tight">
@@ -93,7 +99,7 @@
             </h2>
             <p class="text-sm text-slate-600 mb-10 text-center max-w-2xl mx-auto leading-loose font-bold">
                 <span class="inline-block">難しくて面倒な手続きも、</span><span class="inline-block">この手順通りに進めれば安心です。</span><br>
-                <span class="inline-block text-red-600 border-b-2 border-red-600">※必ず「市の決定」が下りてから、</span><span class="inline-block text-red-600 border-b-2 border-red-600">解体業者と契約してください。</span>
+                <span class="inline-block text-red-600 border-b-2 border-red-600">※必ず「市の決定通知」が下りてから、</span><span class="inline-block text-red-600 border-b-2 border-red-600">解体工事の契約を結んでください。</span>
             </p>
 
             <div class="space-y-8">
@@ -101,37 +107,33 @@
                 <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
                         <span class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</span>
-                        <h3 class="font-bold text-lg text-slate-900">松山市役所へ「判定依頼書」を提出する</h3>
+                        <h3 class="font-bold text-lg text-slate-900">松山市役所へ「判定の依頼」をする</h3>
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                        <span class="inline-block">まずは対象物件になるか、</span><span class="inline-block">ご自身で松山市役所の「住宅課」へ書類を提出し、</span><span class="inline-block">市の職員に現地を見てもらいます。</span>
+                        <span class="inline-block">まずは対象の建物になるか、</span><span class="inline-block">ご自身で松山市役所の「住宅課」へ書類を出して、</span><span class="inline-block">役所の職員に現地を見てもらいます。</span>
                     </p>
                     <div class="bg-slate-50 p-5 rounded border border-slate-200">
-                        <p class="font-bold text-[#890a1e] mb-3 text-sm">【何を書いて、何を持っていけばいいの？】</p>
+                        <p class="font-bold text-[#890a1e] mb-3 text-sm">【用意する書類と書き方のポイント】</p>
                         <ul class="space-y-4 text-sm text-slate-700">
                             <li class="flex gap-2">
                                 <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 <div>
-                                    <span class="font-bold">提出する書類：「老朽危険空家判定依頼書（様式第1号）」</span><br>
-                                    <span class="inline-block text-slate-500 mt-1">※市役所でもらうか、<a href="https://www.city.matsuyama.ehime.jp/kurashi/kurashi/hojokin/akiyajokyaku.html" target="_blank" class="text-blue-600 underline">松山市公式HP</a>から印刷してください。</span>
+                                    <span class="font-bold">① 判定依頼書</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所窓口でもらうか、市のサイトから印刷してください。あなたの氏名、解体したい建物の住所を記入します。所有者が亡くなっている場合は、あなたが相続人代表として記入すれば大丈夫です。</span>
                                 </div>
                             </li>
                             <li class="flex gap-2">
                                 <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 <div>
-                                    <span class="font-bold">記入する内容</span><br>
-                                    <span class="inline-block text-slate-500 mt-1">① 申請するあなたの氏名・住所・電話番号</span><br>
-                                    <span class="inline-block text-slate-500 mt-1">② 解体したい空き家の住所</span><br>
-                                    <span class="inline-block text-red-500 mt-1">※空き家の所有者が亡くなられている場合は、あなたが「相続人代表者」として記入します。</span>
+                                    <span class="font-bold">② 建物の全体写真 ＆ 傷みが激しい部分の写真</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所資料名：補助対象空家の写真。屋根の剥がれや、柱の傾きなどがはっきり分かる写真を数枚用意します。</span>
                                 </div>
                             </li>
                             <li class="flex gap-2">
                                 <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 <div>
-                                    <span class="font-bold">一緒に持っていくもの</span><br>
-                                    <span class="inline-block text-slate-500 mt-1">① 建物の全体がわかる写真</span><br>
-                                    <span class="inline-block text-slate-500 mt-1">② 傷んでいる部分（屋根の剥がれ、柱の傾きなど）のアップ写真</span><br>
-                                    <span class="inline-block text-slate-500 mt-1">③ 場所がわかる簡単な地図（Googleマップの印刷などでOK）</span>
+                                    <span class="font-bold">③ 周辺の地図（Googleマップの印刷等でOK）</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所資料名：補助対象空家の位置図。役所の職員が迷わず現地へ行けるよう、建物の場所がわかる地図を添えます。</span>
                                 </div>
                             </li>
                         </ul>
@@ -147,7 +149,7 @@
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed">
                         <span class="inline-block">市から「補助金の対象になります」という結果が届いたら、</span><span class="inline-block">当社にご連絡ください。</span><br>
-                        <span class="inline-block">補助金の正式な申請には「解体業者の見積書」が必須です。</span><span class="inline-block">完全無料で現地調査とお見積りを作成し、お渡しします。</span>
+                        <span class="inline-block">次のステップの正式申請で、</span><span class="inline-block">「細かい工事項目や内訳が記載された見積書」が必ず必要になります。</span><span class="inline-block">完全無料で現地を調査し、条件に沿った正しい見積書を作成します。</span>
                     </p>
                 </div>
 
@@ -155,17 +157,50 @@
                 <div class="bg-white border border-slate-200 p-6 md:p-8 rounded-lg shadow-sm">
                     <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
                         <span class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">3</span>
-                        <h3 class="font-bold text-lg text-slate-900">市へ「交付申請書」を提出する</h3>
+                        <h3 class="font-bold text-lg text-slate-900">松山市役所へ「交付申請」を提出する</h3>
                     </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                        <span class="inline-block">当社の見積書を受け取ったら、</span><span class="inline-block">市役所に正式な補助金の申し込み（交付申請）を行います。</span>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                        <span class="inline-block">当社の見積書がお手元に届いたら、</span><span class="inline-block">いよいよ市役所へ本申し込み（交付申請）を行います。</span>
                     </p>
-                    <div class="bg-slate-50 p-4 rounded text-sm text-slate-600 border border-slate-200">
-                        <span class="font-bold text-slate-800">提出するもの：</span><br>
-                        <span class="inline-block mt-1">・補助金交付申請書</span><br>
-                        <span class="inline-block mt-1">・成王建設の見積書</span><br>
-                        <span class="inline-block mt-1">・空き家の所有者がわかる書類（固定資産税の納税通知書など）</span><br>
-                        <span class="inline-block mt-1">・市税に滞納がないことの証明書（完納証明書）</span>
+                    <div class="bg-slate-50 p-5 rounded border border-slate-200">
+                        <p class="font-bold text-[#890a1e] mb-3 text-sm">【集める・記入する書類一式】</p>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li class="flex gap-2">
+                                <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <div>
+                                    <span class="font-bold">① 補助金交付申請書 ＆ 確約書 ＆ 口座番号確認書</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所資料名：様式第1号、様式第2号、銀行等口座番号確認書。それぞれお名前や口座情報を記入する用紙です。</span>
+                                </div>
+                            </li>
+                            <li class="flex gap-2">
+                                <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <div>
+                                    <span class="font-bold">② 成王建設がお渡しした見積書</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※解体する建物の所在地や木造などの構造、施工面積、各種処分費の内訳などが細かく記載された、当社発行の原本をそのまま添付します。</span>
+                                </div>
+                            </li>
+                            <li class="flex gap-2">
+                                <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <div>
+                                    <span class="font-bold">③ あなたの住民票の写し（コピー不可）</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所窓口やマイナンバーカードを使って発行した原本が必要です。</span>
+                                </div>
+                            </li>
+                            <li class="flex gap-2">
+                                <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <div>
+                                    <span class="font-bold">④ 税金の滞納がない証明書（コピー不可）</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所資料名：完納証明書。松山市が発行するもので、市税をしっかり納めている証明として提出します。</span>
+                                </div>
+                            </li>
+                            <li class="flex gap-2">
+                                <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <div>
+                                    <span class="font-bold">⑤ 建物の証明書（コピー不可）</span>
+                                    <span class="block text-xs text-slate-500 mt-0.5">※役所資料名：登記事項証明書または固定資産公課証明書。その空き家が本当に実在し、誰の所有物であるかを確認するための公的な書類です。</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -173,14 +208,14 @@
                 <div class="bg-white border-2 border-yellow-400 p-6 md:p-8 rounded-lg shadow-md">
                     <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
                         <span class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">4</span>
-                        <h3 class="font-bold text-lg text-slate-900">交付決定の通知が届く ➡ 成王建設と契約・着工</h3>
+                        <h3 class="font-bold text-lg text-slate-900">決定通知が届いたら ➡ 工事の契約・スタート！</h3>
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed font-bold">
-                        <span class="inline-block">市から「補助金を出します」という決定通知書が届きます。</span><br>
-                        <span class="inline-block text-red-600 text-base mt-2">必ずこの書類を受け取ってから、</span><span class="inline-block text-red-600 text-base">当社と解体工事の契約を結んでください。</span>
+                        <span class="inline-block">市役所から「補助金交付決定通知書」というOKの書類が届きます。</span><br>
+                        <span class="inline-block text-red-600 text-base mt-2">必ずこの書類を受け取ってから、</span><span class="inline-block text-red-600 text-base">成王建設と工事の契約を結んでください。</span>
                     </p>
                     <p class="text-xs text-slate-500 mt-3">
-                        <span class="inline-block">※これ以降の工事や、</span><span class="inline-block">完了後の市への実績報告（写真提出など）は、</span><span class="inline-block">当社がしっかりサポートいたしますのでご安心ください。</span>
+                        <span class="inline-block">※これ以降の実際の解体工事や、</span><span class="inline-block">工事が終わった後に市へ提出する完了写真などの手続き（実績報告）は、</span><span class="inline-block">すべて成王建設にお任せいただけます。</span>
                     </p>
                 </div>
             </div>
