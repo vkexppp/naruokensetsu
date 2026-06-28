@@ -47,6 +47,7 @@
     </style>
 </head>
 <body class="overflow-x-hidden text-slate-900">
+    <!-- ===== Navigation ===== -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
             <div class="flex items-center gap-3 md:gap-5">
@@ -58,7 +59,7 @@
             </div>
             <div class="hidden lg:flex items-center space-x-7 text-[12px] font-bold tracking-[0.1em] text-slate-600">
                 <a href="#simulator" class="hover:text-slate-900 transition-colors">お見積り</a>
-                <a href="#subsidy" class="text-[#890a1e] hover:text-slate-900 transition-colors">補助金について</a>
+                <a href="#subsidy" class="hover:text-slate-900 transition-colors">補助金について</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">対応工事</a>
                 <a href="#faq" class="hover:text-slate-900 transition-colors">よくあるご質問</a>
                 <a href="#about" class="hover:text-slate-900 transition-colors">会社案内</a>
@@ -80,15 +81,17 @@
         </div>
     </nav>
 
+    <!-- ===== Mobile Menu ===== -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
         <a href="#simulator" class="mobile-link">お見積り</a>
-        <a href="#subsidy" class="mobile-link text-[#890a1e] font-bold">補助金について</a>
+        <a href="#subsidy" class="mobile-link">補助金について</a>
         <a href="#service" class="mobile-link">対応工事</a>
         <a href="#faq" class="mobile-link">よくあるご質問</a>
         <a href="#about" class="mobile-link">会社案内</a>
         <a href="#contact" class="mobile-link bg-slate-900 text-white px-8 py-4 rounded-sm mt-4 shadow-lg text-lg">お問い合わせ</a>
     </div>
 
+    <!-- ===== HERO ===== -->
     <section class="relative w-full min-h-[88vh] md:h-screen flex items-center overflow-hidden">
         <img src="600004693690679420.jpg" alt="松山市で解体工事を行う成王建設の重機（ユンボ）" class="hero-img absolute inset-0 w-full h-full object-cover">
         <div class="hero-overlay absolute inset-0"></div>
@@ -109,6 +112,7 @@
         </div>
     </section>
 
+    <!-- ===== 見積シミュレーション ===== -->
     <section id="simulator" class="py-16 md:py-28 px-6 bg-dark text-white">
         <div class="max-w-3xl mx-auto">
             <div class="fade-in text-center mb-10">
@@ -124,6 +128,7 @@
             <div class="fade-in bg-white text-slate-900 rounded-lg shadow-2xl overflow-hidden">
                 <img src="社長吹き出し写真.png" alt="代表 菅 正行からのご案内" class="block w-full h-auto">
               <div class="p-6 md:p-10">
+                <!-- STEP1 構造 -->
                 <div class="mb-8">
                     <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">1</span><span class="text-base font-bold serif">建物の構造</span></p>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="sim-structs">
@@ -133,6 +138,7 @@
                         <button type="button" data-rate="90000" data-name="RC造" class="struct-card rounded-md py-5 px-3 text-center" onclick="simSelectStruct(this)"><span class="block font-bold text-base md:text-lg">RC造</span><span class="struct-sub block text-[10px] mt-1.5">ビル・マンション</span></button>
                     </div>
                 </div>
+                <!-- STEP2 面積 -->
                 <div class="mb-8">
                     <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">2</span><span class="text-base font-bold serif">延床面積</span></p>
                     <div class="flex items-center gap-3 flex-wrap">
@@ -144,6 +150,7 @@
                         <span class="text-xs text-slate-400">（1坪 ≒ 3.3㎡）</span>
                     </div>
                 </div>
+                <!-- STEP3 条件 -->
                 <div class="mb-8">
                     <p class="flex items-center gap-3 mb-4"><span class="bg-slate-900 text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">3</span><span class="text-base font-bold serif">当てはまる条件<span class="text-xs font-normal text-slate-400 ml-1">（任意・複数可）</span></span></p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="sim-options">
@@ -155,6 +162,7 @@
                         <div class="sim-opt-l flex items-center gap-3 p-3.5 rounded-sm border-[1.5px] border-slate-200" data-add="0.05" data-label="浄化槽・便槽あり" data-on="0" onclick="simToggleOpt(this)"><span class="sim-check-l w-5 h-5 rounded-sm border-2 border-slate-300 flex items-center justify-center shrink-0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" style="opacity:0"><path d="M20 6 9 17l-5-5"/></svg></span><span class="text-sm">浄化槽・便槽がある<span class="block text-[10px] text-slate-400">地中埋設物の撤去</span></span></div>
                     </div>
                 </div>
+                <!-- STEP4 名前・メール -->
                 <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 md:p-6 mb-6">
                     <p class="flex items-center gap-3 mb-2"><span class="bg-[#890a1e] text-white text-xs font-bold w-7 h-7 flex items-center justify-center rounded-full serif">4</span><span class="text-base font-bold serif">お名前とメールアドレス</span></p>
                     <p class="text-xs text-slate-500 mb-4 leading-relaxed">結果の表示にはご入力が必要です。担当より、より正確なお見積のご案内も可能です。</p>
@@ -168,6 +176,7 @@
                     </button>
                     <p id="sim-error" class="text-xs text-[#890a1e] font-bold mt-2 text-center hidden">必須入力です</p>
                 </div>
+                <!-- 結果 -->
                 <div class="bg-dark text-white rounded-lg p-8 md:p-10 text-center">
                     <p class="text-blue-300 text-xs tracking-[0.3em] font-bold uppercase mb-3">解体費用の目安（税込）</p>
                     <div id="sim-result" class="serif font-bold leading-tight mb-2"><span class="text-xl sm:text-2xl md:text-3xl text-slate-300 whitespace-nowrap">建物情報を入力してください</span></div>
@@ -183,17 +192,18 @@
         </div>
     </section>
 
+    <!-- ===== 愛媛県・空き家解体 補助金について（トップページ用・シンプル版） ===== -->
     <section id="subsidy" class="py-16 md:py-28 px-6 bg-slate-50 relative overflow-hidden">
         <div class="max-w-4xl mx-auto relative z-10 text-center">
-            <span class="inline-block bg-[#890a1e] text-white text-[10px] md:text-xs font-bold tracking-widest px-4 py-1.5 rounded-sm mb-4">お役立ち情報</span>
+            <span class="inline-block bg-[#890a1e] text-white text-[10px] md:text-xs font-bold tracking-widest px-4 py-1.5 rounded-sm mb-4">補助金情報</span>
             <h3 class="text-3xl md:text-5xl font-bold serif mb-6 text-slate-900 leading-tight">
-                家の解体、<br class="md:hidden">最大100万円戻るかも？
+                <span class="inline-block">家の解体、</span><span class="inline-block">最大100万円</span><span class="inline-block">戻るかも？</span>
             </h3>
-            <p class="text-sm md:text-base text-slate-600 mb-10 leading-relaxed font-bold">
-                愛媛県内の空き家解体には、各自治体の補助金が使える場合があります。<br>
-                まずは解体予定の地域を選択して、あなたが対象かどうか診断してみましょう！
+            <p class="text-sm md:text-base text-slate-600 mb-10 leading-loose font-bold max-w-2xl mx-auto">
+                <span class="inline-block">愛媛県内の空き家解体には、</span><span class="inline-block">各自治体の補助金が</span><span class="inline-block">使える場合があります。</span><span class="inline-block">まずは解体予定の地域を選択して、</span><span class="inline-block">あなたが対象かどうか</span><span class="inline-block">診断してみましょう！</span>
             </p>
             
+            <!-- 地域選択ボタン（各市の専用ページへリンク） -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                 <a href="matsuyama.html" class="block bg-white border-2 border-slate-200 hover:border-[#890a1e] rounded-lg py-6 font-bold text-lg shadow-sm transition-all hover:-translate-y-1">松山市</a>
                 <a href="iyo.html" class="block bg-white border-2 border-slate-200 hover:border-[#890a1e] rounded-lg py-6 font-bold text-lg shadow-sm transition-all hover:-translate-y-1">伊予市</a>
@@ -206,6 +216,7 @@
         </div>
     </section>
 
+    <!-- ===== 対応工事 ===== -->
     <section id="service" class="py-16 md:py-24 px-6 bg-white">
         <div class="max-w-5xl mx-auto">
             <div class="fade-in text-center mb-10">
@@ -237,6 +248,7 @@
         </div>
     </section>
 
+    <!-- ===== よくあるご質問 ===== -->
     <section id="faq" class="py-16 md:py-24 px-6 bg-slate-50">
         <div class="max-w-3xl mx-auto">
             <div class="fade-in text-center mb-8 md:mb-10">
@@ -263,6 +275,7 @@
         </div>
     </section>
 
+    <!-- ===== お問い合わせ ===== -->
     <section id="contact" class="py-16 md:py-28 px-6 bg-dark text-white">
         <div class="max-w-5xl mx-auto">
             <div class="fade-in text-center mb-10 md:mb-14">
@@ -338,6 +351,7 @@
         </div>
     </section>
 
+    <!-- ===== 会社案内 ===== -->
     <section id="about" class="py-16 md:py-28 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="fade-in text-center mb-10 md:mb-14">
@@ -379,6 +393,7 @@
         </div>
     </section>
 
+    <!-- スマホ用 固定下部ボタン -->
     <div class="lg:hidden h-16"></div>
     <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.25)]">
         <a href="#simulator" class="flex-1 flex items-center justify-center gap-2 bg-[#890a1e] text-white py-4 font-bold text-sm tracking-wider">
