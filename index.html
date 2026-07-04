@@ -109,19 +109,20 @@
     </style>
 </head>
 <body class="overflow-x-hidden text-slate-900">
+    <span id="top"></span>
     <!-- ===== Navigation ===== -->
     <nav class="fixed w-full z-50 nav-glass border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3 md:gap-5">
+            <a href="#top" class="flex items-center gap-3 md:gap-5" aria-label="トップへ戻る">
                 <img src="logo.png" alt="成王建設" class="h-9 md:h-12 w-auto object-contain">
                 <h1 class="text-[18px] md:text-2xl font-bold tracking-tight serif leading-none flex items-center">
                     <span class="inline-flex flex-col text-[8px] md:text-[11px] leading-[1.1] mr-1.5 md:mr-2 font-normal serif"><span>株式</span><span>会社</span></span>
                     <span class="tracking-normal">成王建設</span>
                 </h1>
-            </div>
+            </a>
             <div class="hidden lg:flex items-center space-x-7 text-[12px] font-bold tracking-[0.1em] text-slate-600">
                 <a href="#simulator" class="hover:text-slate-900 transition-colors">お見積り</a>
-                <a href="matsuyama.html" class="hover:text-slate-900 transition-colors">補助金情報</a>
+                <a href="#subsidy" class="hover:text-slate-900 transition-colors">補助金情報</a>
                 <a href="#service" class="hover:text-slate-900 transition-colors">対応工事</a>
                 <a href="#faq" class="hover:text-slate-900 transition-colors">よくあるご質問</a>
                 <a href="#about" class="hover:text-slate-900 transition-colors">会社案内</a>
@@ -146,7 +147,7 @@
     <!-- ===== Mobile Menu ===== -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] serif text-slate-900">
         <a href="#simulator" class="mobile-link">お見積り</a>
-        <a href="matsuyama.html" class="mobile-link">補助金情報</a>
+        <a href="#subsidy" class="mobile-link">補助金情報</a>
         <a href="#service" class="mobile-link">対応工事</a>
         <a href="#faq" class="mobile-link">よくあるご質問</a>
         <a href="#about" class="mobile-link">会社案内</a>
@@ -462,14 +463,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-8 text-sm">
                     <div class="md:col-span-2">
                         <p class="serif font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2">補助金情報（対象診断・申請方法）</p>
-                        <ul class="grid grid-cols-2 gap-x-6 gap-y-2 text-slate-500">
-                            <li><a href="matsuyama.html" class="hover:text-[#890a1e] transition-colors">松山市 解体補助金（診断・申請）</a></li>
-                            <li><a href="masaki.html" class="hover:text-[#890a1e] transition-colors">松前町 解体補助金（診断・申請）</a></li>
-                            <li><a href="iyo.html" class="hover:text-[#890a1e] transition-colors">伊予市 解体補助金（診断・申請）</a></li>
-                            <li><a href="imabari.html" class="hover:text-[#890a1e] transition-colors">今治市 解体補助金（診断・申請）</a></li>
-                            <li><a href="toon.html" class="hover:text-[#890a1e] transition-colors">東温市 解体補助金（診断・申請）</a></li>
-                            <li><a href="saijo.html" class="hover:text-[#890a1e] transition-colors">西条市 解体補助金（診断・申請）</a></li>
-                            <li><a href="tobe.html" class="hover:text-[#890a1e] transition-colors">砥部町 解体補助金（診断・申請）</a></li>
+                        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-slate-500">
+                            <li><a href="matsuyama.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">松山市の解体補助金</a></li>
+                            <li><a href="masaki.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">松前町の解体補助金</a></li>
+                            <li><a href="iyo.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">伊予市の解体補助金</a></li>
+                            <li><a href="imabari.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">今治市の解体補助金</a></li>
+                            <li><a href="toon.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">東温市の解体補助金</a></li>
+                            <li><a href="saijo.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">西条市の解体補助金</a></li>
+                            <li><a href="tobe.html" class="whitespace-nowrap hover:text-[#890a1e] transition-colors">砥部町の解体補助金</a></li>
                         </ul>
                     </div>
                     <div>
